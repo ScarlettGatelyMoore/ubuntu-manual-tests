@@ -100,7 +100,7 @@ def substitute(doc, path, content):
     :class:`~xml.etree.ElementTree.Element` instance. The resulting document
     is returned (the original *doc* is not modified).
 
-    *content* can also be a callable. In this case, for each element matching
+    *content* may also be a callable. In this case, for each element matching
     *path*, the *content* callable will be called with *doc* and the matching
     element. It must return a single :class:`~xml.etree.ElementTree.Element`
     containing the content to substitute.
@@ -109,10 +109,10 @@ def substitute(doc, path, content):
 
     .. note::
 
-        Note that the *contents* elements themselves are *not* included in the
+        Note that the *content* element itself is *not* included in the
         substitution. Only the descendents (including text, child elements,
-        etc.) of *contents* are substituted, and the substitution replaces the
-        placeholder element located by *path* entirely.
+        etc.) of *content* are substituted, and the substitution replaces the
+        placeholder elements located by *path* entirely.
     """
     doc = deepcopy(doc)
     parent_map = {
