@@ -10,41 +10,43 @@ is aliased to the "ut:" shortname at the top, so wherever you see a tag
 with a "ut:" prefix, it's part of the configuration. All unprefixed tags
 are HTML to include in the output.
 
-+ The outermost element must be "ut:configuration"
-|
-|-+ Directly under "ut:configuration" there must be one, and only one,
-|   "ut:template" element. This contains the HTML used for all generated
-|   test cases. Within the HTML you must include a *single* "ut:tests"
-|   element which indicates the place within the template to include
-|   the various tests for a given case.
-|
-|-+ Directly under "ut:configuration", there must be one or more
-| | "ut:test" elements. These define the individual tests to be carried
-| | out by testers. Each "ut:test" element must have an "id" attribute
-| | which uniquely identifies it; the identifier is any arbitrary string
-| | and is not directly used in the output.
-| |
-| |-+ Each "ut:test" element must contain a single "ut:action" element,
-| |   which contains the HTML describing the test to carry out
-| |   (e.g. "click this button and fill out a form")
-| |
-| \-+ Each "ut:test" element must also contain a single "ut:expected"
-|     element, which contains the HTML describing the expected outcome
-|     of the test (e.g. "a sheet of paper is printed").
-|
-\-+ Directly under "ut:configuration", there must be one or more "ut:case"
-  | elements. Each of these defines a single test-case file to be written
-  | to the output directory. Each "ut:case" element must have an "id"
-  | attribute which uniquely identifies it; the identifier will be used
-  | as the output filename for that case.
-  |
-  |-+ Each "ut:case" element must contain one or more "ut:include"
-  |   elements. Each "ut:include" element must have a "ref" attribute
-  |   naming the "id" attribute of the "ut:test" element to include
-  |   in that case. Each test will be included in the output in the
-  |   order specified.
-  |
-  \-+ Each "ut:case" element may contain zero or more "ut:define"
+┌ The outermost element must be "ut:configuration"
+│
+├─┬ Directly under "ut:configuration" there must be one, and only one,
+│ ┊ "ut:template" element. This contains the HTML used for all generated
+│ ┊ test cases.
+│ ┊
+│ └┄┄ Within the HTML you must include a *single* "ut:tests" element
+│     which indicates the place within the template to include the
+│     various tests for a given case.
+│
+├─┬ Directly under "ut:configuration", there must be one or more
+│ │ "ut:test" elements. These define the individual tests to be carried
+│ │ out by testers. Each "ut:test" element must have an "id" attribute
+│ │ which uniquely identifies it; the identifier is any arbitrary string
+│ │ and is not directly used in the output.
+│ │
+│ ├── Each "ut:test" element must contain a single "ut:action" element,
+│ │   which contains the HTML describing the test to carry out
+│ │   (e.g. "click this button and fill out a form")
+│ │
+│ └── Each "ut:test" element must also contain a single "ut:expected"
+│     element, which contains the HTML describing the expected outcome
+│     of the test (e.g. "a sheet of paper is printed").
+│
+└─┬ Directly under "ut:configuration", there must be one or more "ut:case"
+  │ elements. Each of these defines a single test-case file to be written
+  │ to the output directory. Each "ut:case" element must have an "id"
+  │ attribute which uniquely identifies it; the identifier will be used
+  │ as the output filename for that case.
+  │
+  ├── Each "ut:case" element must contain one or more "ut:include"
+  │   elements. Each "ut:include" element must have a "ref" attribute
+  │   naming the "id" attribute of the "ut:test" element to include
+  │   in that case. Each test will be included in the output in the
+  │   order specified.
+  │
+  └── Each "ut:case" element may contain zero or more "ut:define"
       elements. Each "ut:define" element must have a "name" attribute. The
       content of the "ut:define" element is HTML that will be substituted
       wherever a "ut:var" element (see below) exists with a matching
