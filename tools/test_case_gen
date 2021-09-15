@@ -28,7 +28,7 @@ class ut:
     A trivial class to define the XML namespace used in the configuration file
     and the (expanded) names of all the tags specific to that namespace.
     """
-    ns       = 'com.ubuntu.tests'
+    ns       = 'urn:com:ubuntu:tests'
     config   = f'{{{ns}}}configuration'
     template = f'{{{ns}}}template'
     tests    = f'{{{ns}}}tests'

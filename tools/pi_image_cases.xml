@@ -5,10 +5,10 @@ Hopefully the layout of this file should be fairly self-explanatory,
 so you may just wish to read the content to get a feel for it, but to
 avoid any ambiguity, here's the long explanation in case it isn't:
 
-The namespace used for all the custom tags is "com.ubuntu.tests" which
-is aliased to the "ut:" shortname at the top, so wherever you see a tag
-with a "ut:" prefix, it's part of the configuration. All unprefixed tags
-are HTML to include in the output.
+The namespace used for all the custom tags is "urn:com:ubuntu:tests"
+which is aliased to the "ut:" shortname at the top, so wherever you see
+a tag with a "ut:" prefix, it's part of the configuration. All unprefixed
+tags are HTML to include in the output.
 
 ┌ The outermost element must be "ut:configuration"
 │
@@ -66,7 +66,7 @@ e.g. within a "ut:case" and a "ut:include" within that case, the "inner"
 definition overrides the outer.
 -->
 
-<ut:configuration xmlns:ut="com.ubuntu.tests">
+<ut:configuration xmlns:ut="urn:com:ubuntu:tests">
   <ut:template>
     <p>This test case is to be carried out on a <ut:var name="model" />.</p>
     <p>Follow the installation steps at <a
