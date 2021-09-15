@@ -21,6 +21,7 @@ import argparse
 from copy import deepcopy
 from pathlib import Path
 from xml.etree import ElementTree as et
+from collections.abc import Mapping
 
 
 class ut:
@@ -67,7 +68,7 @@ def main(args=None):
         for filename, doc in TestConfiguration(
                 ns.config,
                 action_tag=ns.action_tag,
-                expected_tag=ns.expected_tag):
+                expected_tag=ns.expected_tag).items():
             content = et.tostring(doc, encoding='unicode', method='html')
             # Hack off the outer elements as the result is effectively an
             # incomplete snippet of HTML. We can't do this with etree as
@@ -160,7 +161,7 @@ def substitute(doc, path, content):
     return doc
 
 
-class TestConfiguration:
+class TestConfiguration(Mapping):
     """
     Given *xml_file*, a file-like object containing a compatible XML
     configuration for this script, this object will act as an iterator which
@@ -219,12 +220,17 @@ class TestConfiguration:
         except KeyError:
             raise ValueError('Missing "name" attribute in <ut:define>')
 
+    def __len__(self):
+        return len(self._cases)
+
+    def __getitem__(self, key):
+        try:
+            return self._render_case(self._cases[key])
+        except ValueError as exc:
+            raise ValueError(f'In <ut:case id={key!r}>: {exc!r}')
+
     def __iter__(self):
-        for case_id, case in self._cases.items():
-            try:
-                yield case_id, self._render_case(case)
-            except ValueError as exc:
-                raise ValueError(f'In <ut:case id={case_id!r}>: {exc}')
+        return iter(self._cases)
 
     def _render_case(self, case):
         env = self._env.copy()
