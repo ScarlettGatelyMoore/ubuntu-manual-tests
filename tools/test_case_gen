@@ -66,7 +66,7 @@ def main(args=None):
 
     try:
         for filename, doc in TestConfiguration(
-                ns.config,
+                et.fromstring(ns.config.read()),
                 action_tag=ns.action_tag,
                 expected_tag=ns.expected_tag).items():
             content = et.tostring(doc, encoding='unicode', method='html')
@@ -164,19 +164,19 @@ def substitute(doc, path, content):
 
 class TestConfiguration(Mapping):
     """
-    Given *xml_file*, a file-like object containing a compatible XML
-    configuration for this script, this object will act as an iterator which
-    yields tuples of (filename, xml-document), where "xml-document" is the
-    :class:`~xml.etree.ElementTree.Element` at the root of the generated test
-    case document.
+    Given *root*, an :class:`~xml.etree.ElementTree.Element` containing a
+    compatible XML configuration for this script, this object will act as a
+    read-only :class:`~collections.abc.Mapping`
+    which maps filenames (taken from the "id" attribute of each <ut:case>
+    element in the configuration) to rendered test case documents, returned
+    as the root :class:`~xml.etree.ElementTree.Element` of the document.
     """
-    def __init__(self, xml_file, *, action_tag='dt', expected_tag='dd'):
+    def __init__(self, root, *, action_tag='dt', expected_tag='dd'):
         super().__init__()
-        xml_config = et.fromstring(xml_file.read())
-        if xml_config.tag != ut.config:
+        if root.tag != ut.config:
             raise ValueError(
                 'Expected to find <ut:config> as the root element')
-        self._template = xml_config.find(f'./{ut.template}')
+        self._template = root.find(f'./{ut.template}')
         if self._template is None:
             raise ValueError(
                 'Expected to find <ut:template> under the <ut:config> '
@@ -187,7 +187,7 @@ class TestConfiguration(Mapping):
         try:
             self._tests = {
                 elem.attrib['id']: elem
-                for elem in xml_config.findall(f'./{ut.test}')
+                for elem in root.findall(f'./{ut.test}')
             }
         except KeyError:
             raise ValueError(f'Missing "id" attribute in {ut.test}')
@@ -199,7 +199,7 @@ class TestConfiguration(Mapping):
         try:
             self._cases = {
                 elem.attrib['id']: elem
-                for elem in xml_config.findall(f'./{ut.case}')
+                for elem in root.findall(f'./{ut.case}')
             }
         except KeyError:
             raise ValueError('Missing "id" attribute in <ut:case>')
@@ -210,9 +210,9 @@ class TestConfiguration(Mapping):
                     '<ut:config> element')
         self._action_tag = str(action_tag)
         self._expected_tag = str(expected_tag)
-        self._env = self._build_env(root=xml_config)
+        self._env = self._build_env(root)
 
-    def _build_env(self, *, root):
+    def _build_env(self, root):
         try:
             return {
                 elem.attrib['name']: elem
