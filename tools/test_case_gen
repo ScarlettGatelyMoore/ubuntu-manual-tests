@@ -147,16 +147,17 @@ def substitute(doc, path, content):
             last = deepcopy(elem)
             parent.insert(parent_index, last)
             parent_index += 1
-        if last is parent:
-            if last.text is None:
-                last.text = placeholder.tail
+        if placeholder.tail is not None:
+            if last is parent:
+                if last.text is None:
+                    last.text = placeholder.tail
+                else:
+                    last.text += placeholder.tail
             else:
-                last.text += placeholder.tail
-        else:
-            if last.tail is None:
-                last.tail = placeholder.tail
-            else:
-                last.tail += placeholder.tail
+                if last.tail is None:
+                    last.tail = placeholder.tail
+                else:
+                    last.tail += placeholder.tail
         parent.remove(placeholder)
     return doc
 
