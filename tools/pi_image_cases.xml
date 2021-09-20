@@ -89,59 +89,59 @@ definition overrides the outer.
   <ut:define name="post-install"></ut:define>
 
   <ut:test id="uboot-video">
-    <ut:action>
+    <dt>
       Immediately after the "rainbow" splash screen, U-Boot starts. Press a key
       to interrupt the sequence, then type "boot" to continue it.
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Check that the U-Boot prompt (including a two-second wait) appears on
       the primary monitor connected to the Pi, that the keyboard will interrupt
       the sequence, and that boot successfully concludes after resumption.
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="uboot-serial">
-    <ut:action>
+    <dt>
       During the boot sequence, U-Boot starts interacting via serial (GPIO14
       and GPIO15, pins 8 and 10 respectively, on the 40-pin GPIO header). Press
       a key to interrupt the sequence, then type "boot" to continue it.
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Check that the U-Boot prompt (including a two-second wait) appears on
       the attached serial console, that the keyboard will interrupt
       the sequence, and that boot successfully concludes after resumption.
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="flash-kernel">
-    <ut:action>
+    <dt>
       Run <code>sudo flash-kernel</code>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Exit code is clean (0) and no error messages are reported
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="reboot">
-    <ut:action>
+    <dt>
       Run <code>sudo reboot</code>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       System reboots successfully to a login prompt
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="shutdown">
-    <ut:action>
+    <dt>
       Run <code>sudo shutdown -h now</code>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       System shuts down in a reasonable time (less than a minute)
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="usb-file-transfer">
-    <ut:action>
+    <dt>
       Perform a large (300-600MB) file copy to USB storage
       <ul>
         <li>Generate a large (500MB) file: <code>dd if=/dev/urandom of=rubbish
@@ -160,44 +160,44 @@ definition overrides the outer.
         <li>Compare the copied file to that on the stick: <code>cmp rubbish
           /mnt/stick/rubbish</code></li>
       </ul>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       <code>cmp</code> returns 0 and outputs nothing indicating the files are
       identical
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="usb-keyboard">
-    <ut:action>
+    <dt>
       Connect a USB keyboard to one of the <ut:var name="usb" /> ports
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Verify that keys typed on the keyboard appear on the console
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="ram-free">
-    <ut:action>
+    <dt>
       Check output of <code>free -h</code>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Reported &quot;Mem&quot; under &quot;total&quot; is consistent with a
       <ut:var name="model" />. It should be in the region of <ut:var name="mem"
       />.
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="dual-monitor">
-    <ut:action>
+    <dt>
       Boot with a monitor attached to both HDMI ports
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       Verify that you see output on both monitors
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="ethernet">
-    <ut:action>
+    <dt>
       Check auto-configuration of ethernet
       <ul>
         <li>Run <code>ip addr</code></li>
@@ -206,15 +206,15 @@ definition overrides the outer.
         <li>Check <code>ping google.com</code> successfully pings a few times
           (<tt>Ctrl+C</tt> to cancel)</li>
       </ul>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       The &quot;<ut:var name="intf" />&quot; interface should have a DHCP
       assigned IP address and you should be able to ping google.com
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="wifi">
-    <ut:action>
+    <dt>
       Configure wifi via netplan
       <ul>
         <li>Place the following in <code>/etc/netplan/wifi.yaml</code>
@@ -237,15 +237,15 @@ definition overrides the outer.
         <li>Check <code>ping google.com</code> successfully pings a few times
           (<tt>Ctrl+C</tt> to cancel)</li>
       </ul>
-    </ut:action>
-    <ut:expected>
+    </dt>
+    <dd>
       The &quot;<ut:var name="intf" />&quot; interface should have a DHCP
       assigned IP address and you should be able to ping google.com
-    </ut:expected>
+    </dd>
   </ut:test>
 
   <ut:test id="audio">
-    <ut:action>
+    <dt>
       With <ut:var name="device" />, and an available MP3 file:
       <ul>
         <li>Install mpg321 and amixer with <code>sudo apt install mpg321
@@ -267,8 +267,8 @@ definition overrides the outer.
           (<tt>J</tt> for down, <tt>K</tt> for up) before exiting
           (<tt>Esc</tt>) and retrying playback</li>
       </ul>
-    </ut:action>
-    <ut:expected>Audio can be heard through the device</ut:expected>
+    </dt>
+    <dd>Audio can be heard through the device</dd>
   </ut:test>
 
   <ut:case id="1711_RaspberryPi 4 2GB Post-install">
