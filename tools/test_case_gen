@@ -38,9 +38,7 @@ def main(args=None):
         #
         #   $ TEST=1 python3-coverage run --source=tools/ ./tools/test_case_gen
         #   $ python3-coverage report --show-missing
-        import doctest
-        failures, total = doctest.testmod()
-        return bool(failures)
+        return _test_main()
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -76,7 +74,7 @@ def main(args=None):
         else:
             typ, value, tb = sys.exc_info()
             print(value, file=sys.stderr)
-            sys.exit(1)
+            return 1
 
 
 def substitute(doc, path, content):
@@ -347,6 +345,12 @@ class TestConfiguration(Mapping):
             raise ValueError(f'<ut:define name={var_name!r}> not found')
 
 
+def _test_main():
+    import doctest
+    os.environ.pop('TEST', None) # Don't run the test-suite recursively!
+    failures, total = doctest.testmod()
+    return bool(failures)
+
 # Some extra doctests to bump coverage
 
 __test__ = {
@@ -615,8 +619,6 @@ __test__ = {
     'main --help': """
     Running the main function with --help results in help output::
 
-        >>> import os
-        >>> os.environ['TEST'] = '0' # don't run the test-suite recursively!
         >>> try:
         ...     main(['--help']) # doctest: +ELLIPSIS
         ... except SystemExit:
@@ -629,11 +631,9 @@ __test__ = {
     Running the main function with a valid configuration results in output
     to the specified directory::
 
-        >>> import os
         >>> import io
         >>> import tempfile
         >>> from pathlib import Path
-        >>> os.environ['TEST'] = '0' # don't run the test-suite recursively!
         >>> tmp = tempfile.TemporaryDirectory()
         >>> xml = io.open(Path(tmp.name) / 'config.xml', 'w')
         >>> xml.write('''
@@ -682,4 +682,4 @@ __test__ = {
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
