@@ -3,8 +3,8 @@
      tools/pi_image_cases.xml
 -->
 
-    <p>This test case is to be carried out on a Raspberry Pi 4 4GB.</p>
     
+    <p>This test case is to be carried out on a Raspberry Pi 4 4GB.</p>
     <p>Follow the installation steps at <a href="https://ubuntu.com/download/iot/installation-media">
       IoT installation media</a>
     </p>
