@@ -36,7 +36,7 @@
     <dt>Select your timezone, and click on the continue button</dt>
         <dd>The 'Who are you?' screen appears</dd>
     <dt>Input your initial user details and password <em>admin can not be used - it is a dedicated Linux User</em></dt>
-        <dd>Name, username and password are accepted. Login options and home folder encryption choices shown</dd>
+        <dd>Name, username and password are accepted. Automatic login option is shown</dd>
         <dd>Continue button becomes available</dd>
     <dt>Press continue</dt>
         <dd>The installation proceeds</dd>
