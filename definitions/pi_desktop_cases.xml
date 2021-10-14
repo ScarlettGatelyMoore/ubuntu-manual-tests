@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- See TEMPLATE.xml for an explanation of this file layout -->
+
+<ut:configuration xmlns:ut="urn:com:ubuntu:tests">
+  <ut:template>
+    <p>This test case is to be carried out on a <ut:var name="model" />.</p>
+    <p>Follow the installation steps at <a
+      href="https://ubuntu.com/download/iot/installation-media">
+      IoT installation media</a>
+    </p>
+    <ut:var name="post-install" />
+    <dl>
+      <ut:tests />
+    </dl>
+    <p>If <strong>all</strong> actions produce the expected results listed,
+      please <a href="results#add_result">submit</a> a 'passed' result.</p>
+    <p>If <strong>any</strong> action fails, or produces an unexpected result,
+      please <a href="results#add_result">submit</a> a 'failed' result and <a
+      href="../../buginstructions">file a bug</a>. Please be sure to include
+      the bug number when you <a href="results#add_result">submit</a> your
+      result.</p>
+  </ut:template>
+
+  <ut:define name="post-install"></ut:define>
+
+  <ut:test id="startup-splash">
+    <dt>Watch the boot screen</dt>
+    <dd>Check that the Ubuntu logo, and spinner appear during boot time</dd>
+  </ut:test>
+
+  <ut:test id="startup-sound">
+    <dt>
+      Ensure you have speakers on your monitor or headphones plugged into it
+    </dt>
+    <dd>
+      Check that the Ubuntu start up sound plays through the monitor's audio
+      output before the initial System Configuration appears
+    </dd>
+  </ut:test>
+
+  <ut:test id="startup-timezone">
+    <dt>Select your timezone, and click on the Continue button</dt>
+    <dd>The 'Who are you?' screen appears</dd>
+  </ut:test>
+
+  <ut:test id="startup-identity">
+    <dt>
+      Input your initial user details and password 
+      <em>admin</em> can not be used - it is a dedicated Linux User
+    </dt>
+    <dd>
+      Name, username and password are accepted. Login options and home folder
+      encryption choices shown
+    </dd>
+    <dd>Continue button becomes available</dd>
+  </ut:test>
+
+  <ut:test id="flash-kernel">
+    <dt>
+      Run <code>sudo flash-kernel</code>
+    </dt>
+    <dd>
+      Exit code is clean (0) and no error messages are reported
+    </dd>
+  </ut:test>
+
+  <ut:test id="reboot">
+    <dt>
+      Click the power icon at the top right of the screen, and expand the "Power
+      Off / Log Out" entry in the menu that appears, then "Restart..." from that
+      menu, and confirm "Restart" in the dialog that appears
+    </dt>
+    <dd>
+      System reboots successfully to a login prompt
+    </dd>
+  </ut:test>
+
+  <ut:test id="shutdown">
+    <dt>
+      Click the power icon at the top right of the screen, and expand the "Power
+      Off / Log Out" entry in the menu that appears, then "Power Off..." from
+      that menu, and confirm "Power Off" in the dialog that appears
+    </dt>
+    <dd>
+      System shuts down in a reasonable time (less than a minute)
+    </dd>
+  </ut:test>
+
+  <ut:test id="usb-file-transfer">
+    <dt>
+      Perform a large (300-600MB) file copy to USB storage
+      <ul>
+        <li>Generate a large (500MB) file: <code>dd if=/dev/urandom of=rubbish
+          bs=1M count=500</code></li>
+        <li>Insert a USB stick (appropriately sized) into a spare USB port</li>
+        <li>Make a mount directory: <code>sudo mkdir /mnt/stick</code></li>
+        <li>Mount the stick: <code>sudo mount /dev/sda1 /mnt/stick</code>
+          (modify mount-point as necessary; check <code>sudo dmesg</code>
+          output if unsure)</li>
+        <li>Copy the file: <code>sudo cp rubbish /mnt/stick/</code></li>
+        <li>Unmount the stick: <code>sudo umount /mnt/stick</code></li>
+        <li>Remove the stick from the USB port</li>
+        <li>Re-insert the stick into the USB port</li>
+        <li>Re-mount the stick: <code>sudo mount /dev/sda1 /mnt/stick</code>
+          (again, adjust mount-point as necessary)</li>
+        <li>Compare the copied file to that on the stick: <code>cmp rubbish
+          /mnt/stick/rubbish</code></li>
+      </ul>
+    </dt>
+    <dd>
+      <code>cmp</code> returns 0 and outputs nothing indicating the files are
+      identical
+    </dd>
+  </ut:test>
+
+  <ut:test id="ram-free">
+    <dt>
+      Click the power icon at the top right of the screen, select Settings from
+      the menu that appears, then "About" in the left panel of the window that
+      appears
+    </dt>
+    <dd>
+      Reported &quot;Memory&quot; is consistent with a <ut:var name="model" />.
+      It should be in the region of <ut:var name="mem" />.
+    </dd>
+  </ut:test>
+
+  <ut:test id="dual-monitor">
+    <dt>
+      Boot with a monitor attached to both HDMI ports
+    </dt>
+    <dd>
+      Verify that you see output on both monitors
+    </dd>
+  </ut:test>
+
+  <ut:test id="ethernet">
+    <dt>
+      Check auto-configuration of ethernet
+      <ul>
+        <li>Run <code>ip addr</code></li>
+        <li>Check that a valid IP address is recorded on the <ut:var
+           name="intf" /> interface</li>
+        <li>Check <code>ping google.com</code> successfully pings a few times
+          (<tt>Ctrl+C</tt> to cancel)</li>
+      </ul>
+    </dt>
+    <dd>
+      The &quot;<ut:var name="intf" />&quot; interface should have a DHCP
+      assigned IP address and you should be able to ping google.com
+    </dd>
+  </ut:test>
+
+  <ut:test id="wifi">
+    <dt>
+      Configure wifi via Network Manager
+      <ul>
+        <li>Click the power icon at the top right of the screen</li>
+        <li>Select the WiFi entry from the menu and Select Network under that</li>
+        <li>Select your local WiFi network from the scan list</li>
+        <li>Enter the password for your local WiFi network when prompted</li>
+        <li>Wait a few seconds (to allow DHCP to complete), then run <code>ip
+          addr</code></li>
+        <li>Check that a valid IP address is recorded on the <ut:var
+          name="intf" /> interface</li>
+        <li>Check <code>ping google.com</code> successfully pings a few times
+          (<tt>Ctrl+C</tt> to cancel)</li>
+      </ul>
+    </dt>
+    <dd>
+      The &quot;<ut:var name="intf" />&quot; interface should have a DHCP
+      assigned IP address and you should be able to ping google.com
+    </dd>
+  </ut:test>
+
+  <ut:case id="1744_RaspberryPi 4 4GB Desktop">
+    <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+  </ut:case>
+
+  <ut:case id="1745_RaspberryPi 4 8GB Desktop">
+    <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+  </ut:case>
+
+  <ut:case id="1746_RaspberryPi 400 Desktop">
+    <ut:define name="model">Raspberry Pi 400</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+  </ut:case>
+
+  <ut:case id="1747_RaspberryPi CM4 4GB Desktop">
+    <ut:define name="model">Raspberry Pi Compute Module 4 4GB</ut:define>
+    <ut:define name="post-install">
+      <p>Before booting your CM4 with the new image, edit config.txt on the boot
+      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
+      line to ensure the USB ports on the IO board operate correctly</p>
+    </ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+  </ut:case>
+
+  <ut:case id="1748_RaspberryPi CM4 8GB Desktop">
+    <ut:define name="model">Raspberry Pi Compute Module 4 8GB</ut:define>
+    <ut:define name="post-install">
+      <p>Before booting your CM4 with the new image, edit config.txt on the boot
+      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
+      line to ensure the USB ports on the IO board operate correctly</p>
+    </ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+  </ut:case>
+</ut:configuration>
