@@ -70,8 +70,7 @@
       Click the power icon at the top right of the screen, and expand the "Power
       Off / Log Out" entry in the menu that appears, then "Restart..." from that
       menu, and confirm "Restart" in the dialog that appears
-    </dt>
-    <dd>
+    </dt> <dd>
       System reboots successfully to a login prompt
     </dd>
   </ut:test>
@@ -174,7 +173,71 @@
     </dd>
   </ut:test>
 
-  <ut:case id="1744_RaspberryPi 4 4GB Desktop">
+  <ut:test id="www-video">
+    <dt>
+      Start Firefox and play a YouTube video
+      <ul>
+        <li>Ensure you have functioning speakers / a headset plugged into your
+          monitor</li>
+        <li>Click on the Firefox icon on the left of the screen</li>
+        <li>Navigate to <a href="https://youtube.com">YouTube</a></li>
+        <li>Select a video (with audio!) to play</li>
+      </ul>
+    </dt>
+    <dd>
+      Check the video plays smoothly, and that audio is output through the
+      monitor, or speakers / headset plugged into the monitor
+    </dd>
+  </ut:test>
+
+  <ut:test id="local-video">
+    <dt>
+      Download and play BigBuckBunny in the built-in video player
+      <ul>
+        <li>Ensure you have functioning speakers / a headset plugged into your
+          monitor</li>
+        <li>Start a terminal session</li>
+        <li>Run <code>wget https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4</code></li>
+        <li>Once the download has completed, run <code>totem big_buck_bunny_720p_surround.mp4</code></li>
+      </ul>
+    </dt>
+    <dd>
+      Check the video plays smoothly, and that audio is output through the
+      monitor, or speakers / headset plugged into the monitor
+    </dd>
+  </ut:test>
+
+  <ut:test id="lock-screen">
+    <dt>
+      Press <tt>Super+L</tt> and wait for the lock screen to appear, then
+      fade, then for the monitor to suspend. Move the mouse to wake up the
+      monitor, then enter your password to unlock the desktop.
+    </dt>
+    <dd>
+      Ensure the monitor suspends correctly, that it awakens again correctly,
+      and that the desktop unlocks successfully (without the system hanging).
+    </dd>
+  </ut:test>
+
+  <ut:case id="1744_RaspberryPi 4 2GB Desktop">
+    <ut:define name="model">Raspberry Pi 2 4GB</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1745_RaspberryPi 4 4GB Desktop">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -187,9 +250,12 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1745_RaspberryPi 4 8GB Desktop">
+  <ut:case id="1746_RaspberryPi 4 8GB Desktop">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -202,9 +268,12 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1746_RaspberryPi 400 Desktop">
+  <ut:case id="1747_RaspberryPi 400 Desktop">
     <ut:define name="model">Raspberry Pi 400</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -217,9 +286,35 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1747_RaspberryPi CM4 4GB Desktop">
+  <ut:case id="1748_RaspberryPi CM4 2GB Desktop">
+    <ut:define name="model">Raspberry Pi Compute Module 4 2GB</ut:define>
+    <ut:define name="post-install">
+      <p>Before booting your CM4 with the new image, edit config.txt on the boot
+      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
+      line to ensure the USB ports on the IO board operate correctly</p>
+    </ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1749_RaspberryPi CM4 4GB Desktop">
     <ut:define name="model">Raspberry Pi Compute Module 4 4GB</ut:define>
     <ut:define name="post-install">
       <p>Before booting your CM4 with the new image, edit config.txt on the boot
@@ -237,9 +332,12 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1748_RaspberryPi CM4 8GB Desktop">
+  <ut:case id="1750_RaspberryPi CM4 8GB Desktop">
     <ut:define name="model">Raspberry Pi Compute Module 4 8GB</ut:define>
     <ut:define name="post-install">
       <p>Before booting your CM4 with the new image, edit config.txt on the boot
@@ -257,5 +355,8 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
   </ut:case>
 </ut:configuration>
