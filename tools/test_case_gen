@@ -355,8 +355,9 @@ def _test_main():
 
 __test__ = {
     'substitute-prior-append': """
-    The positioning of the substitution placeholder shouldn't matter; it can
-    be the first child, or a later child::
+    The positioning of the substitution placeholder shouldn't matter; it can be
+    the first child or a later child, and preceding elements (if any) may have
+    tail characters or :data:`None`::
 
         >>> from xml.etree import ElementTree as et
         >>> xml = et.fromstring('<p>This <em>is</em> a <color /> fruit</p>')
@@ -367,13 +368,6 @@ __test__ = {
         >>> color = et.fromstring('<color> yellow</color>')
         >>> print(et.tostring(substitute(xml, './color', color)))
         b'<p>This <em>was</em> yellow fruit</p>'
-    """,
-
-    'substitute-empty-cases': """
-    The substitution must succeed even if the text/tail properties of the
-    parent/prior elements are :data:`None`::
-
-        >>> from xml.etree import ElementTree as et
         >>> xml = et.fromstring('<p><content />?</p>')
         >>> content = et.fromstring('<content></content>')
         >>> print(et.tostring(substitute(xml, './content', content)))
