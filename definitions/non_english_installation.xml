@@ -24,7 +24,7 @@
     <dt>Use arrow keys to select language and press Enter</dt>
         <dd>Language list will close.</dd>
         <dd>The installer is localized from this screen onwards</dd>
-    <dt>Boot up the iso using a CD/DVD or USB Key to a Live Session</dt>
+    <dt>Boot up the iso using a DVD or USB Key to a Live Session</dt>
         <dd>The system boots properly and loads the installer displaying Welcome dialog with language selection and 'Try FAMILY' and 'Install FAMILY' buttons</dd>
     <dt>Click on the Install FAMILY icon</dt>
         <dd>The 'Keyboard Layout' screen appears</dd>

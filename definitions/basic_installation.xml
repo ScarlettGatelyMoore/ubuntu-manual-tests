@@ -58,11 +58,11 @@
         <dd>The Screen Install FAMILY XX.XX alongside SYSTEM YY appears</dd>
     <dt>Note the drive selected on the Select drive list and the bar state</dt>
     <strong>If the target drive has a free partition with sufficient freespace, install will proceed without further partitioning intervention</strong>
-        <dd> The drive corresponds to the drive on the chart (e.g /dev/sda) and the bar is divided</dd>
+        <dd>The drive corresponds to the drive on the chart (e.g /dev/sda) and the bar is divided</dd>
     <dt>Move the greyslider bar that separates the blue sections as appropriate</dt>
         <dd>The slider bar can be set as appropriate</dd>
     <dt>Click on the Install Now button</dt>
-    <dt> A dialog will appear  asking if you want to write the changes to disk. Select Continue.</dt>
+    <dt>A dialog will appear  asking if you want to write the changes to disk. Select Continue.</dt>
         <dd>The 'Where are you?' screen is displayed</dd>
   </ut:test>
 
