@@ -46,7 +46,7 @@
 
   <ut:test id="startup-identity">
     <dt>
-      Input your initial user details and password 
+      Input your initial user details and password
       <em>admin</em> can not be used - it is a dedicated Linux User
     </dt>
     <dd>
@@ -219,7 +219,7 @@
     </dd>
   </ut:test>
 
-  <ut:case id="1744_RaspberryPi 4 2GB Desktop">
+  <ut:case id="1751_RaspberryPi 4 2GB Desktop">
     <ut:define name="model">Raspberry Pi 2 4GB</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
