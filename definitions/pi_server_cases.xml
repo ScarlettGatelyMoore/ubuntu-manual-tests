@@ -535,7 +535,7 @@
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
   </ut:case>
 
-  <ut:case id="1744_RaspberryPi Zero 2 Post-install">
+  <ut:case id="1752_RaspberryPi Zero 2 Post-install">
     <ut:define name="model">Raspberry Pi Zero 2</ut:define>
     <ut:include ref="uboot-video" />
     <ut:include ref="uboot-serial" />
