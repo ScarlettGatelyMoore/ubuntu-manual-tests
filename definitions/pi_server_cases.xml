@@ -380,22 +380,6 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
   </ut:case>
 
-  <ut:case id="1725_RaspberryPi CM3 Post-install">
-    <ut:define name="model">Raspberry Pi Compute Module 3</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
-    <ut:include ref="flash-kernel" />
-    <ut:include ref="reboot" />
-    <ut:include ref="shutdown" />
-    <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
-    <ut:include ref="usb-file-transfer" />
-    <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
-    <ut:include ref="audio">
-      <ut:define name="device">an HDMI monitor that supports audio</ut:define>
-      <ut:define name="output">HDMI port</ut:define>
-    </ut:include>
-  </ut:case>
-
   <ut:case id="1726_RaspberryPi CM3+ Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 3+</ut:define>
     <ut:include ref="uboot-video" />
