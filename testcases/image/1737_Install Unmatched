@@ -28,6 +28,8 @@ The scope of this test is to ensure that riscv64+unmatched image boots from SD c
 	<dd>Run any command that is not installed, check that command-not-found recommends things to install</dd>
 	<dd>I.e. hello</dd>
 	<dd>Install a package and check that it works, i.e. hello</dd>
+    <dt>Perform snap testing</dt>
+        <dd>Install a snap and check that it works, i.e. hello</dd>
     <dt>Poweroff</dt>
         <dd>Console messages should reach poweroff target</dd>
 	<dd>There should be final kernel dmsg powering off</dd>
