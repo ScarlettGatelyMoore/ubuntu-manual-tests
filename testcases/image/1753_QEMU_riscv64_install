@@ -1,0 +1,52 @@
+This testcase checks the installation of the live installer image for the
+riscv64 architecture on QEMU.
+
+On your installed Ubuntu machine.
+
+<dl>
+    <dt>sudo apt install -y opensbi qemu-system-misc u-boot-qemu</dt>
+    <dt>curl https://cdimage.ubuntu.com/ubuntu-server/daily-live/current/jammy-live-server-riscv64.img.gz --output jammy-live-server-riscv64.img.gz</dt>
+    <dt>gzip -d jammy-live-server-riscv64.img.gz</dt>
+    <dt>rm -f disk</dt>
+    <dt>dd if=/dev/zero bs=1M of=disk count=1 seek=16383</dt>
+    <dt>Start the installer with:
+<pre>
+/usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
+    -bios /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.bin \
+    -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
+    -netdev user,id=net0 \
+    -device virtio-net-device,netdev=net0 \
+    -drive file=jammy-live-server-riscv64.img,format=raw,if=virtio \
+    -drive file=disk,format=raw,if=virtio \
+    -device virtio-rng-pci
+</pre></dt>
+    <dt>Install on the 16 GiB drive.</dt>
+        <dd>The installation finishes without reporting failures.</dd>
+    <dt>During the reboot press the Enter key to access U-Boot's command line.</dt>
+    <dt>Execute the poweroff command</dt>
+        <dd>QEMU terminates</dd>
+    <dt>Run the installed system with:
+<pre>
+/usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
+    -bios /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.bin \
+    -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
+    -netdev user,id=net0 \
+    -device virtio-net-device,netdev=net0 \
+    -drive file=disk,format=raw,if=virtio \
+    -device virtio-rng-pci
+</pre></dt>
+        <dd>The system boots via GRUB.</dd>
+    <dt>Login in with the username and password defined during the installation</dt>
+    <dt>Run any command that is not installed, e.g. hello.</dt>
+        <dd>Check that command-not-found recommends things to install</dd>
+    <dt>Install a package, e.g. hello.</dt>
+        <dd>Check that the package performs correctly.</dd>
+    <dt>Install a snap, e.g.. hello.</dt>
+        <dd>check that the snap works correctly.</dd>
+    <dt>Poweroff</dt>
+        <dd>Console messages should reach the poweroff target</dd>
+        <dd>There should be final message 'reboot: Power down'</dd>
+        <dd>QEMU should terminate automatically</dd>
+</dl>
+<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
