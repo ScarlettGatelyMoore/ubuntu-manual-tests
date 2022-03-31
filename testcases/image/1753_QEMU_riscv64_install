@@ -41,7 +41,7 @@ On your installed Ubuntu machine.
         <dd>Check that command-not-found recommends things to install</dd>
     <dt>Install a package, e.g. hello.</dt>
         <dd>Check that the package performs correctly.</dd>
-    <dt>Install a snap, e.g.. hello.</dt>
+    <dt>Install a snap, e.g. hello.</dt>
         <dd>check that the snap works correctly.</dd>
     <dt>Poweroff</dt>
         <dd>Console messages should reach the poweroff target</dd>
