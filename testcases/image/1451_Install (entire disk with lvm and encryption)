@@ -36,7 +36,7 @@
         <dd>The passwords are accepted and the 'Install Now' button can be clicked</dd>
     <dt>Check 'Overwrite empty disk space' and click the 'Install Now' button</dt>
         <dd>The screen advances</dd>
-    <dt>If there is only one hard disk, skip to step 14 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
+    <dt>If there is only one hard disk, skip to step 18 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
         <dd>Selected drive is displayed on the chart</dd>
     <dt>Verify that the full drive space is allocated</dt>
         <dd>Full drive space is allocated for installation</dd>
