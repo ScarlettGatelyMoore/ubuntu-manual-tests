@@ -7,7 +7,7 @@
         <dd>Language is selected, all labels are changed to translated versions</dd>
     <dt>Press "Try FAMILY" and wait for the Live session to start</dt>
         <dd>The default desktop is displayed</dd>
-    <dt>Use the desktop and open some applications to try FAMILY before installing</dt>
+    <dt>Use the desktop and open some applications (debs and snaps) to try FAMILY before installing</dt>
     <dt>Go to the Install FAMILY icon (usually on the desktop) and install from the Live session</dt>		
         <dd>The 'Keyboard Layout' screen appears</dd>
         <dd>The proposed keyboard corresponds with your keyboard</dd>
