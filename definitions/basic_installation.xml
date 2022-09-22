@@ -68,7 +68,7 @@
     <dt>Move the greyslider bar that separates the blue sections as appropriate</dt>
         <dd>The slider bar can be set as appropriate</dd>
     <dt>Click on the Install Now button</dt>
-    <dt>A dialog will appear  asking if you want to write the changes to disk. Select Continue.</dt>
+    <dt>A dialog will appear asking if you want to write the changes to disk. Click Continue.</dt>
         <dd>The 'Where are you?' screen is displayed</dd>
   </ut:test>
 
@@ -107,9 +107,9 @@
   </ut:test>
 
   <ut:test id="reboot-other">
-    <dt>Allow the machine to reboot, select the first option at the grub menu</dt>
+    <dt>Allow the machine to reboot, select the first option at the GRUB menu</dt>
         <dd>Your new installation boots</dd>
-    <dt>Reboot machine, select the previous installed system</dt>
+    <dt>Reboot machine, select the previously installed system</dt>
     <dd>Previously installed system boots and operates as expected</dd>
   </ut:test>
 
