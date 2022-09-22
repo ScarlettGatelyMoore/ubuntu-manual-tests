@@ -8,17 +8,18 @@ availability and that nVidia proprietary drivers are installed and loaded.
     <dt>Unplug network cable</dt>
         <dd>No networking should be available to the system</dd>
     <dt>Boot up the image in UEFI mode with <b>Secure Boot enabled</b></dt>
-        <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and 'Try FAMILY' and 'Install FAMILY' buttons</dd>
-    <dt>Click on the Install FAMILY icon</dt>	
+    <dt>When the installer starts and displays a Welcome dialog select your language in the left column</dt>
+        <dd>Language is selected, all labels are changed to translated versions</dd>
+    <dt>Click on the Install FAMILY icon</dt>
         <dd>The 'Keyboard Layout' screen appears</dd>
         <dd>The proposed keyboard corresponds with your keyboard</dd>
-	<dt>Select your keyboard layout and click on continue</dt>
+    <dt>Select your keyboard layout and click on continue</dt>
         <dd>The 'Preparing to install FAMILY' screen is displayed</dd>
     <dt>On the screen Preparing to install FAMILY, note the availability of the following components</dt>
         <dd>Available options should represent the state of your system accurately</dd>
         <dd>
             <ul>
-                <li>Download updates while installing FAMILY should be blank</li>
+                <li>Download updates while installing FAMILY should be unavailable</li>
                 <li>(If on a 'laptop') Is plugged to a power source</li>
                 <li>Install third-party software ... option available</li>
             </ul>
@@ -43,8 +44,8 @@ availability and that nVidia proprietary drivers are installed and loaded.
         <dd>Name, username and password are accepted. Automatic login option is shown</dd>
         <dd>Continue button becomes available</dd>
     <dt>Press continue</dt>
-        <dd>The 'Welcome to FAMILY ' slide is displayed</dd>
-        <dd>The slideshow is entirely in your language</dd> 
+        <dd>The 'Welcome to FAMILY' slide is displayed</dd>
+        <dd>The slideshow is entirely in your language</dd>
     <dt>Wait for the installer to finish</dt>
         <dd>An 'Installation Complete' dialog appears</dd>
     <dt>Click the Restart now button</dt>
@@ -84,7 +85,7 @@ Thu Apr 23 11:40:22 2020
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 
-$ prime-supported
+$ sudo prime-supported
 yes
         </code></dd>
     <dt>Run 'nvidia-settings'</dt>
