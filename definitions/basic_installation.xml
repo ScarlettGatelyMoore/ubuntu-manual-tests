@@ -1,7 +1,6 @@
 <ut:configuration xmlns:ut="urn:com:ubuntu:tests">
   <ut:template>
-    <p><em>Proceed in your native language if you wish. Instructions
-      will remain in English.</em></p>
+    <p><em>Proceed in your native language if you wish. Instructions will remain in English.</em></p>
     <dl>
       <ut:tests />
     </dl>
@@ -44,13 +43,41 @@
   </ut:test>
 
   <ut:test id="entire-disk">
-    <dt>Select 'Erase disk and install FAMILY'</dt>
-    <dt>Click on the continue button (if there is only one hard disk in the system, the button should read 'Install Now')</dt>
+    <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
+        <dd>The 'Erase disk and install FAMILY' radio button is selected and the 'Advanced features' button is active</dd>
+    <dt>Click on the Continue button (if there is only one hard disk in the system, the button should read 'Install Now')</dt>
         <dd>'Write the changes to disks' dialogue appears</dd>
     <dt>Click Continue</dt>
         <dd>If there is only one hard disk, the installer skips to the "Where are you?' screen. Otherwise, the 'Installation type' screen is displayed</dd>
     <dt>If there is only one hard disk, skip to step 12 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' page, select a drive in the 'Select drive' list.</dt>
         <dd>Verify that the selected drive corresponds to the drive on the chart</dd>
+    <dt>Verify that the full drive space is allocated</dt>
+        <dd>Full drive space is allocated for installation</dd>
+    <dt>Click on the Install Now button</dt>
+        <dd>The 'Where are you?' screen is displayed</dd>
+  </ut:test>
+
+  <ut:test id="entire-disk-lvm">
+    <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
+        <dd>The 'Erase disk and install FAMILY' radio button is selected and the 'Advanced features' button is active</dd>
+        <dt>Click on the 'Advanced features...' button</dt>
+        <dd>The 'Advanced Features' dialog is displayed</dd>
+    <dt>Select 'Use LVM with the new FAMILY installation' and check 'Encrypt the new FAMILY installation for security'</dt>
+        <dd>'Encrypt the new FAMILY Installation for security' and 'Use LVM with the new FAMILY Installation' is checked</dd>
+    <dt>Click on the 'OK' button</dt>
+        <dd>The dialog closes and 'LVM and encryption selected' is displayed next to the 'Advanced features...' button</dd>
+    <dt>Click on the 'Install Now' button</dt>
+        <dd>The 'Choose a security key' screen is displayed with the 'Install Now' button greyed out</dd>
+    <dt>Enter a security key and type a different key into the 'confirm the security key' input box</dt>
+        <dd>The installer displays 'Passwords do not match'</dd>
+    <dt>Enter a security key and type the same key into the 'Confirm the security key' input box</dt>
+        <dd>The passwords are accepted and the 'Install Now' button can be clicked</dd>
+    <dt>Check 'Overwrite empty disk space'</dt>
+    <dt>Click on the Continue button (if there is only one hard disk in the system, the button should read 'Install Now')</dt>
+        <dd>'Write the changes to disks' dialogue appears</dd>
+    <dt>Click Continue</dt>
+    <dt>If there is only one hard disk, skip to step 18 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
+        <dd>Selected drive is displayed on the chart</dd>
     <dt>Verify that the full drive space is allocated</dt>
         <dd>Full drive space is allocated for installation</dd>
     <dt>Click on the Install Now button</dt>
@@ -106,6 +133,13 @@
         <dd>The system boots properly and loads into FAMILY showing username selected</dd>
   </ut:test>
 
+  <ut:test id="reboot-encrypted">
+    <dt>Allow the machine to reboot</dt>
+        <dd>The system boots properly</dd>
+        <dd>A field is displayed to enter your password to decrypt the disk</dd>
+        <dd>The system loads into FAMILY showing username selected</dd>
+  </ut:test>
+
   <ut:test id="reboot-other">
     <dt>Allow the machine to reboot, select the first option at the GRUB menu</dt>
         <dd>Your new installation boots</dd>
@@ -118,6 +152,13 @@
     <ut:include ref="entire-disk" />
     <ut:include ref="finish" />
     <ut:include ref="reboot-ubuntu" />
+  </ut:case>
+
+  <ut:case id="1451_Install (entire disk with lvm and encryption)">
+    <ut:include ref="start" />
+    <ut:include ref="entire-disk-lvm" />
+    <ut:include ref="finish" />
+    <ut:include ref="reboot-encrypted" />
   </ut:case>
 
   <ut:case id="1301_Install (auto-resize)">
