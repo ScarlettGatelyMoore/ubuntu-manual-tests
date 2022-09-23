@@ -1,0 +1,59 @@
+The scope of this test is to ensure that riscv64+licheerv image boots from SD card on LicheeRV board
+
+<dl>
+    <dt>Flash downloaded image onto SD card</dt>
+        <dd>You can use Gnome Disks app to restore img.xz onto the SD card</dd>
+        <dd> Alternatively you can use xz -d to decompress, and then dd to copy the image to the SD card</dd>
+    <dt>Connect serial console to the board</dt>
+        <dd>FTDI adapter for serial console (pinout available here: https://popolon.org/depots/RISC-V/D1/LicheeRV/dl.sipeed.com/Lichee_RV_Dock/1_Datasheet/Sipeed%20Lichee%20RV%20DOCK%20Datasheet%20V1.0.pdf)</dd>
+    <dt>Connect to the serial console</dt>
+        <dd>sudo screen /dev/ttyUSB1 115200</dd>
+    <dt>Power on the board</dt>
+        <dd>You should see U-BOOT menu</dd>
+        <dd>It should then boot GRUB after a delay</dd>
+        <dd>You should see GRUB menu</dd>
+        <dd>It should then boot the default kernel after a delay</dd>
+        <dd>After a while cloud-init will run</dd>
+        <dd>Then one will be able to login</dd>
+    <dt>Login and change password</dt>
+        <dd>Login using ubuntu for both username and password</dd>
+        <dd>Reenter ubuntu password again</dd>
+        <dd>Set new password</dd>
+        <dd>Confirm the new password</dd>
+    <dt>Perform Wifi testing</dt>
+        <dd>You should see a wlan0 interface by typing:</dd>
+        <dd>$ ip a </dd>
+        <dd>Try to connect to local network by using the following netplan configuration file</dd>
+        <dd> network:</dd>
+        <dd>  version: 2</dd>
+        <dd>  renderer: networkd</dd>
+        <dd>  wifis:</dd>
+        <dd>    wlan0:</dd>
+        <dd>      dhcp4: yes</dd>
+        <dd>      dhcp6: yes</dd>
+        <dd>      access-points:</dd>
+        <dd>        "YOUR_SSID":</dd>
+        <dd>          password: "YOUR_PASSWORD"</dd>
+        <dd>And then type:</dd>
+        <dd>$ sudo netplan apply </dd>
+        <dd>You should connect successfully to your local network in a few seconds</dd>
+    <dt>Perform generic testing</dt>
+        <dd>Check that apt update works</dd>
+        <dd>Run any command that is not installed, check that command-not-found recommends things to install</dd>
+        <dd>e.g. hello</dd>
+        <dd>Install a package and check that it works, e.g. hello</dd>
+    <dt>Perform snap testing</dt>
+        <dd>Install a snap and check that it works, e.g. hello</dd>
+    <dt>Perform HDMI testing</dt>
+        <dd>Plug an HDMI cable and make sure a prompt asking for login appears on the screen</dd>
+    <dt>Perform USB test</dt>
+        <dd>Plug a keyboard in and enter the login/password</dd>
+    <dt>Reboot</dt>
+        <dd>The board should reboot normally</dt>
+    <dt>Poweroff</dt>
+        <dd>Console messages should reach poweroff target</dd>
+        <dd>There should be final kernel dmsg powering off</dd>
+        <dd>Manually turn power-off from the board</dd>
+</dl>
+<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
