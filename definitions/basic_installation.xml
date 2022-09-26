@@ -84,7 +84,7 @@
         <dd>The 'Where are you?' screen is displayed</dd>
   </ut:test>
 
-  <ut:test id="entire-disk-lvm">
+  <ut:test id="entire-disk-zfs">
     <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
         <dd>The 'Erase disk and install FAMILY' radio button is selected and the 'Advanced features' button is active</dd>
         <dt>Click on the 'Advanced features...' button</dt>
