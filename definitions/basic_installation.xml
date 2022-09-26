@@ -84,6 +84,26 @@
         <dd>The 'Where are you?' screen is displayed</dd>
   </ut:test>
 
+  <ut:test id="entire-disk-lvm">
+    <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
+        <dd>The 'Erase disk and install FAMILY' radio button is selected and the 'Advanced features' button is active</dd>
+        <dt>Click on the 'Advanced features...' button</dt>
+        <dd>The 'Advanced Features' dialog is displayed</dd>
+    <dt>Select 'Erase disk and use ZFS'</dt>
+        <dd>'Erase disk and use ZFS' is selected</dd>
+    <dt>Click on the 'OK' button</dt>
+        <dd>The dialog closes and 'ZFS selected' is displayed next to the 'Advanced features...' button</dd>
+    <dt>Click on the 'Install Now' button</dt>
+        <dd>'Write the changes to disks' dialogue appears</dd>
+    <dt>Click Continue</dt>
+    <dt>If there is only one hard disk, skip to step 18 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
+        <dd>Selected drive is displayed on the chart</dd>
+    <dt>Verify that the full drive space is allocated</dt>
+        <dd>Full drive space is allocated for installation</dd>
+    <dt>Click on the Install Now button</dt>
+        <dd>The 'Where are you?' screen is displayed</dd>
+  </ut:test>
+
   <ut:test id="auto-resize">
     <dt>Select Install FAMILY XX.XX alongside SYSTEM YY </dt>
         <dd>(SYSTEM YY is the name of the system already installed on disk (FAMILY 12.04, Windows 7, ...)</dd>
@@ -140,6 +160,48 @@
         <dd>The system loads into FAMILY showing username selected</dd>
   </ut:test>
 
+  <ut:test id="reboot-zfs">
+    <dt>Allow the machine to reboot</dt>
+        <dd>The system boots properly</dd>
+        <dd>The system loads into FAMILY showing username selected</dd>
+        <dd>Upon login, open a terminal, run the following commands and verify it matches the output</dd>
+        <dd><code>$ zfs mount
+            rpool/ROOT/ubuntu_UUID        /
+            bpool/BOOT/ubuntu_UUID        /boot
+            rpool/USERDATA/root_0y7dio      /root
+            rpool/ROOT/ubuntu_UUID/srv    /srv
+            rpool/USERDATA/u_0y7dio         /home/u
+            rpool/ROOT/ubuntu_UUID/usr/local  /usr/local
+            rpool/ROOT/ubuntu_UUID/var/lib  /var/lib
+            rpool/ROOT/ubuntu_UUID/var/games  /var/games
+            rpool/ROOT/ubuntu_UUID/var/mail  /var/mail
+            rpool/ROOT/ubuntu_UUID/var/snap  /var/snap
+            rpool/ROOT/ubuntu_UUID/var/log  /var/log
+            rpool/ROOT/ubuntu_UUID/var/www  /var/www
+            rpool/ROOT/ubuntu_UUID/var/spool  /var/spool
+            rpool/ROOT/ubuntu_UUID/var/lib/AccountsService  /var/lib/AccountsService
+            rpool/ROOT/ubuntu_UUID/var/lib/NetworkManager  /var/lib/NetworkManager
+            rpool/ROOT/ubuntu_UUID/var/lib/apt  /var/lib/apt
+            rpool/ROOT/ubuntu_UUID/var/lib/dpkg  /var/lib/dpkg
+        </code></dd>
+        <dd><code>$ zsysctl show
+            Name:      rpool/ROOT/ubuntu_UUID
+            ZSys:      true
+            Last Used: current
+            History:
+              - Name:       rpool/ROOT/ubuntu_UUID@autozsys_SNAPID
+                Created on: 2020-04-14 16:37:10
+            Users:
+              - Name:    root
+                History:
+                 - rpool/USERDATA/root_0y7dio@autozsys_SNAPID (2020-04-14 16:37:10)
+              - Name:    u
+                History:
+                 - rpool/USERDATA/u_0y7dio@autozsys_SNAPID (2020-04-14 16:37:10)
+                 - rpool/USERDATA/u_0y7dio@autozsys_SNAPID (2020-04-14 16:34:41)
+        </code></dd>
+  </ut:test>
+
   <ut:test id="reboot-other">
     <dt>Allow the machine to reboot, select the first option at the GRUB menu</dt>
         <dd>Your new installation boots</dd>
@@ -159,6 +221,13 @@
     <ut:include ref="entire-disk-lvm" />
     <ut:include ref="finish" />
     <ut:include ref="reboot-encrypted" />
+  </ut:case>
+
+  <ut:case id="1716_Install (entire disk with ZFS)">
+    <ut:include ref="start" />
+    <ut:include ref="entire-disk-zfs" />
+    <ut:include ref="finish" />
+    <ut:include ref="reboot-zfs" />
   </ut:case>
 
   <ut:case id="1301_Install (auto-resize)">
