@@ -184,22 +184,6 @@
             rpool/ROOT/ubuntu_UUID/var/lib/apt  /var/lib/apt
             rpool/ROOT/ubuntu_UUID/var/lib/dpkg  /var/lib/dpkg
         </code></dd>
-        <dd><code>$ zsysctl show
-            Name:      rpool/ROOT/ubuntu_UUID
-            ZSys:      true
-            Last Used: current
-            History:
-              - Name:       rpool/ROOT/ubuntu_UUID@autozsys_SNAPID
-                Created on: 2020-04-14 16:37:10
-            Users:
-              - Name:    root
-                History:
-                 - rpool/USERDATA/root_0y7dio@autozsys_SNAPID (2020-04-14 16:37:10)
-              - Name:    u
-                History:
-                 - rpool/USERDATA/u_0y7dio@autozsys_SNAPID (2020-04-14 16:37:10)
-                 - rpool/USERDATA/u_0y7dio@autozsys_SNAPID (2020-04-14 16:34:41)
-        </code></dd>
   </ut:test>
 
   <ut:test id="reboot-other">
