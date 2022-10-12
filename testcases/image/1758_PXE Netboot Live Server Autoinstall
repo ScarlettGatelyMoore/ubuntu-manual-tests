@@ -1,7 +1,7 @@
 <p>
 This testcase is to run netboot installation on amd64 machines with live
-images. You need an installed Ubuntu machine in the same network, which will be
-functioning as a PXE server with DHCP.
+images. You need an installed Ubuntu machine in the same network, configured
+with a static IP, which will be functioning as a PXE server with DHCP.
 </p>
 
 <em>
@@ -10,10 +10,15 @@ English.
 </em>
 
 <dl>
- <dt>HOST is the IP address of installed Ubuntu machine.</dt>
+ <dt>HOST is the IP address of the machine acting as the PXE/DHCP/HTTP
+     server.</dt>
  <dt>URL is the ISO being tested, as listed in the download links for
-    the test case.</dt>
- <dt>INTERFACE is the relevant network interface.</dt>
+     the test case.</dt>
+ <dt>INTERFACE is the relevant network interface on the HOST.</dt>
+ <dt>STARTADDR and ENDADDR are the start and end points for dhcp addresses to
+     be handed out on this test network.  Choose appropriate values to match
+     the static network configuration of the HOST, and see the manpage for
+     dnsmasq for more details.</dt>
 </dl>
 
 <p>Setup the various services:</p>
@@ -30,13 +35,12 @@ English.
 </dl>
 
 <p>
-Configure /etc/dnsmasq.d/pxe.conf - adjust as appropriate for the installation
-network:
+Configure /etc/dnsmasq.d/pxe.conf:
 </p>
 <pre>
 interface=INTERFACE,lo
 bind-interfaces
-dhcp-range=INTERFACE,192.168.0.100,192.168.0.200
+dhcp-range=INTERFACE,STARTADDR,ENDADDR
 dhcp-boot=pxelinux.0
 enable-tftp
 tftp-root=/srv/tftp
@@ -49,7 +53,9 @@ autoinstall:
  version: 1
  identity:
   hostname: live-server
-  # password is ubuntu
+  # This password is ubuntu
+  # To use a different password, set the appropriate hash here.
+  # `mkpasswd`, from the 'whois' package, can help with hash creation.
   password: $1$glNWVUKh$VxFYudlLU5FR9WDGXOK761
   username: ubuntu
 </pre>
