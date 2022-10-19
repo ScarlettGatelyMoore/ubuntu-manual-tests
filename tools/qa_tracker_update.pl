@@ -10,6 +10,7 @@ use utf8;
 use Encode;
 use File::Path;
 use File::Basename;
+use Getopt::Std;
 use Data::Dumper;
 use Term::ReadKey;
 
@@ -45,6 +46,22 @@ use open ':encoding(utf8)';
 #my ($programName, $path) = fileparse($ARGV[0], '\[^\.]*');
 #print "$programName - $path";
 #die;
+
+# describe the usage if called with -h or without arguments
+my %options=();
+getopts("h", \%options);
+
+if (defined $options{h} || $#ARGV < 1) {
+    my $scriptname = basename($0);
+    print "usage: perl $scriptname DOMAIN TESTCASES\n\n";
+    print "example: perl $scriptname iso testcases/image/1310_Upgrade\n\n";
+    print "DOMAIN is defined by the server URL being 'http://DOMAIN$baseURL'\n\n";
+    print "TESTCASES is one of several testcase filenames to upload\n";
+    print "If the testcase filename starts by a number (NNNNN_<testname>) the corresponding test will be updated\n";
+    print "If it doesn't include a number it will create a new testcase on the server and assign it an ID\n\n";
+    print "The Ubuntu SSO credential can be stored in the script to avoid prompting\n";
+    exit;
+}
 
 #first argument is the domain
 my $domain = $ARGV[0];
