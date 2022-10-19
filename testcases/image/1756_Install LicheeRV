@@ -55,7 +55,7 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>       valid_lft 86393sec preferred_lft 86393sec</dd>
         <dd>    inet6 fe80::3620:3ff:fe2a:d0c/64 scope link</dd>
         <dd>       valid_lft forever preferred_lft forever</dd>
-        <dd>Try to connect to local network by using the following netplan configuration file to store at /etc/netplan/wifi.yaml</dd>
+        <dd>Try to connect to local network by using the following netplan configuration file saved at /etc/netplan/wifi.yaml</dd>
         <dd> network:</dd>
         <dd>  version: 2</dd>
         <dd>  renderer: networkd</dd>
