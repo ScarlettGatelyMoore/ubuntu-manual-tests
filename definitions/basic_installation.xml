@@ -193,6 +193,43 @@
     <dd>Previously installed system boots and operates as expected</dd>
   </ut:test>
 
+  <ut:test id="desktop-login-wizard">
+    <dt>Start the session</dt>
+      <dd>The initial setup should autostart and the 'Online Accounts' screen display and the following account types should be displayed</dd>
+      <dd>
+        <li>Google</li>
+        <li>Nextcloud</li>
+        <li>Microsoft</li>
+      </dd>
+    <dt>Select one of the accounts and go through the steps to configure it. If you are not connected to the Internet skip this test.</dt>
+      <dd>The accounts list should be displayed again but with the configure account ID displayed on the corresponding entry</dd>
+    <dt>Click 'Next'</dt>
+      <dd>The 'Help Improve Ubuntu' screen is displayed and the 'Yes, send system info to Canonical' option is selected</dd>
+    <dt>Click 'Show the First Report'</dt>
+      <dd>A new dialog opens showing the collect information</dd>
+    <dt>Verify that the report informations make sense and that it doesn't include anything private or that shouldn't be collected</dt>
+    <dt>Close the dialog and click 'Legal notice'</dt>
+      <dd>The default webbrowser opens and display the 'Legal Notice – System Information' page from the Canonical website</dd>
+    <dt>Close the browser, go back to the wizard and click 'Next'</dt>
+      <dd>The 'privacy' screen is displayed, the location services toggle is off</dd>
+    <dt>Go to settings->privacy screen and check that the status</dt>
+      <dd>It should reflect the wizard status</dd>
+    <dt>Go back to the wizard and change the toggle status</dt>
+      <dd>The settings screen show reflect the status change</dd>
+    <dt>Click 'Next'</dt>
+      <dd>The 'Ready to go' screen is displayed including a grid of icons representing popular software</dd>
+    <dt>If you are connected to the internet click on one of the software</dt>
+      <dd>'Ubuntu Software' is started and show the page corresponding to the selected software</dd>
+    <dt>Click 'Install'</dt>
+      <dd>The software should get installed and be available once it's finished</dd>
+    <dt>Close the store, go back to the wizard and click 'Open Ubuntu Software now'</dt>
+      <dd>'Ubuntu Software' is started and displays the frontpage</dd>
+    <dt>Close the store, go back to the wizard and click 'Done'</dt>
+      <dd>The wizard close, you have a working desktop session</dd>
+    <dt>Start '$ ubuntu-report send yes'</dt>
+      <dd>If you are connected to the Internet it should tell you that the report for that machine has already been sent. If you are not connected it should retry later or on next login.</dd>
+  </ut:test>
+
   <ut:case id="1300_Install (entire disk)">
     <ut:include ref="start" />
     <ut:include ref="entire-disk" />
@@ -226,5 +263,9 @@
     <ut:include ref="manual-partitions" />
     <ut:include ref="finish" />
     <ut:include ref="reboot-ubuntu" />
+  </ut:case>
+
+  <ut:case id="1775_First login wizard">
+    <ut:include ref="desktop-login-wizard" />
   </ut:case>
 </ut:configuration>
