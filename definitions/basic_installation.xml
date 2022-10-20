@@ -268,4 +268,9 @@
   <ut:case id="1775_First login wizard">
     <ut:include ref="desktop-login-wizard" />
   </ut:case>
+
+  <ut:case id="1776_Install (Minimal)">
+    <dt>Go through an installation picking your preferred partitioning method, in the 'Updates and other software' select 'Minimal installation'</dt>
+      <dd>On the installed system check that none of the libreoffice, rhythmbox, totem, thunderbird, cheese, shotwell software are installed </dd>
+  </ut:case>
 </ut:configuration>
