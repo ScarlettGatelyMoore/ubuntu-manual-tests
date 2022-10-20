@@ -165,24 +165,24 @@
         <dd>The system boots properly</dd>
         <dd>The system loads into FAMILY showing username selected</dd>
         <dd>Upon login, open a terminal, run the following commands and verify it matches the output</dd>
-        <dd><code>$ zfs mount
-            rpool/ROOT/ubuntu_UUID        /
+        <dd><code>$ zfs mount | sort
             bpool/BOOT/ubuntu_UUID        /boot
-            rpool/USERDATA/root_0y7dio      /root
+            rpool/ROOT/ubuntu_UUID        /
             rpool/ROOT/ubuntu_UUID/srv    /srv
-            rpool/USERDATA/u_0y7dio         /home/u
             rpool/ROOT/ubuntu_UUID/usr/local  /usr/local
-            rpool/ROOT/ubuntu_UUID/var/lib  /var/lib
             rpool/ROOT/ubuntu_UUID/var/games  /var/games
-            rpool/ROOT/ubuntu_UUID/var/mail  /var/mail
-            rpool/ROOT/ubuntu_UUID/var/snap  /var/snap
-            rpool/ROOT/ubuntu_UUID/var/log  /var/log
-            rpool/ROOT/ubuntu_UUID/var/www  /var/www
-            rpool/ROOT/ubuntu_UUID/var/spool  /var/spool
             rpool/ROOT/ubuntu_UUID/var/lib/AccountsService  /var/lib/AccountsService
-            rpool/ROOT/ubuntu_UUID/var/lib/NetworkManager  /var/lib/NetworkManager
             rpool/ROOT/ubuntu_UUID/var/lib/apt  /var/lib/apt
             rpool/ROOT/ubuntu_UUID/var/lib/dpkg  /var/lib/dpkg
+            rpool/ROOT/ubuntu_UUID/var/lib/NetworkManager  /var/lib/NetworkManager
+            rpool/ROOT/ubuntu_UUID/var/lib  /var/lib
+            rpool/ROOT/ubuntu_UUID/var/log  /var/log
+            rpool/ROOT/ubuntu_UUID/var/mail  /var/mail
+            rpool/ROOT/ubuntu_UUID/var/snap  /var/snap
+            rpool/ROOT/ubuntu_UUID/var/spool  /var/spool
+            rpool/ROOT/ubuntu_UUID/var/www  /var/www
+            rpool/USERDATA/root_0y7dio      /root
+            rpool/USERDATA/u_0y7dio         /home/u
         </code></dd>
   </ut:test>
 
