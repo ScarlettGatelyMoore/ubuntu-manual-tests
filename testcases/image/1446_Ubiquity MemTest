@@ -1,11 +1,9 @@
 <em>Proceed in your native language if you wish. Instructions will remain in English</em>
 
 <dl>
-    <dt>Boot up the image.  When you see the aubergine screen with an icon at the bottom, press any key to get the menu</dt>
-    <dt>Select your language and press <strong>enter</strong></dt>
-    <dt>From the main menu select <strong>Test Memory</strong> and press <strong>Enter</strong></dt>
-    <dt>Wait until the test finishes</dt>
-        <dd>The test should finish and show any errors</dd>
+    <dt>Boot up the image.</dt>
+    <dt>When you see the GRUB boot menu select 'Test memory' and press <strong>Enter</strong></dt>
+    <dt>The test will run indefinitely the purpose of the test is to ensure Memtest86+ launches and starts testing the memory</dt>
     <dt>Press <strong>ESC</strong></dt>
         <dd>Ensure that the system restarts</dd>
 </dl>
