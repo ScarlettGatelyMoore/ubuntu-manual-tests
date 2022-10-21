@@ -13,7 +13,7 @@
            <li>'Try or Install FAMILY'</li>
            <li>'FAMILY (safe graphics)'</li>
            <li>'OEM install (for manufacturers)'</li>
-           <li>'Memory test' (only on BIOS systems)</li>
+           <li>'Test memory' (only on BIOS systems)</li>
         </dd>
         <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and 'Try FAMILY' and 'Install FAMILY' buttons</dd>
     <dt>Click on the release notes hyperlink to confirm that a browser launches and you are taken to the release notes discourse page.</dt>
