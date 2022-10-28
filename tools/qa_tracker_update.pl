@@ -11,6 +11,7 @@ use Encode;
 use File::Path;
 use File::Basename;
 use Data::Dumper;
+use Term::ReadKey;
 
 my $mech = WWW::Mechanize->new();
 
@@ -102,6 +103,21 @@ sub login {
     #    foreach ($mech->forms()) {
     #        print Dumper( $mech->current_form() );
     #    }
+
+    if ($email eq "") {
+        print "Enter your Ubuntu One email: ";
+        $email = <STDIN>;
+        chomp $email;
+    }
+
+    if ($password eq "") {
+        print "Enter your Ubuntu One password: ";
+        ReadMode('noecho');
+        $password = <STDIN>;
+        chomp $password;
+        ReadMode('normal');
+        print "\n";
+    }
 
     #dev sites require you to authenticate to even see the site, then to do it again to login
     if (index($baseURL,"ps.qa.dev") != -1) {
