@@ -39,6 +39,8 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd> - Installation</dd>
         <dd>   - Installing to /lib/modules/5.17.0-1003-allwinner/updates/dkms/</dd>
         <dd>depmod........................</dd>
+        <dd>Load the kernel module with:</dd>
+        <dd>$ sudo modprobe 8723ds</dd>
         <dd>You should see a wlan0 interface by typing:</dd>
         <dd>$ ip a </dd>
         <dd>1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defaul0</dd>
@@ -49,12 +51,8 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>       valid_lft forever preferred_lft forever</dd>
         <dd>2: usb0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOW0</dd>
         <dd>    link/ether ae:12:05:64:8e:2c brd ff:ff:ff:ff:ff:ff</dd>
-        <dd>3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group def0</dd>
+        <dd>3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default qlen 1000</dd>
         <dd>    link/ether 34:20:03:2a:0d:0c brd ff:ff:ff:ff:ff:ff</dd>
-        <dd>    inet 192.168.1.28/24 metric 600 brd 192.168.1.255 scope global dynamic wlan0</dd>
-        <dd>       valid_lft 86393sec preferred_lft 86393sec</dd>
-        <dd>    inet6 fe80::3620:3ff:fe2a:d0c/64 scope link</dd>
-        <dd>       valid_lft forever preferred_lft forever</dd>
         <dd>Try to connect to local network by using the following netplan configuration file saved at /etc/netplan/wifi.yaml</dd>
         <dd> network:</dd>
         <dd>  version: 2</dd>
