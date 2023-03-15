@@ -11,7 +11,8 @@ Scope of this test is to verify that the system is installed and you can login i
         Create a partition on two drives. For each drive:
         <dl>
             <dt>If it already has partitions, select "Reformat" from the menu</dt>
-            <dt>Select "Add partition" from the menu</dt>
+            <dt>Select "Use As Boot Device" from the menu - (on the second disk it will say "Add As Another Boot Device")</dt>
+            <dt>Select "Add GPT Partition" from the menu</dt>
             <dt>Leave size blank and select "Leave unformatted" for the format</dt>
             <dt>Click Done</dt>
        </dl>
