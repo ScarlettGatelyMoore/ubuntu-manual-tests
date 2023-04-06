@@ -8,7 +8,7 @@ The scope of this test is to ensure that riscv64+visionfive image boots from SD 
         <dd>Ethernet cable for networking</dd>
         <dd>FTDI adapter for serial console (pinout available here: https://rvspace.org/en/Product/VisionFive/Technical_Documents/VisionFive_Single_Board_Computer_Quick_Start_Guide)</dd>
     <dt>Connect to the serial console</dt>
-        <dd>sudo screen /dev/ttyUSB1 115200</dd>
+        <dd>sudo screen /dev/ttyUSB0 115200</dd>
     <dt>Power on the board</dt>
         <dd>You should see U-BOOT menu</dd>
         <dd>It should then boot GRUB after a delay</dd>

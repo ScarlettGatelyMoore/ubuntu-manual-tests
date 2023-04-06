@@ -7,7 +7,7 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
     <dt>Connect serial console to the board</dt>
         <dd>FTDI adapter for serial console (pinout available here: https://popolon.org/depots/RISC-V/D1/LicheeRV/dl.sipeed.com/Lichee_RV_Dock/1_Datasheet/Sipeed%20Lichee%20RV%20DOCK%20Datasheet%20V1.0.pdf)</dd>
     <dt>Connect to the serial console</dt>
-        <dd>sudo screen /dev/ttyUSB1 115200</dd>
+        <dd>sudo screen /dev/ttyUSB0 115200</dd>
     <dt>Power on the board</dt>
         <dd>You should see U-BOOT menu</dd>
         <dd>It should then boot GRUB after a delay</dd>
