@@ -3,7 +3,9 @@ The goal of this test case is to check that localization support is functional d
     <dt>Boot up the image</dt>
     <dt>Select a non-English language and press Enter</dt>
 	<dd>The boot screen is displayed in the selected language</dd>
-    <dt>Select the Install FAMILY option</dt>
+    <dt>Select the Try FAMILY option</dt>
+      <dd>Confirm after booting into live session that relevant items are in the correct language</dd>
+    <dt>Click the 'Install FAMILY' application on the desktop</dt>
 	<dt>Once Ubiquity starts click on Forward</dt>
     <dt>Select the same non English language from the list and click Forward</dt>
     <dt>Check your keyboard layout is correct or alter click Forward</dt>

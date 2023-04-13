@@ -26,7 +26,11 @@
         <dd>The installer is localized from this screen onwards</dd>
     <dt>Boot up the iso using a DVD or USB Key to a Live Session</dt>
         <dd>The system boots properly and loads the installer displaying Welcome dialog with language selection and 'Try FAMILY' and 'Install FAMILY' buttons</dd>
-    <dt>Click on the Install FAMILY icon</dt>
+    <dt>Select the Try FAMILY option</dt>
+      <dd>Confirm after booting to live session that the relevant items are in the correct language, apps like 'Ubuntu Software' will still be referred to as 'Ubuntu Software'.</dd>
+    <dt>Click on the Install FAMILY desktop icon</dt>
+    <dt>Verify the language selected is the same as selected earlier on</dt>
+    <dt>Click Continue</dt>
         <dd>The 'Keyboard Layout' screen appears</dd>
         <dd>The proposed keyboard corresponds with your keyboard</dd>
     <dt>Select your keyboard layout and click on continue</dt>
