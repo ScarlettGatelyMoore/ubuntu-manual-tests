@@ -58,6 +58,8 @@ autoinstall:
   # `mkpasswd`, from the 'whois' package, can help with hash creation.
   password: $1$glNWVUKh$VxFYudlLU5FR9WDGXOK761
   username: ubuntu
+ apt:
+  fallback: offline-install
 </pre>
 
 <p>Configure /srv/tftp/pxelinux.cfg/default:</p>
