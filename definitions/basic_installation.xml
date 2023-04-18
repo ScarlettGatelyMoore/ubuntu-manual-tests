@@ -134,7 +134,7 @@
     <dt>Select your timezone, and click on the Continue button</dt>
         <dd>The 'Who are you?' screen appears</dd>
     <dt>Input your initial user details and password <em>admin can not be used - it is a dedicated Linux User</em></dt>
-        <dd>'Require my password...' is selected but 'log in automatically' option is shown</dd>
+        <dd>'Require my password to log in' is shown and selected or if 'Log in automatically' and 'require my password to log in' are shown then 'Require my password to login' is selected. If just 'Require my password to log in' is shown, having it off is the equivalent of having 'Log in automatically' on.</dd>
         <dd>Name, username and password are accepted.</dd>
         <dd>Continue button becomes available</dd>
     <dt>Press Continue</dt>
