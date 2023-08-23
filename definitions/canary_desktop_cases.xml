@@ -212,7 +212,56 @@
       <dd>The system loads into FAMILY showing username selected</dd>
   </ut:test>
 
-  <ut:case id="1760_Canary Install (entire disk)">
+  <ut:test id="enable-full-disk-encryption-tpm">
+    <dt>Click on "Advanced features"</dt>
+      <dd>Click on the tickbox for "Enhanced secure-boot"</dd>
+      <dd>Click on the tickbox for Hardware-backed full disk encryption</dd>
+      <dd>Click "Ok"</dd>
+    <dt>Click Continue</dt>
+  </ut:test>
+
+  <ut:test id="full-disk-encryption-no-tpm-not-available">
+    <dt>Click on "Advanced features"</dt>
+      <dd>There should be no tickbox for "Enhanced secure-boot"</dd>
+      <dd>Click "Ok"</dd>
+    <dt>Click Continue</dt>
+  </ut:test>
+
+  <ut:test id="no-tpm-check">
+    <dt>Click on "Advanced features"</dt>
+    <dt>Verify there is no option for Hardware backed full disk encryption with TPM.</dt>
+  </ut:test>
+
+  <ut:test id="no-tpm-reason-no-tpm">
+    <dt>For this check, please use a system with no TPM enabled hardware</dt>
+  </ut:test>
+
+  <ut:test id="no-tpm-reason-low-disk">
+    <dt>For this check, please use a system with TPM enabled hardware, with approx 20G of disk space. The install should fail later on.</dt>
+  </ut:test>
+
+  <ut:test id="no-tpm-reason-misc-template">
+    <dt>For this check, please use a system with TPM enabled hardware, with $REASONITWILLFAIL.</dt>
+  </ut:test>
+
+  <ut:test id="tpm-on-boot">
+    <dt>After rebooting, log in to the installed system and run `snap list`, and check that the `pc-kernel` package is installed.</dt>
+    <dt>Open up a terminal window, and try to run this command: `sudo apt install linux-image-generic`.</dt>
+      <dd>You should get a response which includes this message: `boot-managed-by-snapd : Conflicts: linux-image`</dd>
+  </ut:test>
+
+  <ut:test id="hw-requirements">
+    <dt>In order to do full disk encryption with TPM, you either need to make sure you're using a piece of hardware that has TPM functionality, or you can install with a VM.</dt>
+    <dt>If you install with a vm, you can use the following command:</dt>
+      <dd>virt-install --os-variant ubuntu22.04 --name ubuntu-canary-install --memory 4096 --disk canary.img --cdrom mantic-desktop-canary-amd64.iso --machine q35 --features smm.state=on --boot loader=/usr/share/OVMF/OVMF_CODE.secboot.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/usr/share/OVMF/OVMF_VARS.ms.fd,loader_secure=yes --tpm backend.type=emulator,backend.version=2.0,model=tpm-tis</dd>
+      <dd>Make sure the paths to the .img and .iso files are accurate.</dd>
+  </ut:test>
+
+  <ut:test id="should-fail">
+    <dt>Somewhere along the installation process, either in the install screen or after reboot, the install should fail.</dt>
+  </ut:test>
+
+  <ut:case id="1760_Canary Install (entire disk no tpm)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -231,9 +280,11 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="custom-partition"><ut:define name="partition-instruction"></ut:define></ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1762_Canary Install (auto-resize)">
@@ -241,9 +292,11 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="resize" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1763_Canary Install (entire disk with lvm and encryption)">
@@ -261,9 +314,11 @@
     <ut:include ref="safe-graphics" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1765_Canary Install RST">
@@ -287,13 +342,16 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="bitlocker-screen" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" /> 
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1767_Canary Live Session">
@@ -305,10 +363,12 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="reuse-partition" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <ut:include ref="reuse-postinst" />
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1769_Canary Non-English Installation No Network">
@@ -321,10 +381,12 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Verify that your system is localized and that the calendar shows the regional settings correctly</dt>
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1770_Canary Install (Screen Reader)">
@@ -339,10 +401,12 @@
     <dd>The screen reader should be active now and read elements allow a keyboard navigation without screen</dd>
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <dd>The screen reader should still be active</dd>
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1771_Canary Install UEFI SecureBoot nVidia">
@@ -378,6 +442,7 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="custom-partition">
       <ut:define name="partition-instruction">
         <dt>Ensure that your scheme also has a separated /home partition included</dt>
@@ -386,6 +451,7 @@
     </ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
     <dt>Login as the user you created, or ensure that you are auto-logged in as the user created during setup if you checked the auto-login option</dt>
         <dd>The new user's desktop is presented</dd>
     <dt>Create a new folder on the desktop by right clicking on it and title it 'test', open Firefox and browse to a couple of sites</dt>
@@ -394,6 +460,7 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
 <!-- Canary doesn't have the 'reuse' option at the moment?-->
     <ut:include ref="custom-partition">
       <ut:define name="partition-instruction">
@@ -403,6 +470,7 @@
     </ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1773_Canary Non-English Installation Online and CJK Input">
@@ -413,16 +481,56 @@
       <dd>Check that the strings are correctly showing translated and with the right font</dd>
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Verify that your system is localized</dt>
     <dt>Verify that the input method works correctly by entering text in the editor. The input method of choice should be available from the panel and typing in the editor should properly display the ibus chars selector.</dt>
+    <ut:include ref="tpm-on-boot" />
   </ut:case>
  
  <!-- is that meant to work with Canary today?-->
   <ut:case id="1774_Canary VMWare Easy Install">
     <p>The goal of this test case is to check that the Easy Install option in VMWare Player works correctly with the Ubuntu image.</p>
+  </ut:case>
+
+  <ut:case id="1775_Canary Install (entire disk with TPM encryption)">
+    <ut:include ref="grub" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="start" />
+    <ut:include ref="select-installation-type" />
+    <ut:include ref="enable-full-disk-encryption-tpm"/>
+    <ut:include ref="hw-requirements"/>
+    <ut:include ref="entire-disk" />
+    <ut:include ref="setup" />
+    <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
+  </ut:case>
+
+  <ut:case id="1776_Canary Install no TPM option without TPM support">
+    <ut:include ref="grub" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="start" />
+    <ut:include ref="select-installation-type" />
+    <ut:include ref="no-tpm-reason-no-tpm"/>
+    <ut:include ref="full-disk-encryption-no-tpm-not-available"/>
+    <ut:include ref="entire-disk" />
+    <ut:include ref="setup" />
+    <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="tpm-on-boot" />
+  </ut:case>
+
+  <ut:case id="1776_Canary Install no TPM option with low disk space">
+    <ut:include ref="grub" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="start" />
+    <ut:include ref="select-installation-type" />
+    <ut:include ref="no-tpm-reason-low-disk"/>
+    <ut:include ref="entire-disk" />
+    <ut:include ref="setup" />
+    <ut:include ref="should-fail"/>
+    <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
 </ut:configuration>
