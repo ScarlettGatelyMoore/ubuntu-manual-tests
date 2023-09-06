@@ -251,10 +251,7 @@
   </ut:test>
 
   <ut:test id="hw-requirements">
-    <dt>In order to do full disk encryption with TPM, you either need to make sure you're using a piece of hardware that has TPM functionality, or you can install with a VM.</dt>
-    <dt>If you install with a vm, you can use the following command:</dt>
-      <dd>virt-install --os-variant ubuntu22.04 --name ubuntu-canary-install --memory 4096 --disk canary.img --cdrom mantic-desktop-canary-amd64.iso --machine q35 --features smm.state=on --boot loader=/usr/share/OVMF/OVMF_CODE.secboot.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/usr/share/OVMF/OVMF_VARS.ms.fd,loader_secure=yes --tpm backend.type=emulator,backend.version=2.0,model=tpm-tis</dd>
-      <dd>Make sure the paths to the .img and .iso files are accurate.</dd>
+    <dt>In order to do full disk encryption with TPM, you either need to make sure you're using a piece of hardware that has TPM functionality, or you can install with a VM, making sure you have the correct options set to emulate a TPM backed system.</dt>
   </ut:test>
 
   <ut:test id="should-fail">
@@ -342,16 +339,13 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="bitlocker-screen" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" /> 
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1767_Canary Live Session">
@@ -363,12 +357,10 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="reuse-partition" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <ut:include ref="reuse-postinst" />
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1769_Canary Non-English Installation No Network">
@@ -517,19 +509,6 @@
     <ut:include ref="full-disk-encryption-no-tpm-not-available"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
-  </ut:case>
-
-  <ut:case id="1776_Canary Install no TPM option with low disk space">
-    <ut:include ref="grub" />
-    <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
-    <ut:include ref="select-installation-type" />
-    <ut:include ref="no-tpm-reason-low-disk"/>
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="should-fail"/>
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
