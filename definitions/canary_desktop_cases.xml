@@ -220,7 +220,7 @@
     <dt>Click Continue</dt>
   </ut:test>
 
-  <ut:test id="full-disk-encryption-no-tpm-not-available">
+  <ut:test id="hardware-backed-full-disk-encryption-no-tpm-not-available">
     <dt>Click on "Advanced features"</dt>
       <dd>There should be no tickbox for "Enhanced secure-boot"</dd>
       <dd>Click "Ok"</dd>
@@ -229,7 +229,7 @@
 
   <ut:test id="no-tpm-check">
     <dt>Click on "Advanced features"</dt>
-    <dt>Verify there is no option for Hardware backed full disk encryption with TPM.</dt>
+    <dt>Verify there is no option for Hardware-backed full disk encryption with TPM.</dt>
   </ut:test>
 
   <ut:test id="no-tpm-reason-no-tpm">
@@ -492,7 +492,7 @@
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="no-tpm-reason-no-tpm"/>
-    <ut:include ref="full-disk-encryption-no-tpm-not-available"/>
+    <ut:include ref="hardware-backed-full-disk-encryption-no-tpm-not-available"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
