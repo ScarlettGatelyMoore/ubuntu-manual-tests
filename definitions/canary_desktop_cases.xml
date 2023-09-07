@@ -258,7 +258,7 @@
     <dt>Somewhere along the installation process, either in the install screen or after reboot, the install should fail.</dt>
   </ut:test>
 
-  <ut:case id="1760_Canary Install (entire disk no tpm)">
+  <ut:case id="1760_Canary Install (entire disk)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -473,7 +473,7 @@
     <p>The goal of this test case is to check that the Easy Install option in VMWare Player works correctly with the Ubuntu image.</p>
   </ut:case>
 
-  <ut:case id="1775_Canary Install (entire disk with TPM encryption)">
+  <ut:case id="1781 Install (entire disk with TPM encryption)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -486,7 +486,7 @@
     <ut:include ref="tpm-on-boot" />
   </ut:case>
 
-  <ut:case id="1776_Canary Install no TPM option without TPM support">
+  <ut:case id="1782_Canary Install no TPM option without TPM support">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
