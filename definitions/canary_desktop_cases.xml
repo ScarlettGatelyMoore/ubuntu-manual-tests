@@ -277,11 +277,9 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="custom-partition"><ut:define name="partition-instruction"></ut:define></ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1762_Canary Install (auto-resize)">
@@ -289,11 +287,9 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="resize" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1763_Canary Install (entire disk with lvm and encryption)">
@@ -311,11 +307,9 @@
     <ut:include ref="safe-graphics" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1765_Canary Install RST">
@@ -393,12 +387,10 @@
     <dd>The screen reader should be active now and read elements allow a keyboard navigation without screen</dd>
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <dd>The screen reader should still be active</dd>
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1771_Canary Install UEFI SecureBoot nVidia">
@@ -434,7 +426,6 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="custom-partition">
       <ut:define name="partition-instruction">
         <dt>Ensure that your scheme also has a separated /home partition included</dt>
@@ -443,7 +434,6 @@
     </ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
     <dt>Login as the user you created, or ensure that you are auto-logged in as the user created during setup if you checked the auto-login option</dt>
         <dd>The new user's desktop is presented</dd>
     <dt>Create a new folder on the desktop by right clicking on it and title it 'test', open Firefox and browse to a couple of sites</dt>
@@ -452,7 +442,6 @@
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
 <!-- Canary doesn't have the 'reuse' option at the moment?-->
     <ut:include ref="custom-partition">
       <ut:define name="partition-instruction">
@@ -462,7 +451,6 @@
     </ut:include>
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
 
   <ut:case id="1773_Canary Non-English Installation Online and CJK Input">
@@ -473,13 +461,11 @@
       <dd>Check that the strings are correctly showing translated and with the right font</dd>
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="entire-disk" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Verify that your system is localized</dt>
     <dt>Verify that the input method works correctly by entering text in the editor. The input method of choice should be available from the panel and typing in the editor should properly display the ibus chars selector.</dt>
-    <ut:include ref="tpm-on-boot" />
   </ut:case>
  
  <!-- is that meant to work with Canary today?-->

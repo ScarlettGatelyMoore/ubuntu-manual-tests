@@ -18,7 +18,7 @@
          <li>'Try or Install FAMILY'</li>
          <li>'FAMILY (safe graphics)'</li>
          <li>'OEM install (for manufacturers)'</li>
-         <li>'Memory test' (only on BIOS systems)</li>
+         <li>'Test memory' (only on BIOS systems)</li>
       </dd>
   
     
@@ -47,6 +47,13 @@
     
     <dt>Click on 'Continue'</dt>
       <dd>The 'Installation type' screen is displayed</dd>
+  
+    
+    <dt>Click on "Advanced features"</dt>
+      <dd>Click on the tickbox for "Enhanced secure-boot"</dd>
+      <dd>Click on the tickbox for Hardware-backed full disk encryption</dd>
+      <dd>Click "Ok"</dd>
+    <dt>Click Continue</dt>
   
     
     <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
@@ -84,6 +91,11 @@
       <dd>The system boots properly and loads into FAMILY showing username selected</dd>
   
     <dt>Verify that your system is localized and that the calendar shows the regional settings correctly</dt>
+    
+    <dt>After rebooting, log in to the installed system and run `snap list`, and check that the `pc-kernel` package is installed.</dt>
+    <dt>Open up a terminal window, and try to run this command: `sudo apt install linux-image-generic`.</dt>
+      <dd>You should get a response which includes this message: `boot-managed-by-snapd : Conflicts: linux-image`</dd>
+  
   
     </dl>
     <p>If <strong>all</strong> actions produce the expected results described,
