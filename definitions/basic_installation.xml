@@ -31,6 +31,7 @@
         <dd>The 'Updates and other software' screen is displayed</dd>
     <dt>On the screen 'Updates and other software', note the availability of the following components</dt>
         <dd>Available options should represent the state of your system accurately</dd>
+        <dd>For Mantic and later releases, the default install is a minimal install. Releases before Mantic the default is a 'full' install, complete with other apps a user might want. The new, default, install does not include these add-ons.</dd>
         <dd>
             <ul>
                 <li>(If network is available) 'Download updates while installing FAMILY'</li>
