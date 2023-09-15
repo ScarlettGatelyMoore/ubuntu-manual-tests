@@ -6,7 +6,7 @@
     <p><em>Proceed in your native language if you wish. Instructions will remain in English.</em></p>
     <dl>
       
-    <dt>For this test, you must boot the iso and after hearing the "online" sound, press super+alt+s to activate the screen reader.</dt>
+    <dt>For this test, you must boot the iso and after hearing the Ubuntu start up sound, press super+alt+s to activate the screen reader.</dt>
     <dt>After you've activated the screen reader, you must navigate through the install process doing a "Install (Entire Disk)" install, reboot and verify everthing works as intended.</dt>
   
     </dl>

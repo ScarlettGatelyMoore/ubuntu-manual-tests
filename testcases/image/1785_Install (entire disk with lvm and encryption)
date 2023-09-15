@@ -14,7 +14,7 @@
       <dd>The 'Keyboard layout' screen appears</dd>
       <dd>The proposed keyboard corresponds with your keyboard</dd>
     <dt>Select your keyboard layout and click on Continue</dt>
-      <dd>The 'Connect to internet' screen is displayed</dd>
+      <dd>The 'Connect to a network' screen is displayed</dd>
       <dd>The screen should reflect the current status and display those elements</dd>
       <dd>
          <li>Wired connection</li>
@@ -22,11 +22,11 @@
          <li>Connect to a hidden Wi-Fi network</li>
          <li>I don't want to connect to internet for now</li>
       </dd>
-    <dt>Click on 'Continue'</dt>
-      <dd>The 'Updates and other software' screen is displayed, listing normal and minimal installation.</dd>
+    <dt>Click on 'Next'</dt>
+      <dd>The 'Applications and updates' screen is displayed, listing normal and minimal installation, as well as options for installing updates, third party software and additional media formats.</dd>
   
     
-    <dt>Click on 'Continue'</dt>
+    <dt>Click on 'Next'</dt>
       <dd>The 'Installation type' screen is displayed</dd>
   
     
@@ -38,22 +38,20 @@
         <dd>'Encrypt the new FAMILY Installation for security' and 'Use LVM with the new FAMILY Installation' is checked</dd>
     <dt>Click on the 'OK' button</dt>
         <dd>The dialog closes and 'LVM and encryption selected' is displayed next to the 'Advanced features...' button</dd>
-    <dt>Click on the 'Install Now' button</dt>
+    <dt>Click on the 'Next' button</dt>
         <dd>The 'Choose a security key' screen is displayed with the 'Install Now' button greyed out</dd>
     <dt>Enter a security key and type a different key into the 'confirm the security key' input box</dt>
         <dd>The installer displays 'Passwords do not match'</dd>
     <dt>Enter a security key and type the same key into the 'Confirm the security key' input box</dt>
-        <dd>The passwords are accepted and the 'Install Now' button can be clicked</dd>
-    <dt>Check 'Overwrite empty disk space'</dt>
+        <dd>The passwords are accepted and the 'Next' button can be clicked</dd>
     <dt>Click on the Continue button (if there is only one hard disk in the system, the button should read 'Install Now')</dt>
         <dd>'Write the changes to disks' dialogue appears</dd>
     <dt>Click Continue</dt>
-    <dt>If there is only one hard disk, skip to step 18 (On the 'Where are you?' screen...). Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
+    <dt>If there is only one hard disk, skip to the 'Where are you?' screen. Otherwise, on the 'Installation type' screen verify that the drive selected on the Select drive list corresponds to the drive on the chart (e.g /dev/sda)</dt>
         <dd>Selected drive is displayed on the chart</dd>
     <dt>Verify that the full drive space is allocated</dt>
         <dd>Full drive space is allocated for installation</dd>
-    <dt>Click on the Install Now button</dt>
-        <dd>The 'Where are you?' screen is displayed</dd>
+    <dt>Click on the Next button</dt>
   
     
       <dd>The 'Where are you?' screen is displayed</dd>
@@ -64,15 +62,14 @@
     <dt>Input your initial user details and password <em>admin can not be used - it is a dedicated Linux User</em></dt>
 
       <dd>Name, username and password are accepted.</dd>
-      <dd>Continue button becomes available</dd>
-    <dt>Click on 'Continue'</dt>
-      <dd>The 'Choose your look' screen is displayed showing light and dark options</dd>
-    <dt>Click on 'Continue'</dt>
-      <dd>The 'Welcome to FAMILY' slide is displayed</dd>
-      <dd>The slideshow is entirely in your language</dd>
+    <dt>The "Require my password to log in" slider is already highlighted.</dt>
+      <dd>The "Use Active Directory" tickbox is unchecked.</dd>
+    <dt>Click on 'Next'</dt>
+      <dd>The 'Choose your theme' screen is displayed showing light and dark options, as well as color options below.</dd>
+    <dt>Click on 'Next'</dt>
     <dt>Wait for the installer to finish</dt>
       <dd>An 'Installation Complete' dialog appears</dd>
-    <dt>Click the 'Restart into FAMILY XX.XX' button</dt>
+    <dt>Click the 'Restart Now' button</dt>
       <dd>GUI is shut down, a prompt to remove media and press Enter appears</dd>
     <dt>Remove the disc and press enter</dt>
       <dd>The machine is rebooted</dd>
