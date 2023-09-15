@@ -258,7 +258,7 @@
   </ut:test>
 
   <ut:test id="choose-language">
-    <dt>Upon booting the iso, you should be greeted with the "Choose your language" screen.</dt>
+    <dt>Upon reaching the desktop environment, you should be greeted with the "Choose your language" screen.</dt>
       <dd>Pick your desired language.</dd>
   </ut:test>
 
