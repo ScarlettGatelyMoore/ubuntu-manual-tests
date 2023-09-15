@@ -573,19 +573,6 @@
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1783_Canary Install Test GNOME Suite">
-    <ut:include ref="grub" />
-    <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
-    <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" />
-    <dt>After rebooting, follow the two test cases here to test the GNOME suite of applications:</dt>
-        <dd>https://wiki.ubuntu.com/DesktopTeam/TestPlans/gjs</dd>
-    <dt>This test case is primarily useful when there have been updates to gjs, but is still worthy of testing on every release.</dt>
-  </ut:case>
-
   <ut:case id="1784_Install (entire disk with ZFS)">
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
