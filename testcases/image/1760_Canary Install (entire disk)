@@ -21,7 +21,7 @@
       <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and the mascot logo on the right.'</dd>
   
     
-    <dt>Upon booting the iso, you should be greeted with the "Choose your language" screen.</dt>
+    <dt>Upon reaching the desktop environment, you should be greeted with the "Choose your language" screen.</dt>
       <dd>Pick your desired language.</dd>
   
     
