@@ -44,14 +44,12 @@
       <dd>The 'Installation type' screen is displayed</dd>
   
     
-    <dt>Select 'Something Else' and click 'Continue'</dt>
-      <dd>A screen showing the current hard disks and partition layouts is displayed</dd>
-    <dt>Select the drive you wish to partition and use the Add '+', Change 'Change', and Delete '-' buttons to create your desired scheme</dt>
-      <dd>The screen updates showing your desired partitions and mount points</dd>
-      <em>Make sure that your scheme also includes a separate /home partition</em>
-    <dt>Once you have your required partitioning scheme laid out, click on 'Continue'</dt>
+    <dt>Note the state of the 'Erase disk and install FAMILY' radio button</dt>
+      <dd>The 'Erase disk and install FAMILY' radio button is selected and the 'Advanced features' button is active</dd>
+    <dt>Click on 'Continue'</dt>
       <dd>The 'Write changes to disk' screen is displayed, including the details of incoming partitions changes.</dd>
     <dt>Verify that the partitioning details make sense</dt>
+      <dd>The available disk should be used for the installation</dd>
     <dt>Click 'Start Installing'</dt>
   
     
@@ -79,9 +77,9 @@
     <dt>Allow the machine to reboot</dt>
       <dd>The system boots properly and loads into FAMILY showing username selected</dd>
   
-    
-    <dt>Login, ensure that the /home partition is still in use and the data from the previous installation have been preserved</dt>
-  
+    <dt>After rebooting, follow the two test cases here to test the GNOME suite of applications:</dt>
+        <dd>https://wiki.ubuntu.com/DesktopTeam/TestPlans/gjs</dd>
+    <dt>This test case is primarily useful when there have been updates to gjs, but is still worthy of testing on every release.</dt>
   
     </dl>
     <p>If <strong>all</strong> actions produce the expected results described,
