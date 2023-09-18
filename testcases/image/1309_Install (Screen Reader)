@@ -8,11 +8,11 @@ This is an installation using the Screen-Reader as done by a visually blind indi
     <dt>Press Alt+Super+S to start the screen-reader</dt>
     <dt>Press Alt+Tab to change to the installer</dt>
     <dt>Press Up or Down arrow to select your language(default is English)</dt>
-    <dt>Press Tab once to "Try FAMILY"</dt>
-    <dt>Press Enter</dt>
+    <dt>Press Tab twice to "Install FAMILY"</dt>
+    <!-- <dt>Press Enter</dt>
     <dt>Wait for the Desktop to begin the installation. </dt>
     <dt>Press Super+1 to begin the installation. Super is the left windows key</dt>
-    <dt>Use up-arrow and down-arrow to select the language you want to the installation to use </dt>
+    <dt>Use up-arrow and down-arrow to select the language you want to the installation to use </dt> -->
     <dt>Press Enter</dt>
     <dt>Use up-arrow and down-arrow to hear the options and spacebar to select them</dt>
     <dt>Press Enter</dt>
