@@ -80,7 +80,24 @@
       <dd>The system boots properly and loads into FAMILY showing username selected</dd>
   
     
-    <dt>Login, ensure that the /home partition is still in use and the data from the previous installation have been preserved</dt>
+    <dt>Open a terminal using your FAMILY commands or GUI to do so, in terminal enter <code>df -h</code> and press enter</dt>
+		<dt>Terminal echoes the output of the df command</dt>
+      <dd>Check that / and /home use different partitions</dd>
+  
+    
+    <dt>Create a file in the /home/$USER/ directory to check for later.</dt>
+    <dt>Run the following command to create a file we'll check for later:</dt>
+      <dd>echo "dummy file" &gt; /home/$USER/dummy_file</dd>
+  
+    
+    <dt>Shutdown the installed system.</dt>
+    <dt>Put the installation medium back in, and boot into the installation of a new system.</dt>
+      <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
+    <dt>Continue installation as normal, and reboot once finished.</dt>
+  
+    
+    <dt>Login, and check the following command runs without any errors:</dt>
+      <dd>echo /home/$USER/dummy_file</dd>
   
   
     </dl>
