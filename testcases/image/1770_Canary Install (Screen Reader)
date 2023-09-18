@@ -27,6 +27,7 @@
   
     <dt>Wait to hear the drums and press Alt+Super+S to start the screen-reader</dt>
     <dd>The screen reader should be active now and read elements allow a keyboard navigation without screen</dd>
+        <dd>If doing this test on a VM, ensure the screen reader is enabled in the vm and not the host system.</dd>
     
     <dt>Click on 'Continue'</dt>
       <dd>The 'Try or Install' screen is displayed with 'try FAMILY' and 'Install FAMILY' buttons</dd>

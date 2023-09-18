@@ -460,6 +460,7 @@
     <ut:include ref="try-or-install" />
     <dt>Wait to hear the drums and press Alt+Super+S to start the screen-reader</dt>
     <dd>The screen reader should be active now and read elements allow a keyboard navigation without screen</dd>
+        <dd>If doing this test on a VM, ensure the screen reader is enabled in the vm and not the host system.</dd>
     <ut:include ref="start" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="entire-disk" />
