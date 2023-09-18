@@ -90,7 +90,7 @@
   </ut:test>
 
   <ut:test id="custom-partition">
-    <dt>Select 'Something Else' and click 'Continue'</dt>
+    <dt>Select 'Manual Partitioning' and click 'Next'</dt>
       <dd>A screen showing the current hard disks and partition layouts is displayed</dd>
     <dt>Select the drive you wish to partition and use the Add '+', Change 'Change', and Delete '-' buttons to create your desired scheme</dt>
       <dd>The screen updates showing your desired partitions and mount points</dd>
@@ -274,7 +274,8 @@
   </ut:case>
 
   <ut:test id="reuse-postinst">
-    <dt>Login, ensure that the /home partition is still in use and the data from the previous installation have been preserved</dt>
+    <dt>Login, and check the following command runs without any errors:</dt>
+      <dd>echo /home/$USER/dummy_file</dd>
   </ut:test>
 
   <ut:test id="entire-disk-zfs">
@@ -345,6 +346,25 @@
     <dt>Verify that the full drive space is allocated</dt>
         <dd>Full drive space is allocated for installation</dd>
     <dt>Click on the Next button</dt>
+  </ut:test>
+
+  <ut:test id="reuse-home-initial-check">
+    <dt>Open a terminal using your FAMILY commands or GUI to do so, in terminal enter <code>df -h</code> and press enter</dt>
+		<dt>Terminal echoes the output of the df command</dt>
+      <dd>Check that / and /home use different partitions</dd>
+  </ut:test>
+
+  <ut:test id="reuse-home-setup-test-file">
+    <dt>Create a file in the /home/$USER/ directory to check for later.</dt>
+    <dt>Run the following command to create a file we'll check for later:</dt>
+      <dd>echo "dummy file" > /home/$USER/dummy_file</dd>
+  </ut:test>
+
+  <ut:test id="reinstall-reuse-home">
+    <dt>Shutdown the installed system.</dt>
+    <dt>Put the installation medium back in, and boot into the installation of a new system.</dt>
+      <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
+    <dt>Continue installation as normal, and reboot once finished.</dt>
   </ut:test>
 
   <ut:case id="1761_Canary Install (manual partitioning)">
@@ -429,6 +449,9 @@
     <ut:include ref="reuse-partition" />
     <ut:include ref="setup" />
     <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="reuse-home-initial-check"/>
+    <ut:include ref="reuse-home-setup-test-file"/>
+    <ut:include ref="reinstall-reuse-home"/>
     <ut:include ref="reuse-postinst" />
   </ut:case>
 

@@ -19,7 +19,7 @@
         </dd>
     <dt>Click on the continue button</dt>
         <dd>The 'Installation type' screen is displayed</dd>
-    <dt>Select Something Else</dt>
+    <dt>Select Manual Partitioning</dt>
         <dd>A screen showing the current hard disks and partition layouts is displayed</dd>
     <dt>Select the drive you wish to partition and use the 'Add', 'Change', and 'Delete' buttons to create your desired scheme</dt>
         <dd>The screen updates showing your desired partitions and mount points</dd>
@@ -47,6 +47,14 @@
     <dt>Open a terminal using your FAMILY commands or GUI to do so, in terminal enter <code>df -h</code> and press enter</dt>
 		<dd>Terminal echoes the output of the df command</dd>
     <dt>Check that / and /home use different partitions</dt>
+    <dt>Create a file in the /home/$USER/ directory to check for later.</dt>
+    <dt>Run the following command to create a file we'll check for later:</dt>
+        <dd>echo "dummy file" > /home/$USER/dummy_file</dd>
+    <dt>Shutdown the installed system.</dt>
+    <dt>Put the installation medium back in, and boot into the installation of a new system.</dt>
+        <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
+    <dt>Continue installation as normal, and reboot once finished.</dt>
+    <dt>Boot into the installed system and check the file you created in the previous install is present in the '/home/' directory</dt>
 </dl>
 
 <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.<br />
