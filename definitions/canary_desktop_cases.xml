@@ -275,7 +275,7 @@
 
   <ut:test id="reuse-postinst">
     <dt>Login, and check the following command runs without any errors:</dt>
-      <dd>echo /home/$USER/dummy_file</dd>
+      <dd>cat /home/$USER/dummy_file</dd>
   </ut:test>
 
   <ut:test id="entire-disk-zfs">

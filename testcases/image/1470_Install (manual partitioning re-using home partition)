@@ -55,6 +55,7 @@
         <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
     <dt>Continue installation as normal, and reboot once finished.</dt>
     <dt>Boot into the installed system and check the file you created in the previous install is present in the '/home/' directory</dt>
+        <dd>cat /home/$USER/dummy_file</dd>
 </dl>
 
 <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.<br />
