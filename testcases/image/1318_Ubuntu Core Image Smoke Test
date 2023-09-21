@@ -3,10 +3,7 @@ This testcase is intended to confirm the base chroot tarball is in proper workin
     <dt>From the terminal, run the following commands</dt>
     <dt>mkdir base</dt>
     <dt>sudo tar -C base -zxf (release)-base-(arch).tar.gz</dt>
-    <dt>sudo mount --bind /proc base/proc</dt>
-    <dt>sudo mount --bind /sys base/sys</dt>
-    <dt>sudo mount --bind /dev base/dev</dt>
-    <dt>sudo mount --bind /dev/pts base/dev/pts</dt>
+    <dt>for m in proc sys dev dev/pts; do sudo mount --bind /$m base/$m; done</dt>
     <dt>sudo cp /etc/resolv.conf base/etc/</dt>
     <dt>sudo chroot base</dt>
     <dt>apt update; apt install (some package)</dt>
