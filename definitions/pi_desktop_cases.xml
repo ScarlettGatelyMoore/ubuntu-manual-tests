@@ -341,4 +341,40 @@
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
   </ut:case>
+
+  <ut:case id="1796_RaspberryPi 5 4GB Desktop">
+    <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1797_RaspberryPi 5 8GB Desktop">
+    <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
 </ut:configuration>
