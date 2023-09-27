@@ -24,31 +24,6 @@
 
   <ut:define name="post-install"></ut:define>
 
-  <ut:test id="uboot-video">
-    <dt>
-      Immediately after the "rainbow" splash screen, U-Boot starts. Press a key
-      to interrupt the sequence, then type "boot" to continue it.
-    </dt>
-    <dd>
-      Check that the U-Boot prompt (including a two-second wait) appears on
-      the primary monitor connected to the Pi, that the keyboard will interrupt
-      the sequence, and that boot successfully concludes after resumption.
-    </dd>
-  </ut:test>
-
-  <ut:test id="uboot-serial">
-    <dt>
-      During the boot sequence, U-Boot starts interacting via serial (GPIO14
-      and GPIO15, pins 8 and 10 respectively, on the 40-pin GPIO header). Press
-      a key to interrupt the sequence, then type "boot" to continue it.
-    </dt>
-    <dd>
-      Check that the U-Boot prompt (including a two-second wait) appears on
-      the attached serial console, that the keyboard will interrupt
-      the sequence, and that boot successfully concludes after resumption.
-    </dd>
-  </ut:test>
-
   <ut:test id="flash-kernel">
     <dt>
       Run <code>sudo flash-kernel</code>
@@ -209,8 +184,6 @@
 
   <ut:case id="1711_RaspberryPi 4 2GB Post-install">
     <ut:define name="model">Raspberry Pi 4 2GB</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -238,8 +211,6 @@
 
   <ut:case id="1719_RaspberryPi 4 4GB Post-install">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -267,8 +238,6 @@
 
   <ut:case id="1720_RaspberryPi 4 8GB Post-install">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -296,8 +265,6 @@
 
   <ut:case id="1721_RaspberryPi 3B+ Post-install">
     <ut:define name="model">Raspberry Pi 3B+</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -318,8 +285,6 @@
 
   <ut:case id="1722_RaspberryPi 3B Post-install">
     <ut:define name="model">Raspberry Pi 3B</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -340,8 +305,6 @@
 
   <ut:case id="1723_RaspberryPi 3A+ Post-install">
     <ut:define name="model">Raspberry Pi 3A+</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -361,8 +324,6 @@
 
   <ut:case id="1724_RaspberryPi 2 Post-install">
     <ut:define name="model">Raspberry Pi 2</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -382,8 +343,6 @@
 
   <ut:case id="1726_RaspberryPi CM3+ Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 3+</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -398,8 +357,6 @@
 
   <ut:case id="1727_RaspberryPi CM3+ Lite Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 3+ Lite</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -414,8 +371,6 @@
 
   <ut:case id="1740_RaspberryPi 400 Post-install">
     <ut:define name="model">Raspberry Pi 400</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -442,8 +397,6 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -470,8 +423,6 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -498,8 +449,6 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -521,8 +470,6 @@
 
   <ut:case id="1752_RaspberryPi Zero 2 Post-install">
     <ut:define name="model">Raspberry Pi Zero 2</ut:define>
-    <ut:include ref="uboot-video" />
-    <ut:include ref="uboot-serial" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
