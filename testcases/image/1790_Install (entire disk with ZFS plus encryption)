@@ -110,6 +110,63 @@
         </code></dd>
     <dt>Run the lsblk command and check for this line in the output:</dt>
       <dd>cryptoswap   252:1    0   2.6G  0 crypt [SWAP]</dd>
+    <dt>Run the following command to place a file under ~:</dt>
+      <dd>echo "hello" &gt; /home/$USER/hello</dd>
+      <dd>We're going to check for this file in a later part of this test case.</dd>
+  
+    
+    <dt>Shut down the installed system.</dt>
+    <dt>Using the same .iso, boot into the iso using the disk that you just completed the installation on.</dt>
+    <dt>Go through the grub menu and instead of installing, select "Try Ubuntu".</dt>
+    <dt>The next steps will make the initial install unusable afterwards, so bear that in mind.</dt>
+    <dt>Open a terminal window, and enter the following:</dt>
+        <dd>sudo su</dd>
+        <dd>fdisk -l /dev/$disk # Where $disk is the disk you completed the install on.</dd>
+    <dt>The output should include something similar to the following:</dt>
+        <dd><code>/dev/vda1      2048     4095     2048    1M BIOS boot
+                  /dev/vda2      4096  1054719  1050624  513M EFI System
+                  /dev/vda3   1054720  9037823  7983104  3.8G Linux swap
+                  /dev/vda4   9037824 13178879  4141056    2G Solaris boot
+                  /dev/vda5  13178880 83884031 70705152 33.7G Solaris root</code></dd>
+        <dd>For the rest of this testcase, we will use vda in place of $disk.</dd>
+    <dt>Check for the zfs pool names:</dt>
+        <dd>blkid /dev/vda*</dd>
+        <dd><code>/dev/vda: PTUUID="7dd06581-4867-4632-9a90-23d9c472b039" PTTYPE="gpt"
+                  /dev/vda1: PARTUUID="c061c581-06c1-43e2-8680-d353771bf341"
+                  /dev/vda2: UUID="2748-996B" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f7c29e7e-687f-4cbb-a1a1-f8876f809a64"
+                  /dev/vda3: UUID="8c1d6471-1f90-4212-8fbd-097a9a9ad909" TYPE="crypto_LUKS" PARTUUID="8ff61492-9bda-40fe-94a8-7d6fe4d220cb"
+                  /dev/vda4: LABEL="bpool" UUID="8851209407646287070" UUID_SUB="1631837207961890120" BLOCK_SIZE="4096" TYPE="zfs_member" PARTUUID="8b8b8818-cc94-42bd-b23d-cf7c9e9b73ff"
+                  /dev/vda5: LABEL="rpool" UUID="4519996901618382696" UUID_SUB="8860607139843727357" BLOCK_SIZE="4096" TYPE="zfs_member" PARTUUID="5cc65ba9-8ef4-475c-a107-cc130a9be1be"</code></dd>
+        <dd>Here, the zfs pool names are the labels of the drives of TYPE "zfs_member". So in this case, the zfs pools are "bpool" and "rpool".</dd>
+    <dt>Now, we will import the pool of the root partition:</dt>
+        <dd>zpool import rpool</dd>
+    <dt>Check the output of the following command to see that rpool is imported:</dt>
+        <dd>zpool status -v</dd>
+    <dt>After entering the following command, enter your recovery key in the prompt:</dt>
+        <dd>cryptsetup luksOpen /dev/zvol/rpool/keystore keystore</dd>
+    <dt>Mount the keystore:</dt>
+        <dd>mkdir /mnt/keystore</dd>
+        <dd>mount /dev/mapper/keystore /mnt/keystore</dd>
+    <dt>Copy the key to necessary location:</dt>
+        <dd>mkdir -p /run/keystore/rpool</dd>
+        <dd>cp -b /mnt/keystore/system.key /run/keystore/rpool</dd>
+    <dt>Make the root pool mountable:</dt>
+        <dd>zfs set canmount=on rpool</dd>
+    <dt>Load the zfs key:</dt>
+        <dd>zfs load-key rpool</dd>
+    <dt>Check for the pool associated with the userdata:</dt>
+        <dd>zfs list -o name,type,keylocation</dd>
+    <dt>You want to find a line in the output of the above command in this format:</dt>
+        <dd>$poolname/USERDATA/$username_$hash</dd>
+        <dd>For example: rpool/USERDATA/tim_aqj46w</dd>
+    <dt>Set mountpoint for USERDATA:</dt>
+        <dd>mkdir -p /mnt/rpool/USERDATA/tim_aqj46w</dd>
+        <dd>zfs set mountpoint=/mnt/rpool/USERDATA/tim_aqj46w rpool/USERDATA/tim_aqj46w</dd>
+    <dt>Mount the pool:</dt>
+        <dd>zfs mount -a</dd>
+    <dt>Check for the test file we made earlier, for example:</dt>
+        <dd>cat /mnt/rpool/USERDATA/tim_aqj46w/hello</dd>
+        <dd>The output should be "hello"</dd>
   
   
     </dl>
