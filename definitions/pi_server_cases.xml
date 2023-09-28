@@ -442,7 +442,7 @@
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
   </ut:case>
 
-  <ut:case id="1777 CM4 8GB Post-install">
+  <ut:case id="1777_RaspberryPi CM4 8GB Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 4 8GB</ut:define>
     <ut:define name="post-install">
       <p>Before booting your CM4 with the new image, edit config.txt on the boot
