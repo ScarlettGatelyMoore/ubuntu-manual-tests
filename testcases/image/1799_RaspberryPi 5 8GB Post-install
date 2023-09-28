@@ -4,7 +4,7 @@
 -->
 
     
-    <p>This test case is to be carried out on a Raspberry Pi 4 4GB.</p>
+    <p>This test case is to be carried out on a Raspberry Pi 5 8GB.</p>
     <p>Follow the installation steps at <a href="https://ubuntu.com/download/iot/installation-media">
       IoT installation media</a>
     </p>
@@ -40,7 +40,7 @@
     </dt>
     <dd>
       Reported "Mem" under "total" is consistent with a
-      Raspberry Pi 4 4GB. It should be in the region of 3.6-3.8GB.
+      Raspberry Pi 5 8GB. It should be in the region of 7.6-7.8GB.
     </dd>
   
     
@@ -122,32 +122,6 @@
         <li>Find the correct hardware output for the HDMI1 port:
           <code>cat /proc/asound/cards</code> and note the number at the start
           of the line for the HDMI1 port (usually 0 and possibly
-          1 for any connected monitor(s), and 1 or possibly 2 for the headphone
-          jack)</li>
-        <li>Attempt to play your MP3 file with: <code>mpg321 -o alsa -a
-          hw:<em>num</em>,0 <em>music.mp3</em></code> substituting
-          <em>num</em> for the number found during the previous step, and
-          <em>music.mp3</em> for your choice of MP3 file, e.g. <code>mpg321 -o
-          alsa -a hw:0,0 "Jeff Wayne - War of the
-          Worlds.mp3"</code></li>
-        <li>Use <tt>Ctrl+C</tt> to end playback early, if you wish</li>
-        <li>If you cannot hear anything, first check that the mixer's volume is
-          not set too low; run <code>alsamixer</code>, and adjust the volume
-          (<tt>J</tt> for down, <tt>K</tt> for up) before exiting
-          (<tt>Esc</tt>) and retrying playback</li>
-      </ul>
-    </dt>
-    <dd>Audio can be heard through the device</dd>
-  
-    
-    <dt>
-      With a pair of headphones with a 3.5mm jack, and an available MP3 file:
-      <ul>
-        <li>Install mpg321 and amixer with <code>sudo apt install mpg321
-          alsa-utils</code></li>
-        <li>Find the correct hardware output for the headphone jack:
-          <code>cat /proc/asound/cards</code> and note the number at the start
-          of the line for the headphone jack (usually 0 and possibly
           1 for any connected monitor(s), and 1 or possibly 2 for the headphone
           jack)</li>
         <li>Attempt to play your MP3 file with: <code>mpg321 -o alsa -a

@@ -12,29 +12,6 @@
       
     
     <dt>
-      Immediately after the "rainbow" splash screen, U-Boot starts. Press a key
-      to interrupt the sequence, then type "boot" to continue it.
-    </dt>
-    <dd>
-      Check that the U-Boot prompt (including a two-second wait) appears on
-      the primary monitor connected to the Pi, that the keyboard will interrupt
-      the sequence, and that boot successfully concludes after resumption.
-    </dd>
-  
-    
-    <dt>
-      During the boot sequence, U-Boot starts interacting via serial (GPIO14
-      and GPIO15, pins 8 and 10 respectively, on the 40-pin GPIO header). Press
-      a key to interrupt the sequence, then type "boot" to continue it.
-    </dt>
-    <dd>
-      Check that the U-Boot prompt (including a two-second wait) appears on
-      the attached serial console, that the keyboard will interrupt
-      the sequence, and that boot successfully concludes after resumption.
-    </dd>
-  
-    
-    <dt>
       Run <code>sudo flash-kernel</code>
     </dt>
     <dd>
