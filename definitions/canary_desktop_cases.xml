@@ -377,7 +377,7 @@
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1762_Canary Install (auto-resize)">
+  <ut:case id="1762_Install (auto-resize)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
