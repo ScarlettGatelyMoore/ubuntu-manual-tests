@@ -262,7 +262,7 @@
       <dd>Pick your desired language.</dd>
   </ut:test>
 
-  <ut:case id="1760_Canary Install (entire disk)">
+  <ut:case id="1760_Install (entire disk)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="choose-language"/>
@@ -367,7 +367,7 @@
     <dt>Continue installation as normal, and reboot once finished.</dt>
   </ut:test>
 
-  <ut:case id="1761_Canary Install (manual partitioning)">
+  <ut:case id="1761_Install (manual partitioning)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -387,7 +387,7 @@
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1763_Canary Install (entire disk with lvm and encryption)">
+  <ut:case id="1763_Install (entire disk with lvm and encryption)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -397,7 +397,7 @@
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1764_Canary Install (Safe Graphics mode)">
+  <ut:case id="1764_Install (Safe Graphics mode)">
     <ut:include ref="grub" />
     <ut:include ref="safe-graphics" />
     <ut:include ref="start" />
@@ -407,7 +407,7 @@
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1765_Canary Install RST">
+  <ut:case id="1765_Install RST">
     <ut:include ref="rst-config" />
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
@@ -422,7 +422,7 @@
     <ut:include ref="reboot-ubuntu" /> 
   </ut:case>
 
-  <ut:case id="1766_Canary Install Bitlocker">
+  <ut:case id="1766_Install Bitlocker">
     <ut:include ref="bitlocker-config" />
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
@@ -437,11 +437,11 @@
     <ut:include ref="reboot-ubuntu" /> 
   </ut:case>
 
-  <ut:case id="1767_Canary Live Session">
+  <ut:case id="1767_Live Session">
     <ut:include ref="session-start" />
   </ut:case>
 
-  <ut:case id="1768_Canary Install (manual partitioning re-using home partition)">
+  <ut:case id="1768_Install (manual partitioning re-using home partition)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -455,7 +455,7 @@
     <ut:include ref="reuse-postinst" />
   </ut:case>
 
-  <ut:case id="1769_Canary Non-English Installation No Network">
+  <ut:case id="1769_Non-English Installation No Network">
     <p>The goal of this test case is to check that localization support is
       functional during the installation, and that language packs are 
       installed correctly for those languages in the ISO, and that an
@@ -473,7 +473,7 @@
     <ut:include ref="tpm-on-boot" />
   </ut:case>
 
-  <ut:case id="1770_Canary Install (Screen Reader)">
+  <ut:case id="1770_Install (Screen Reader)">
     <p>This is an installation using the Screen-Reader as done by a visually blind individual. 
        Please cover your monitor, lay it face down or turn it off during this installation.
        You will require speakers or headphones to hear the screen-reader. 
@@ -492,7 +492,7 @@
     <dd>The screen reader should still be active</dd>
   </ut:case>
 
-  <ut:case id="1771_Canary Install UEFI SecureBoot nVidia">
+  <ut:case id="1771_Install UEFI SecureBoot nVidia">
     <p>This test is to ensure that the image boots in UEFI, that the
        resulting installation can boot in UEFI as well, regardless of network
        availability and that nVidia proprietary drivers are installed and loaded.</p>
@@ -548,7 +548,7 @@ yes
         <dd>Verify that settings are displayed and you can configure the card</dd>
   </ut:case>
 
-  <ut:case id="1772_Canary Install (erase and re-install)">
+  <ut:case id="1772_Install (erase and re-install)">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -580,7 +580,7 @@ yes
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1773_Canary Non-English Installation Online and CJK Input">
+  <ut:case id="1773_Non-English Installation Online and CJK Input">
     <p>The goal of this test case is to check that localization support is functional during the installation, that language packs are downloaded and installed correctly from the Internet and that the input methods for either Chinese, Japanese or Korean are working.</p>
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
@@ -596,7 +596,7 @@ yes
   </ut:case>
  
  <!-- is that meant to work with Canary today?-->
-  <ut:case id="1774_Canary VMWare Easy Install">
+  <ut:case id="1774_VMWare Easy Install">
     <p>The goal of this test case is to check that the Easy Install option in VMWare Player works correctly with the Ubuntu image.</p>
   </ut:case>
 
@@ -613,7 +613,7 @@ yes
     <ut:include ref="tpm-on-boot" />
   </ut:case>
 
-  <ut:case id="1782_Canary Install no TPM option without TPM support">
+  <ut:case id="1782_Install no TPM option without TPM support">
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
     <ut:include ref="start" />
@@ -641,7 +641,7 @@ yes
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
-  <ut:case id="1786_Canary Non-English Installation Online">
+  <ut:case id="1786_Non-English Installation Online">
     <p>The goal of this test case is to check that localization support is functional during the installation, that language packs are downloaded and installed correctly from the Internet and that the input methods for either Chinese, Japanese or Korean are working.</p>
     <ut:include ref="grub" />
     <ut:include ref="try-or-install" />
