@@ -334,7 +334,7 @@
       <dd>On the installed system check that none of the libreoffice, rhythmbox, totem, thunderbird, cheese, shotwell software are installed </dd>
   </ut:case>
 
-  <ut:case id="1795_Install (entire disk with ZFS plus encryption)">
+  <ut:case id="1790_Install (entire disk with ZFS plus encryption)">
     <ut:include ref="start" />
     <ut:include ref="entire-disk-zfs-encryption" />
     <ut:include ref="finish" />

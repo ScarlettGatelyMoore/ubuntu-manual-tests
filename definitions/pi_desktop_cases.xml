@@ -342,7 +342,7 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1796_RaspberryPi 5 4GB Desktop">
+  <ut:case id="1791_RaspberryPi 5 4GB Desktop">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -360,7 +360,7 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1797_RaspberryPi 5 8GB Desktop">
+  <ut:case id="1792_RaspberryPi 5 8GB Desktop">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />

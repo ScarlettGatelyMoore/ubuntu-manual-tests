@@ -483,7 +483,7 @@
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
   </ut:case>
 
-  <ut:case id="1798_RaspberryPi 5 4GB Post-install">
+  <ut:case id="1793_RaspberryPi 5 4GB Post-install">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
@@ -506,7 +506,7 @@
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
   </ut:case>
 
-  <ut:case id="1799_RaspberryPi 5 8GB Post-install">
+  <ut:case id="1794_RaspberryPi 5 8GB Post-install">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
