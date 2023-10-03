@@ -392,7 +392,7 @@
   </ut:case>
 
   <ut:case id="1790_Install (entire disk with ZFS plus encryption)">
-    <p><strong>This test involves installing a fresh system with zfs + encryption, then borking the system in a post-install test step. If the system you are installing on is important to you, and you want to preserve the zfs+encryption installed system, do not do this test.</strong></p>
+    <p><strong>This test involves installing a fresh system with zfs + encryption, then breaking the system in a post-install test step. If the system you are installing on is important to you, and you want to preserve the zfs+encryption installed system, do not do this test.</strong></p>
     <ut:include ref="start" />
     <ut:include ref="entire-disk-zfs-encryption" />
     <ut:include ref="finish" />
