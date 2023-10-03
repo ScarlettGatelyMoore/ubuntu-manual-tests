@@ -115,7 +115,7 @@
       <dd>We're going to check for this file in a later part of this test case.</dd>
   
     
-    <b>The next steps will make the initial installed system unusable afterwards, so bear that in mind.</b>
+    <p><strong>The next steps will make the initial installed system unusable afterwards, so bear that in mind.</strong></p>
     <dt>Shut down the installed system.</dt>
     <dt>Using the same .iso, boot into the iso using the disk that you just completed the installation on.</dt>
     <dt>Go through the grub menu and instead of installing, select "Try Ubuntu".</dt>
