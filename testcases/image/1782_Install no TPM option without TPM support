@@ -48,7 +48,7 @@
   
     
     <dt>Click on "Advanced features"</dt>
-      <dd>There should be no tickbox for "Enhanced secure-boot"</dd>
+      <dd>The tickbox for enabling full disk encryption with TPM should be unselectable and there should be a message detailing the fact the system is not compatible with TPM.</dd>
       <dd>Click "Ok"</dd>
     <dt>Click Continue</dt>
   
