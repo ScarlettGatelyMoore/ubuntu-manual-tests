@@ -49,13 +49,6 @@
     <dt>Click Continue</dt>
     <dt>The "Choose a security key" slide opens</dt>
         <dd>Enter your desired security key</dd>
-    <dt>Tick the "Enable recovery key" checkbox</dt>
-        <dd>Enter your desired recovery key</dd>
-        <dd>Click the downwards arrow icon, and click "Open" in the popup window</dd>
-    <dt>Open a terminal window and run the following commands:</dt>
-        <dd>cat /home/ubuntu/recovery.key</dd>
-    <dt>Verify the recovery key matches your inputted recovery key</dt>
-    <dt>Close the terminal window</dt>
     <dt>Click on the 'Install Now' button</dt>
         <dd>'Write the changes to disks' dialogue appears</dd>
     <dt>Click Continue</dt>
@@ -142,7 +135,7 @@
         <dd>zpool import rpool</dd>
     <dt>Check the output of the following command to see that rpool is imported:</dt>
         <dd>zpool status -v</dd>
-    <dt>After entering the following command, enter your recovery key in the prompt:</dt>
+    <dt>After entering the following command, enter your security key in the prompt:</dt>
         <dd>cryptsetup luksOpen /dev/zvol/rpool/keystore keystore</dd>
     <dt>Mount the keystore:</dt>
         <dd>mkdir /mnt/keystore</dd>
