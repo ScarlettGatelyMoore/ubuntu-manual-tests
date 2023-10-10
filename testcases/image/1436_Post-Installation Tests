@@ -6,7 +6,7 @@
         <dd>Both the description and the release presented matches the version of FAMILY you installed</dd>
     <dt><pre>arch</pre></dt>
         <dd>The result correctly lists the architecture of the installation you installed. For example, x86_64 for 64-bit x86 machine.</dd>
-    <dt><pre>sudo sfdisk -l</pre></dt>
+    <dt><pre>run `gnome-disks`</pre></dt>
         <dd>The partition scheme displayed matches the partition scheme you chose during installation</dd>
     <dt><pre>sudo apt-get update</pre></dt>
         <dd>Apt hits each of the package mirrors and updates all of them without error</dd>
