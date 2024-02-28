@@ -14,17 +14,8 @@
   </ut:template>
 
   <ut:test id="session-start">
-    Test-case Live Session Start
-    <dl>
-      <dt>Boot up the image</dt>
-        <dd>FAMILY boot screen is displayed</dd>
-      <dt>When the installer starts select your language in the left column</dt>
-        <dd>Language is selected, all labels are changed to translated versions</dd>
-      <dt>Click on 'Continue'</dt>
-        <dd>The 'Try or Install' screen is displayed with 'try FAMILY' and 'Install FAMILY' buttons</dd>
-      <dt>Click on the 'Try FAMILY' icon to select the option and click on the 'Continue' button</dt>
-        <dd>The default desktop is displayed</dd>
-    </dl>
+    <dt>Click on the 'Try FAMILY' icon to select the option and click on the 'Continue' button</dt>
+      <dd>The default desktop is displayed</dd>
     Test-case Live Session Usage
     <dl>
       <dt>Use and execute the default applications found for the desktop environment being run</dt>
@@ -55,8 +46,8 @@
   </ut:test>
 
   <ut:test id="try-or-install">
-    <dt>Select the 'Try or Install FAMILY' option and press Enter</dt>
-      <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and the mascot logo on the right.'</dd>
+    <dt>You're greeted with the 'Try or install FAMILY' slide. The 'FAMILY' logo should be on the left hand side.</dt>
+      <dd>Select "Install Ubuntu" to continue with the installation process, or "Try Ubuntu" to boot into a live session.</dd>
   </ut:test>
 
   <ut:test id="safe-graphics">
@@ -64,7 +55,7 @@
       <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and the mascot logo on the right.'</dd>
   </ut:test>
 
-  <ut:test id="start">
+  <!-- <ut:test id="start">
     <dt>Click on 'Continue'</dt>
       <dd>The 'Try or Install' screen is displayed with 'try FAMILY' and 'Install FAMILY' buttons</dd>
     <dt>Click on the release notes hyperlink to confirm that a browser launches and you are taken to the release notes discourse page.</dt>
@@ -82,10 +73,9 @@
       </dd>
     <dt>Click on 'Next'</dt>
       <dd>The 'Applications and updates' screen is displayed, listing normal and minimal installation, as well as options for installing updates, third party software and additional media formats.</dd>
-  </ut:test>
+  </ut:test> -->
 
   <ut:test id="select-installation-type">
-    <dt>Click on 'Next'</dt>
       <dd>The 'Installation type' screen is displayed</dd>
   </ut:test>
 
@@ -107,10 +97,7 @@
     <dt>Select the drive you wish to partition and use the Add '+', Change 'Change', and Delete '-' buttons to create your desired scheme</dt>
       <dd>The screen updates showing your desired partitions and mount points</dd>
       <em>Make sure that your scheme also includes a separate /home partition</em>
-    <dt>Once you have your required partitioning scheme laid out, click on 'Continue'</dt>
-      <dd>The 'Write changes to disk' screen is displayed, including the details of incoming partitions changes.</dd>
-    <dt>Verify that the partitioning details make sense</dt>
-    <dt>Click 'Start Installing'</dt>
+    <dt>Once you have your required partitioning scheme laid out, click on 'Next'</dt>
   </ut:test>
 
   <ut:test id="resize">
@@ -262,17 +249,6 @@
       <dd>Pick your desired language.</dd>
   </ut:test>
 
-  <ut:case id="1760_Install (entire disk)">
-    <ut:include ref="grub" />
-    <ut:include ref="try-or-install" />
-    <ut:include ref="choose-language"/>
-    <ut:include ref="start" />
-    <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" />
-  </ut:case>
-
   <ut:test id="reuse-postinst">
     <dt>Login, and check the following command runs without any errors:</dt>
       <dd>cat /home/$USER/dummy_file</dd>
@@ -367,87 +343,209 @@
     <dt>Continue installation as normal, and reboot once finished.</dt>
   </ut:test>
 
+  <ut:test id="a11y-panel">
+    <dt>You should be greeted with a panel where you are prompted to set any of your needed or desired accessibility options.</dt>
+      <dd>Click through the options, (Seeing, Hearing, Typing, Pointing and clicking, Zoom) and make sure the drop down options are fully functional.</dd>
+  </ut:test>
+
+  <ut:test id="keyboard-layout">
+    <dt>You should be greeted with a slide asking you to confirm your keyboard layout.</dt>
+      <dd>Feel free to either select your desired layout, or use the auto-detect feature at the bottom.</dd>
+    <dt>Proceed by clicking "Next"</dt>
+  </ut:test>
+
+  <ut:test id="network-connect">
+    <dt>The 'Connect to a network' screen should now be displayed</dt>
+    <dd>The screen should reflect the current status and display the following options (unless you're in a VM):</dd>
+      <dd>
+         <li>Wired connection</li>
+         <li>Connect to a Wi-Fi network followed by a scrollable list of available APs, displaying an active one colored with a leading checkmark</li>
+         <li>Connect to a hidden Wi-Fi network</li>
+         <li>I don't want to connect to internet for now</li>
+      </dd>
+    <dd>If you ARE installing in a VM, you should check that the VM automatically has internet access. This is usually via a "wired connection".</dd>
+    <dd>If you're testing a testcase that requires no internet access, make sure the install medium does not have internet access by configuring it properly in this slide.</dd>
+    <dt>Click "Next"</dt>
+  </ut:test>
+
+  <ut:test id="applications-and-updates">
+    <dt>The 'Applications and updates' screen is displayed, listing normal and minimal installation, as well as options for installing updates, third party software and additional media formats.</dt>
+    <dd>Select any options pertinent to the testcase - though "Default installation" is normally the desired option.</dd>
+    <dt>Click "Next"</dt>
+  </ut:test>
+
+  <ut:test id="installation-type-vanilla">
+    <dt>Select "Erase disk and install ubuntu"</dt>
+    <dt>Click 'Next'</dt>
+  </ut:test>
+
+  <ut:test id="account-setup">
+    <dt>You should be greeted with the "Set up your account" slide</dt>
+      <dd>Put in your desired user details.</dd>
+  </ut:test>
+
+  <ut:test id="timezone">
+    <dt>You should be greeted with the "Select your timezone" slide</dt>
+      <dd>If your system is connected to the internet, verify that the timezone that was auto-detected is accurate</dd>
+      <dd>Note that, if you're on a VPN, the timezone will be affected by this.</dd>
+    <dt>Click 'Next'</dt>
+  </ut:test>
+
+  <ut:test id="ready-to-install">
+    <dt>You should be greeted by the "Ready to install" slide.</dt>
+    <dt>On this slide, the devices to be changed and the partition table is shown to the user.</dt>
+      <dd>Check that the devices listed and the partition table listed is accurate and representative of the install options you set earlier in the process.</dd>
+    <dt>Click 'Next'</dt>
+  </ut:test>
+
+
+  <!-- done -->
+  <ut:case id="1760_Install (entire disk)">
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
+    <ut:include ref="select-installation-type" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
+    <ut:include ref="reboot-ubuntu" />
+  </ut:case>
+
+
+  <!-- done -->
   <ut:case id="1761_Install (manual partitioning)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="custom-partition"><ut:define name="partition-instruction"></ut:define></ut:include>
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1762_Install (auto-resize)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="resize" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1763_Install (entire disk with lvm and encryption)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="disk-lvm-encryption" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1764_Install (Safe Graphics mode)">
     <ut:include ref="grub" />
     <ut:include ref="safe-graphics" />
-    <ut:include ref="start" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1765_Install RST">
     <ut:include ref="rst-config" />
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="rst-screen" />
-    <ut:include ref="start" />
-    <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" /> 
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
+    <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1766_Install Bitlocker">
     <ut:include ref="bitlocker-config" />
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="bitlocker-screen" />
-    <ut:include ref="start" />
-    <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" /> 
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
+    <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1767_Live Session">
+    <ut:include ref="bitlocker-config" />
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
     <ut:include ref="session-start" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1768_Install (manual partitioning re-using home partition)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="reuse-partition" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <ut:include ref="reuse-home-initial-check"/>
     <ut:include ref="reuse-home-setup-test-file"/>
@@ -455,6 +553,7 @@
     <ut:include ref="reuse-postinst" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1769_Non-English Installation No Network">
     <p>The goal of this test case is to check that localization support is
       functional during the installation, and that language packs are 
@@ -462,17 +561,25 @@
       informational message is shown prompting users to connect to the
       Internet to fully install language support for those languages not included.</p>
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <p>Make sure the language selected is NOT English, and that all text in the installer is accurately translated and nothing is in English.</p>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <p>Make sure in the following slide, that you disable internet access.</p>
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="enable-full-disk-encryption-tpm"/>
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
     <dt>Verify that your system is localized and that the calendar shows the regional settings correctly</dt>
-    <ut:include ref="tpm-on-boot" />
+    <ut:include ref="ready-to-install" />
+    <ut:include ref="reboot-ubuntu" />
+    <dt>Make sure the desktop environment is in your desired language with all text accurately translated.</dt>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1770_Install (Screen Reader)">
     <p>This is an installation using the Screen-Reader as done by a visually blind individual. 
        Please cover your monitor, lay it face down or turn it off during this installation.
@@ -480,34 +587,46 @@
         As you press Enter to continue on each page, it can take several minutes to advance
         to the next installer page.</p>
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <dt>Ensure that in the Accessibility slide you enable the screen reader in the drop down.</dt>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <dt>Wait to hear the drums and press Alt+Super+S to start the screen-reader</dt>
-    <dd>The screen reader should be active now and read elements allow a keyboard navigation without screen</dd>
-        <dd>If doing this test on a VM, ensure the screen reader is enabled in the vm and not the host system.</dd>
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <dd>The screen reader should still be active</dd>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1771_Install UEFI SecureBoot nVidia">
     <p>This test is to ensure that the image boots in UEFI, that the
        resulting installation can boot in UEFI as well, regardless of network
        availability and that nVidia proprietary drivers are installed and loaded.</p>
     <dt>Boot up the image in UEFI mode with <b>Secure Boot enabled</b></dt>
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <dt>Disconnect from any network using the top panel controls.</dt>
-    <ut:include ref="start" />
-    <dt>Check 'Install third-party software for graphics and Wi-Fi hardware'</dt>
+    <ut:include ref="keyboard-layout" />
+    <dt>In the next slide, disconnect from any network using the top panel controls.</dt>
+    <ut:include ref="network-connect" />
+    <dt>In the next slide, check 'Install third-party software for graphics and Wi-Fi hardware'</dt>
+    <ut:include ref="applications-and-updates" />
     <dt>Click on 'Continue'</dt>
     <dd>The 'Configure secure boot' screen is displayed</dd>
     <dt>Enter a security key and confirm it</dt>
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
+    <ut:include ref="reboot-ubuntu" />
     <dt>Allow the machine to reboot</dt>
      <dd>A blue screen titled 'Perform MOK management' is displayed</dd>
     <dt>In the list of commands select 'Enroll MOK'</dt>
@@ -548,48 +667,61 @@ yes
         <dd>Verify that settings are displayed and you can configure the card</dd>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1772_Install (erase and re-install)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="custom-partition">
-      <ut:define name="partition-instruction">
-        <dt>Ensure that your scheme also has a separated /home partition included</dt>
-          <dd>You will need the separated /home partition to verify that erasing and reinstalling FAMILY will wipe it out</dd>
-      </ut:define>
-    </ut:include>
-    <ut:include ref="setup" />
+    <dt>Ensure that your scheme also has a separated /home partition included</dt>
+      <dd>You will need the separated /home partition to verify that erasing and reinstalling FAMILY will wipe it out</dd>
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Login as the user you created, or ensure that you are auto-logged in as the user created during setup if you checked the auto-login option</dt>
         <dd>The new user's desktop is presented</dd>
     <dt>Create a new folder on the desktop by right clicking on it and title it 'test', open Firefox and browse to a couple of sites</dt>
         <dd>Now you have a test folder on the desktop and some browsing history, this will be needed to check if erasing and reinstall of FAMILY will wipe them out </dd>
     <dt>Reboot using the iso with a CD/DVD or USB Key to perform a reinstall of FAMILY</dt>
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-<!-- Canary doesn't have the 'reuse' option at the moment?-->
-    <ut:include ref="custom-partition">
-      <ut:define name="partition-instruction">
-        <dt>Use the same /home partition than in the first installation and unsure the format checkbox is not selected</dt>
-          <dd>You will need the separated /home partition to verify that erasing and reinstalling FAMILY will wipe it out</dd>
-      </ut:define>
-    </ut:include>
-    <ut:include ref="setup" />
+    <dt>Use the same /home partition than in the first installation and ensure the format checkbox is selected</dt>
+      <dd>You will need the separated /home partition to verify that erasing and reinstalling FAMILY will wipe it out</dd>
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
+    <dt>Ensure that the test directory is no longer in the ~ directory.</dt>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1773_Non-English Installation Online and CJK Input">
     <p>The goal of this test case is to check that localization support is functional during the installation, that language packs are downloaded and installed correctly from the Internet and that the input methods for either Chinese, Japanese or Korean are working.</p>
     <ut:include ref="grub" />
-    <ut:include ref="try-or-install" />
+    <ut:include ref="choose-language"/>
     <dt>Select a CJK language (Chinese, Japanese, Korean)</dt>
       <dd>Check that the strings are correctly showing translated and with the right font</dd>
-    <ut:include ref="start" />
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Verify that your system is localized</dt>
     <dt>Verify that the input method works correctly by entering text in the editor. The input method of choice should be available from the panel and typing in the editor should properly display the ibus chars selector.</dt>
@@ -600,89 +732,152 @@ yes
     <p>The goal of this test case is to check that the Easy Install option in VMWare Player works correctly with the Ubuntu image.</p>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1781_Install (entire disk with TPM encryption)">
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="enable-full-disk-encryption-tpm"/>
     <ut:include ref="hw-requirements"/>
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <ut:include ref="tpm-on-boot" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1782_Install no TPM option without TPM support">
+    <dt>In this test case, make sure that the machine you're installing on does not have the HW requirements for TPM FDE.</dt>
     <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="no-tpm-reason-no-tpm"/>
-    <ut:include ref="hardware-backed-full-disk-encryption-no-tpm-not-available"/>
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
-    <ut:include ref="reboot-ubuntu" />
+    <dt>That's it. If the checkbox isn't available, this testcase has passed.</dt>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1784_Install (entire disk with ZFS)">
-    <ut:include ref="start" />
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="entire-disk-zfs" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-zfs" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1785_Install (entire disk with lvm and encryption)">
-    <ut:include ref="start" />
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
     <ut:include ref="entire-disk-lvm" />
-    <ut:include ref="setup" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
+    <dt>After you reboot, you should be prompted to enter your security key before getting to the login screen.</dt>
     <ut:include ref="reboot-ubuntu" />
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1786_Non-English Installation Online">
     <p>The goal of this test case is to check that localization support is functional during the installation, that language packs are downloaded and installed correctly from the Internet and that the input methods for either Chinese, Japanese or Korean are working.</p>
     <ut:include ref="grub" />
+    <dt>In the following slide, make sure to select a language of your choice which is NOT English.</dt>
+    <ut:include ref="choose-language"/>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
     <dt>Verify that your system is localized</dt>
     <dt>Verify that the input method works correctly by entering text in the editor. The input method of choice should be available from the panel and typing in the editor should properly display the ibus chars selector.</dt>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1787_Non-English Live Session and Installation; No Network">
     <dt>Before doing this test, make sure when booting into the live session you've selected a non-english language. You must also make sure the machine you're installing on has no internet access.</dt>
-    <ut:include ref="session-start" />
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
     <dt>Verify that the language you've selected is being used in the live session.</dt>
     <dt>Verify applications and basic functionality work in the live session, then click the install icon.</dt>
+      <dd>You should also disable network access here.</dd>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="session-start" />
+    <dt>Ensure that the live session is localised with the right language you previously selected.</dt>
+    <dt>Click the installer icon to now continue with the installation</dt>
+    <ut:include ref="choose-language"/>
+    <dt>Ensure the installer is still in the selected language.</dt>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <dt>In the following slide, ensure you disable network connectivity - it should've been done already.</dt>
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
+    <dt>Ensure after rebooting, that the installed desktop is still in the correct language with all translations being accurate and complete.</dt>
   </ut:case>
 
+  <!-- done -->
   <ut:case id="1788_Non-English Live Session and Installation; Full Network Support">
     <dt>Before doing this test, make sure when booting into the live session you've selected a non-english language.</dt>
-    <ut:include ref="session-start" />
+    <ut:include ref="grub" />
+    <ut:include ref="choose-language"/>
     <dt>Verify that the language you've selected is being used in the live session.</dt>
     <dt>Verify applications and basic functionality work in the live session, then click the install icon.</dt>
+    <ut:include ref="a11y-panel" />
     <ut:include ref="try-or-install" />
-    <ut:include ref="start" />
+    <ut:include ref="session-start" />
+    <dt>Ensure that the live session is localised with the right language you previously selected.</dt>
+    <dt>Click the installer icon to now continue with the installation</dt>
+    <ut:include ref="choose-language"/>
+    <dt>Ensure the installer is still in the selected language.</dt>
+    <ut:include ref="a11y-panel" />
+    <ut:include ref="try-or-install" />
+    <ut:include ref="keyboard-layout" />
+    <ut:include ref="network-connect" />
+    <ut:include ref="applications-and-updates" />
     <ut:include ref="select-installation-type" />
-    <ut:include ref="entire-disk" />
-    <ut:include ref="setup" />
+    <ut:include ref="installation-type-vanilla" />
+    <ut:include ref="account-setup" />
+    <ut:include ref="timezone" />
+    <ut:include ref="ready-to-install" />
     <ut:include ref="reboot-ubuntu" />
-  </ut:case>
-
-  <ut:case id="1789_Install Screen Reader">
-    <dt>For this test, you must boot the iso and after hearing the Ubuntu start up sound, press super+alt+s to activate the screen reader.</dt>
-    <dt>After you've activated the screen reader, you must navigate through the install process doing a "Install (Entire Disk)" install, reboot and verify everthing works as intended.</dt>
+    <dt>Ensure after rebooting, that the installed desktop is still in the correct language with all translations being accurate and complete.</dt>
   </ut:case>
 
 </ut:configuration>
