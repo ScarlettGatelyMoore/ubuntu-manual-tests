@@ -20,7 +20,8 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>Reenter ubuntu password again</dd>
         <dd>Set new password</dd>
         <dd>Confirm the new password</dd>
-    <dt>Perform Wifi testing</dt>
+    <dt>Install Wifi kernel module</dt>
+        <dd><b>This step is only needed when testing relases with Linux kernel up to v6.5.</b></dd>
         <dd>Make sure licheerv-rtl8723ds-dkms is installed, otherwise, install it: </dd>
         <dd>$ sudo apt install licheerv-rtl8723ds-dkms </dd>
         <dd>It will take quite some time to build, the output of the above command should look like this:.</dd>
@@ -41,17 +42,18 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>depmod........................</dd>
         <dd>Load the kernel module with:</dd>
         <dd>$ sudo modprobe 8723ds</dd>
+    <dt>Perform Wifi testing</dt>
         <dd>You should see a wlan0 interface by typing:</dd>
         <dd>$ ip a </dd>
-        <dd>1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defaul0</dd>
+        <dd>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group defaul0</dd>
         <dd>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</dd>
         <dd>    inet 127.0.0.1/8 scope host lo</dd>
         <dd>       valid_lft forever preferred_lft forever</dd>
         <dd>    inet6 ::1/128 scope host</dd>
         <dd>       valid_lft forever preferred_lft forever</dd>
-        <dd>2: usb0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOW0</dd>
+        <dd>2: usb0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc pfifo_fast state DOW0</dd>
         <dd>    link/ether ae:12:05:64:8e:2c brd ff:ff:ff:ff:ff:ff</dd>
-        <dd>3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default qlen 1000</dd>
+        <dd>3: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc mq state DOWN group default qlen 1000</dd>
         <dd>    link/ether 34:20:03:2a:0d:0c brd ff:ff:ff:ff:ff:ff</dd>
         <dd>Try to connect to local network by using the following netplan configuration file saved at /etc/netplan/wifi.yaml</dd>
         <dd> network:</dd>
@@ -79,7 +81,7 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
     <dt>Perform USB test</dt>
         <dd>Plug a keyboard in and enter the login/password</dd>
     <dt>Reboot</dt>
-        <dd>The board should reboot normally</dt>
+        <dd>The board should reboot normally</dd>
     <dt>Poweroff</dt>
         <dd>Console messages should reach poweroff target</dd>
         <dd>There should be final kernel dmsg powering off</dd>
