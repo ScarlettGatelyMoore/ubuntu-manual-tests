@@ -21,7 +21,7 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>Set new password</dd>
         <dd>Confirm the new password</dd>
     <dt>Install Wifi kernel module</dt>
-        <dd><b>This step is only needed when testing relases with Linux kernel up to v6.5.</b></dd>
+        <dd><b>This step is only needed when testing releases with Linux kernel up to v6.5.</b></dd>
         <dd>Make sure licheerv-rtl8723ds-dkms is installed, otherwise, install it: </dd>
         <dd>$ sudo apt install licheerv-rtl8723ds-dkms </dd>
         <dd>It will take quite some time to build, the output of the above command should look like this:.</dd>
