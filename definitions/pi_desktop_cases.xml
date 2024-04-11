@@ -115,7 +115,7 @@
 
   <ut:test id="ram-free">
     <dt>
-      Click the power icon at the top right of the screen, select Settings from
+      Launch Settings from
       the menu that appears, then "About" in the left panel of the window that
       appears
     </dt>
@@ -155,7 +155,7 @@
     <dt>
       Configure wifi via Network Manager
       <ul>
-        <li>Click the power icon at the top right of the screen</li>
+        <li>Launch settings</li>
         <li>Select the WiFi entry from the menu and Select Network under that</li>
         <li>Select your local WiFi network from the scan list</li>
         <li>Enter the password for your local WiFi network when prompted</li>
