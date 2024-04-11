@@ -24,6 +24,14 @@
 
   <ut:define name="post-install"></ut:define>
 
+  <ut:test id="power-led">
+    <dt>Watch the power LED</dt>
+      <dd>
+        Ensure it turns out at boot time, and stays lit as the kernel starts
+        (when the rainbow screen disappears)
+      </dd>
+  </ut:test>
+
   <ut:test id="startup-splash">
     <dt>Watch the boot screen</dt>
     <dd>Check that the Ubuntu logo, and spinner appear during boot time</dd>
@@ -223,6 +231,7 @@
 
   <ut:case id="1745_RaspberryPi 4 4GB Desktop">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -241,6 +250,7 @@
 
   <ut:case id="1746_RaspberryPi 4 8GB Desktop">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -259,6 +269,7 @@
 
   <ut:case id="1747_RaspberryPi 400 Desktop">
     <ut:define name="model">Raspberry Pi 400</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -282,6 +293,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -305,6 +317,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -328,6 +341,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -346,6 +360,7 @@
 
   <ut:case id="1791_RaspberryPi 5 4GB Desktop">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
@@ -364,6 +379,7 @@
 
   <ut:case id="1792_RaspberryPi 5 8GB Desktop">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
     <ut:include ref="startup-timezone" />
