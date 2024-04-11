@@ -199,6 +199,8 @@
         <li>Start a terminal session</li>
         <li>Run <code>wget https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4</code></li>
         <li>Once the download has completed, run <code>totem big_buck_bunny_720p_surround.mp4</code></li>
+        <li>The utility may prompt to install codecs; accept the recommendation
+          and install whatever codecs are required</li>
       </ul>
     </dt>
     <dd>
