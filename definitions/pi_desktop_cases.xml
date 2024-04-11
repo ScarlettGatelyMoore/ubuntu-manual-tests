@@ -164,21 +164,45 @@
       Configure wifi via Network Manager
       <ul>
         <li>Launch settings</li>
-        <li>Select the WiFi entry from the menu and Select Network under that</li>
-        <li>Select your local WiFi network from the scan list</li>
+        <li>Select the WiFi entry from the menu</li>
+        <li>Select your local WiFi network from the visible networks list</li>
         <li>Enter the password for your local WiFi network when prompted</li>
         <li>Wait a few seconds (to allow DHCP to complete), then run <code>ip
           addr</code></li>
         <li>Check that a valid IP address is recorded on the <ut:var
           name="intf" /> interface</li>
+        <li>Disconnect ethernet, if any is plugged in</li>
         <li>Check <code>ping google.com</code> successfully pings a few times
           (<tt>Ctrl+C</tt> to cancel)</li>
+        <li>Reconnect ethernet, if it was connected before</li>
       </ul>
     </dt>
     <dd>
       The &quot;<ut:var name="intf" />&quot; interface should have a DHCP
       assigned IP address and you should be able to ping google.com
     </dd>
+  </ut:test>
+
+  <ut:test id="bluetooth">
+    <dt>
+      Configure bluetooth and pair a device
+      <ul>
+        <li>Launch settings</li>
+        <li>Select the Bluetooth entry from the menu (you must be on this page
+          for the Pi to be &quot;discoverable&quot;)</li>
+        <li>On another Bluetooth device (e.g. an Android phone) make sure it
+          is &quot;discoverable&quot; (e.g. on Android go into Bluetooth
+          settings)</li>
+        <li>Ensure the other device shows up in the &quot;Devices&quot; list
+          on the Bluetooth settings page, then select it</li>
+        <li>Confirm the pincode on both devices</li>
+        <li>Ensure the other device now shows as anything other that &quot;Not
+          Set Up&quot; in the &quot;Devices&quot; list</li>
+        </ul>
+      </dt>
+      <dd>
+        The Bluetooth interface can scan for, and pair with, another device
+      </dd>
   </ut:test>
 
   <ut:test id="www-video">
@@ -243,6 +267,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -262,6 +287,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -281,6 +307,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -305,6 +332,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -329,6 +357,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -353,6 +382,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -372,6 +402,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
@@ -391,6 +422,7 @@
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
     <ut:include ref="www-video" />
     <ut:include ref="local-video" />
     <ut:include ref="lock-screen" />
