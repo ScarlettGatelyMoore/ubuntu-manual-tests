@@ -23,6 +23,17 @@
   </ut:template>
 
   <ut:define name="post-install"></ut:define>
+  <ut:define name="actpwr"></ut:define>
+
+  <ut:test id="power-led">
+    <dt>
+      After powering on the machine, check the power LED.
+    </dt>
+    <dd>
+      The power LED illuminates and stays illuminated while the kernel continues
+      to boot. <ut:var name="actpwr" />
+    </dd>
+  </ut:test>
 
   <ut:test id="flash-kernel">
     <dt>
@@ -184,6 +195,7 @@
 
   <ut:case id="1711_RaspberryPi 4 2GB Post-install">
     <ut:define name="model">Raspberry Pi 4 2GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -211,6 +223,7 @@
 
   <ut:case id="1719_RaspberryPi 4 4GB Post-install">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -238,6 +251,7 @@
 
   <ut:case id="1720_RaspberryPi 4 8GB Post-install">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -265,6 +279,7 @@
 
   <ut:case id="1721_RaspberryPi 3B+ Post-install">
     <ut:define name="model">Raspberry Pi 3B+</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -285,6 +300,7 @@
 
   <ut:case id="1722_RaspberryPi 3B Post-install">
     <ut:define name="model">Raspberry Pi 3B</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -305,6 +321,7 @@
 
   <ut:case id="1723_RaspberryPi 3A+ Post-install">
     <ut:define name="model">Raspberry Pi 3A+</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -324,6 +341,7 @@
 
   <ut:case id="1724_RaspberryPi 2 Post-install">
     <ut:define name="model">Raspberry Pi 2</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -371,6 +389,7 @@
 
   <ut:case id="1740_RaspberryPi 400 Post-install">
     <ut:define name="model">Raspberry Pi 400</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -470,6 +489,12 @@
 
   <ut:case id="1752_RaspberryPi Zero 2 Post-install">
     <ut:define name="model">Raspberry Pi Zero 2</ut:define>
+    <ut:include ref="power-led">
+      <ut:define name="actpwr">
+        On the Pi Zero 2W, the LED may blink off periodically to show disk
+        activity, but should otherwise remain lit.
+      </ut:define>
+    </ut:include>
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -485,6 +510,7 @@
 
   <ut:case id="1793_RaspberryPi 5 4GB Post-install">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -508,6 +534,7 @@
 
   <ut:case id="1794_RaspberryPi 5 8GB Post-install">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:include ref="power-led" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
