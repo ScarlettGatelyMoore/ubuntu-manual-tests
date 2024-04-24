@@ -17,7 +17,7 @@
     
     <dt>Watch the power LED</dt>
       <dd>
-        Ensure it turns out at boot time, and stays lit as the kernel starts
+        Ensure it turns on at boot time, and stays lit as the kernel starts
         (when the rainbow screen disappears)
       </dd>
   
