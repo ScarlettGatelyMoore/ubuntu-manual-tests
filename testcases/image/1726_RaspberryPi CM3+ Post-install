@@ -65,7 +65,7 @@
       </ul>
     </dt>
     <dd>
-      <code>cmp</code> returns 0 and outputs nothing indicating the files are
+      <code>cmp</code> returns 0 and outputs nothing, indicating the files are
       identical
     </dd>
   

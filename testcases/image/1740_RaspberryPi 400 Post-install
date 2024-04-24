@@ -74,7 +74,7 @@
       </ul>
     </dt>
     <dd>
-      <code>cmp</code> returns 0 and outputs nothing indicating the files are
+      <code>cmp</code> returns 0 and outputs nothing, indicating the files are
       identical
     </dd>
   
@@ -174,6 +174,33 @@
     <dd>
       The "wlan0" interface should have a DHCP
       assigned IP address and you should be able to ping google.com
+    </dd>
+  
+    
+    <dt>
+      Configure bluetooth, scan for, and pair, a device
+      <ul>
+        <li>Run <code>sudo bluetoothctl</code></li>
+        <li>Check bluetoothctl prints <code>Agent registered</code></li>
+        <li>Check the MAC address looks "real" (not some obviously blank
+          value like AA:AA:AA:AA:AA:AA)</li>
+        <li>Run <code>scan on</code></li>
+        <li>Make some other Bluetooth device visible for pairing (e.g. go into
+          Bluetooth settings on your Android phone)</li>
+        <li>Verify the other Bluetooth device appears in console output</li>
+          <li>Run <code>pair XX:XX:XX:XX:XX:XX</code>
+          where XX:XX:XX:XX:XX:XX is the other device's MAC address, as it
+          appears in scan output
+        </li>
+        <li>Verify the passcode on both devices</li>
+        <li>Check output includes "Pairing successful"</li>
+        <li>Disable scanning with <code>scan off</code></li>
+        <li>Exit tool with <code>quit</code></li>
+      </ul>
+    </dt>
+    <dd>
+      The Bluetooth interface should have a valid MAC address (not
+      AA:AA:AA:AA:AA:AA), can see and pair with another Bluetooth device.
     </dd>
   
   
