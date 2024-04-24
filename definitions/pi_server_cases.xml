@@ -84,7 +84,7 @@
       </ul>
     </dt>
     <dd>
-      <code>cmp</code> returns 0 and outputs nothing indicating the files are
+      <code>cmp</code> returns 0 and outputs nothing, indicating the files are
       identical
     </dd>
   </ut:test>
@@ -247,6 +247,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1719_RaspberryPi 4 4GB Post-install">
@@ -275,6 +276,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1720_RaspberryPi 4 8GB Post-install">
@@ -303,6 +305,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1721_RaspberryPi 3B+ Post-install">
@@ -324,6 +327,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1722_RaspberryPi 3B Post-install">
@@ -345,6 +349,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1723_RaspberryPi 3A+ Post-install">
@@ -365,6 +370,7 @@
       <ut:define name="output">headphone jack</ut:define>
     </ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1724_RaspberryPi 2 Post-install">
@@ -435,6 +441,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1741_RaspberryPi CM4 2GB Post-install">
@@ -461,6 +468,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1742_RaspberryPi CM4 4GB Post-install">
@@ -487,6 +495,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1777_RaspberryPi CM4 8GB Post-install">
@@ -513,6 +522,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1752_RaspberryPi Zero 2 Post-install">
@@ -534,6 +544,7 @@
       <ut:define name="output">HDMI0 port</ut:define>
     </ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1793_RaspberryPi 5 4GB Post-install">
@@ -558,6 +569,7 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 
   <ut:case id="1794_RaspberryPi 5 8GB Post-install">
@@ -582,5 +594,6 @@
     </ut:include>
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
   </ut:case>
 </ut:configuration>
