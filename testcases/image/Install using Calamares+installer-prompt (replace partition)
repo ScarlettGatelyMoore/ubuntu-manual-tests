@@ -25,7 +25,7 @@
         <dd>At the bottom, a partition layout should be shown</dd>
         <dd>Below the partition layout, the bootloader should show that it's being installed to the correct location</dd>
     <dt>Select the target partition from the "Current" bar and click "Next"</dt>
-        <dd>The "After" bar should show the target partition being replaced</dt>
+        <dd>The "After" bar should show the target partition being replaced</dd>
     <dt>At the "Users" pane, enter details about the main system user and click "Next"</dt>
         <dd>All details should be correctly filled in</dd>
     <dt>At the "Summary" pane, confirm the details you entered throughout the install are accurate and click "Install", then "Install now"</dt>

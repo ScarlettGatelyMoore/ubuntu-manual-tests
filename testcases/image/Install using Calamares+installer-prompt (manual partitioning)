@@ -20,7 +20,7 @@
     <dt>At the "Partions" pane, select the "Erase manual partitioning" radio button and click "Next"</dt>
         <dd>At the top, the correct storage device should be selected</dd>
         <dd>At the bottom, the current partition layout should be shown</dd>
-    <dt>At the partition screen, set up your partition scheme and click "Next"</dd>
+    <dt>At the partition screen, set up your partition scheme and click "Next"</dt>
         <dd>At the top, the correct storage device should be selected</dd>
         <dd>Below the storage device, a bar should be shown reflecting your partition scheme</dd>
         <dd>The table below the bar should list the partitions, file system, label, mount point, and size</dd>
