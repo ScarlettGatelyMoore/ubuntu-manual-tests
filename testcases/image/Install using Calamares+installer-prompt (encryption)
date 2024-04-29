@@ -1,7 +1,6 @@
 <em>Proceed in your native language if you wish. Instructions will remain in English</em>
 
 <dl>
-    <dt>Before running this test, ensure that you are using a BIOS firmware to boot</dt>
     <dt>Boot up the image</dt>
         <dd>FAMILY boot screen is displayed</dd>
     <dt>When installer-prompt starts select your language in the first prompt</dt>
@@ -18,14 +17,18 @@
         <dd>"Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"</dd>
         <dd>"Download and install updates following installation" should be unchecked</dd>
         <dd>The checkboxes under "Install additional third-party packages" should be unchecked</dd>
-    <dt>At the "Partions" pane, select the "Erase disk" radio button and click "Next"</dt>
-        <dd>In the top left corner, "BIOS" is displayed</dd>
+    <dt>At the "Partions" pane, select the "Erase disk" radio button</dt>
         <dd>At the top, the correct storage device should be selected</dd>
         <dd>Under the radio button, "Swap to file" should be selected from the drop down and "No swap" is the other option</dd>
         <dd>Next to the swap drop down, "ext4" is selected from a second drop down and "xfs" and "btrfs" are the other options</dd>
         <dd>Above the partition layout, "Encrypt system" should be unchecked</dd>
         <dd>At the bottom, a partition layout should be shown which uses all disk space</dd>
         <dd>Below the partition layout, the bootloader should show that it's being installed to the correct location</dd>
+    <dt>Check the "Encrypt system" checkbox</dt>
+        <dd>Next to the checkbox, two prompts are shown: "Passphrase" and "Confirm passphrase"</dd>
+    <dt>Enter two matching passphrases in the prompts and click "Next"</dt>
+        <dd>Upon success, a green checkmark is shown to the right of the prompts</dd>
+        <dd>The "After" partition layout at the bottom should show the target partition for the installation as LUKS2</dd>
     <dt>At the "Users" pane, enter details about the main system user and click "Next"</dt>
         <dd>All details should be correctly filled in</dd>
     <dt>At the "Summary" pane, confirm the details you entered throughout the install are accurate and click "Install", then "Install now"</dt>

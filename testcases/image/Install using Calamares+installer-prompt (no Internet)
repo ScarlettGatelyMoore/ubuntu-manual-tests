@@ -1,25 +1,24 @@
 <em>Proceed in your native language if you wish. Instructions will remain in English</em>
 
 <dl>
-    <dt>Before running this test, ensure that you are using a BIOS firmware to boot</dt>
+    <dt>Before starting this test, make sure you are NOT connected to the Internet</dt>
     <dt>Boot up the image</dt>
         <dd>FAMILY boot screen is displayed</dd>
     <dt>When installer-prompt starts select your language in the first prompt</dt>
         <dd>Language is selected, all labels are changed to translated versions</dd>
-        <dd>Current internet connection is shown in the second prompt</dd>
+        <dd>Internet connection is shown as "Disconnected" in the second prompt</dd>
     <dt>Press "Install FAMILY" and wait for Calamares installer to start</dt>
     <dt>After the "Welcome" pane is shown click "Next"</dt>
+        <dd>A warning is shown: "The system is not connected to the Internet"</dd>
     <dt>The "Location" pane is shown with a map and options to select region, time zone, language, and number/date locale</dt>
+        <dd>The default location shown is America/New York</dd>
     <dt>Select the appropriate locale options and click "Next"</dt>
         <dd>The display should reflect your selections</dd>    
     <dt>In the "Keyboard" pane, select your keyboard layout and click "Next"</dt>
         <dd>Test the keyboard layout in the given box, which should be set correctly</dd>
     <dt>At the "Customize" pane, click "Next"</dt>
-        <dd>"Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"</dd>
-        <dd>"Download and install updates following installation" should be unchecked</dd>
-        <dd>The checkboxes under "Install additional third-party packages" should be unchecked</dd>
+        <dd>"Normal Installation" should be selected, but there is also a option for "Minimal Installation"</dd>
     <dt>At the "Partions" pane, select the "Erase disk" radio button and click "Next"</dt>
-        <dd>In the top left corner, "BIOS" is displayed</dd>
         <dd>At the top, the correct storage device should be selected</dd>
         <dd>Under the radio button, "Swap to file" should be selected from the drop down and "No swap" is the other option</dd>
         <dd>Next to the swap drop down, "ext4" is selected from a second drop down and "xfs" and "btrfs" are the other options</dd>
