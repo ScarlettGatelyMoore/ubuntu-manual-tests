@@ -7,7 +7,10 @@
     <p>This test case is to be carried out on a <ut:var name="model" />.</p>
     <p>Follow the installation steps at <a
       href="https://ubuntu.com/download/iot/installation-media">
-      IoT installation media</a>
+      IoT installation media</a>, and write the image to <ut:var name="storage" />.
+      Then, using <tt>sudo rpi-eeprom-config</tt>, ensure the EEPROM's
+      <tt><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#BOOT_ORDER">BOOT_ORDER</a></tt>
+      is set to <ut:var name="boot-order"/>.
     </p>
     <ut:var name="post-install" />
     <dl>
@@ -253,8 +256,10 @@
     </dd>
   </ut:test>
 
-  <ut:case id="1745_RaspberryPi 4 4GB Desktop">
+  <ut:case id="1745_RaspberryPi 4 4GB Desktop SD">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
+    <ut:define name="storage">an SD card</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -273,8 +278,32 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1746_RaspberryPi 4 8GB Desktop">
+  <ut:case id="1812_RaspberryPi 4 4GB Desktop USB">
+    <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
+    <ut:define name="storage">a USB3 drive</ut:define>
+    <ut:define name="boot-order">0xf41</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1746_RaspberryPi 4 8GB Desktop SD">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
+    <ut:define name="storage">an SD card</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -293,8 +322,32 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1747_RaspberryPi 400 Desktop">
+  <ut:case id="1813_RaspberryPi 4 8GB Desktop USB">
+    <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
+    <ut:define name="storage">a USB3 drive</ut:define>
+    <ut:define name="boot-order">0xf41</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1747_RaspberryPi 400 Desktop SD">
     <ut:define name="model">Raspberry Pi 400</ut:define>
+    <ut:define name="storage">an SD card</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -313,13 +366,10 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1748_RaspberryPi CM4 2GB Desktop">
-    <ut:define name="model">Raspberry Pi Compute Module 4 2GB</ut:define>
-    <ut:define name="post-install">
-      <p>Before booting your CM4 with the new image, edit config.txt on the boot
-      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
-      line to ensure the USB ports on the IO board operate correctly</p>
-    </ut:define>
+  <ut:case id="1814_RaspberryPi 400 Desktop USB">
+    <ut:define name="model">Raspberry Pi 400</ut:define>
+    <ut:define name="storage">a USB3 drive</ut:define>
+    <ut:define name="boot-order">0xf41</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -328,7 +378,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
-    <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
     <ut:incldue ref="dual-monitor" />
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
@@ -338,8 +388,10 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1749_RaspberryPi CM4 4GB Desktop">
+  <ut:case id="1749_RaspberryPi CM4 4GB Desktop eMMC">
     <ut:define name="model">Raspberry Pi Compute Module 4 4GB</ut:define>
+    <ut:define name="storage">the internal eMMC</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:define name="post-install">
       <p>Before booting your CM4 with the new image, edit config.txt on the boot
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
@@ -363,8 +415,10 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1750_RaspberryPi CM4 8GB Desktop">
+  <ut:case id="1750_RaspberryPi CM4 8GB Desktop eMMC">
     <ut:define name="model">Raspberry Pi Compute Module 4 8GB</ut:define>
+    <ut:define name="storage">the internal eMMC</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:define name="post-install">
       <p>Before booting your CM4 with the new image, edit config.txt on the boot
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
@@ -388,8 +442,10 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1791_RaspberryPi 5 4GB Desktop">
+  <ut:case id="1791_RaspberryPi 5 4GB Desktop SD">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:define name="storage">an SD card</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
@@ -408,8 +464,98 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1792_RaspberryPi 5 8GB Desktop">
+  <ut:case id="1815_RaspberryPi 5 4GB Desktop USB3">
+    <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:define name="storage">a USB3 drive</ut:define>
+    <ut:define name="boot-order">0xf41</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1816_RaspberryPi 5 4GB Desktop NVMe">
+    <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
+    <ut:define name="storage">an NVMe drive</ut:define>
+    <ut:define name="boot-order">0xf61</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1792_RaspberryPi 5 8GB Desktop SD">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:define name="storage">an SD card</ut:define>
+    <ut:define name="boot-order">0xf1</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1817_RaspberryPi 5 8GB Desktop USB">
+    <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:define name="storage">a USB3 drive</ut:define>
+    <ut:define name="boot-order">0xf41</ut:define>
+    <ut:include ref="power-led" />
+    <ut:include ref="startup-splash" />
+    <ut:include ref="startup-sound" />
+    <ut:include ref="startup-timezone" />
+    <ut:include ref="startup-identity" />
+    <ut:include ref="flash-kernel" />
+    <ut:include ref="reboot" />
+    <ut:include ref="shutdown" />
+    <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
+    <ut:incldue ref="dual-monitor" />
+    <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
+    <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
+    <ut:include ref="bluetooth" />
+    <ut:include ref="www-video" />
+    <ut:include ref="local-video" />
+    <ut:include ref="lock-screen" />
+  </ut:case>
+
+  <ut:case id="1818_RaspberryPi 5 8GB Desktop USB">
+    <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
+    <ut:define name="storage">an NVMe drive</ut:define>
+    <ut:define name="boot-order">0xf61</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="startup-splash" />
     <ut:include ref="startup-sound" />
