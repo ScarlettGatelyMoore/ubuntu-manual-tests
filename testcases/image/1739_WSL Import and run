@@ -135,11 +135,11 @@ Hello, world!
 
 	<dt>Install and run a graphical application
 <pre>
-$ sudo apt install x11-utils
+$ sudo apt install x11-apps
 [...]
 </pre>
 	</dt>
-		<dd>Start one of the graphical application from the x11-utils package, like xcalc for example:
+		<dd>Start one of the graphical application from the x11-apps package, like xcalc for example:
 <pre>
 $ xcalc
 (Wait a moment until the application starts and is displayed)
