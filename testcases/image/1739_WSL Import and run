@@ -39,7 +39,7 @@ TestUbuntuWSL    Stopped         2
 	</dt>
 		<dd>Verify that	you're inside the WSL instance and running the right distribution. For example run:
 <pre>
-# lsb_release -a
+$ lsb_release -a
 No LSB modules are available.
 Distributor ID: Ubuntu
 Description:    Ubuntu 20.04.3 LTS
@@ -72,12 +72,12 @@ Is the information correct? [Y/n]
 
 	<dt>Add the newly created user to the sudo group:
 <pre>
-# usermod -aG sudo ubuntu
+$ usermod -aG sudo ubuntu
 </pre>
 	</dt>
 	<dd>Verify that you	can switch to the new user
 <pre>
-# su ubuntu
+$ su ubuntu
 To run a command as administrator (user &quot;root&quot;), use &quot;sudo &lt;command&gt;&quot;.
 See &quot;man sudo_root&quot; for details.
 $ whoami
