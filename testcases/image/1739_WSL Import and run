@@ -150,15 +150,27 @@ $ hello
 Hello, world!
 </pre></dd>
 
-	<dt>Install and run a graphical application
+	<dt>Install and run graphical applications
 <pre>
-$ sudo apt install x11-apps
+$ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal
 [...]
 </pre>
 	</dt>
 		<dd>Start one of the graphical application from the x11-apps package, like xcalc for example:
 <pre>
 $ xcalc
+(Wait a moment until the application starts and is displayed)
+</pre></dd>
+
+		<dd>Start the GTK demo application with the default backend:
+<pre>
+$ gtk4-demo
+(Wait a moment until the application starts and is displayed)
+</pre></dd>
+
+		<dd>Start the GTK demo application with the Wayland backend:
+<pre>
+$ GDK_BACKEND=wayland gtk4-demo
 (Wait a moment until the application starts and is displayed)
 </pre></dd>
 
