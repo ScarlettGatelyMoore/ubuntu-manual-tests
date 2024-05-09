@@ -149,7 +149,7 @@ $ xcalc
 <pre>logout</pre></dt>
 	<dd>Check that your back to the PowerShell prompt</dd>
 
-	<dt>Uninstall the application
+	<dt>Unregister the distro instance
 <pre>
 > wsl.exe --unregister Ubuntu20.04.3
 </pre></dt>
