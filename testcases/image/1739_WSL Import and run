@@ -48,9 +48,26 @@ Codename:       focal
 </pre>
 		</dd>
 
-	<dt>Since the image	has been installed directly and not with the distro launcher, you're logged in a root by default and have to create a first user manually.
+    <dt>Wait for cloud-init to finish its job, if it's present in the system (cloud-init is only present in recent releases):
 <pre>
-# adduser ubuntu
+$ which cloud-init && cloud-init status --wait
+/usr/bin/cloud-init
+
+status: disabled
+</pre></dt>
+
+  <dt>Since the image	has been installed directly and not with the distro launcher, you're logged in a root by default and have to create a first user manually. But first, verify that there is no other user already created by default:
+<pre>
+$ id 1000
+id: '1000': no such user: No such file or directory
+$ id ubuntu
+id: 'ubuntu': no such user
+$ egrep ':100[0-9]:' /etc/passwd        # should output nothing.
+</pre>
+		</dt>
+    <dt>Create a new user named 'ubuntu':
+<pre>
+$ adduser ubuntu
 Adding user `ubuntu' ...
 Adding new group `ubuntu' (1000) ...
 Adding new user `ubuntu' (1000) with group `ubuntu' ...
