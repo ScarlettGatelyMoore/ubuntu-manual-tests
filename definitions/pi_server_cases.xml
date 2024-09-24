@@ -468,11 +468,6 @@
 
   <ut:case id="1741_RaspberryPi CM4 2GB Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 4 2GB</ut:define>
-    <ut:define name="post-install">
-      <p>Before booting your CM4 with the new image, edit config.txt on the boot
-      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
-      line to ensure the USB ports on the IO board operate correctly</p>
-    </ut:define>
     <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
@@ -496,11 +491,6 @@
 
   <ut:case id="1742_RaspberryPi CM4 4GB Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 4 4GB</ut:define>
-    <ut:define name="post-install">
-      <p>Before booting your CM4 with the new image, edit config.txt on the boot
-      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
-      line to ensure the USB ports on the IO board operate correctly</p>
-    </ut:define>
     <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
@@ -524,11 +514,6 @@
 
   <ut:case id="1777_RaspberryPi CM4 8GB Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 4 8GB</ut:define>
-    <ut:define name="post-install">
-      <p>Before booting your CM4 with the new image, edit config.txt on the boot
-      (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
-      line to ensure the USB ports on the IO board operate correctly</p>
-    </ut:define>
     <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
