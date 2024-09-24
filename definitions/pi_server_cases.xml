@@ -181,6 +181,7 @@
     <dt>
       Configure bluetooth, scan for, and pair, a device
       <ul>
+        <li>Install bluez with <code>sudo apt install bluez</code></li>
         <li>Run <code>sudo bluetoothctl</code></li>
         <li>Check bluetoothctl prints <code>Agent registered</code></li>
         <li>Check the MAC address looks "real" (not some obviously blank
