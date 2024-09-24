@@ -2,28 +2,12 @@
 The purpose of this testcase is to test that kernel crash dumps are <strong>successfully disabled</strong> on installed systems which do not meet certain criteria. The result of this test case will depend on the specifics of your hardware. Please perform the test using a system that <strong>does not meet</strong> the following minimum criteria:
 </p>
 
-<table>
-    <tr>
-        <th>Hardware items</th>
-        <th> Minimum specification</th>
-    </tr>
-    <tr>
-        <td>CPU Architecture</td>
-        <td> amd64 (x86_64), arm64 (aarch64), or s390x</td>
-    </tr>
-    <tr>
-        <td>CPU Cores</td>
-        <td> >=4</td>
-    </tr>
-    <tr>
-        <td>Memory (RAM + SWAP)</td>
-        <td> >=6GiB</td>
-    </tr>
-    <tr>
-        <td>Disk space in /var</td>
-        <td> 5 x (Memory)</td>
-    </tr>
-</table>
+<ul>
+    <li><strong> CPU Architecture</strong>: amd64 (x86_64), arm64 (aarch64), or s390x </li>
+    <li><strong> CPU Cores</strong>: >=4 </li>
+    <li><strong> Memory (RAM + SWAP)</strong>: >=6GiB</li>
+    <li><strong> Disk space in /var</strong>: 5 x (Memory)</li>
+</ul>
 
 <em>
     Proceed in your native language if you wish. Instructions will remain in
