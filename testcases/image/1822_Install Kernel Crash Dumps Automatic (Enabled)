@@ -1,8 +1,5 @@
 <p>
-The purpose of this testcase is to test that kernel crash dumps are
-<b>successfully enabled</b> on installed systems which meet certain criteria.
-The result of this test case will depend on the specifics of your hardware.
-Please perform the test using a system that <b>meets</b> the following minimum
+The purpose of this testcase is to test that kernel crash dumps are <strong>successfully enabled</strong> on installed systems which meet certain criteria. The result of this test case will depend on the specifics of your hardware. Please perform the test using a system that <strong>meets</strong> the following minimum
 criteria:
 </p>
 
@@ -68,9 +65,9 @@ something similar to:</p>
 
 <p> Ensure that: </p>
 <ul>
-    <li><b>current state</b> shows <b> ready to dump</b>.</li>
-    <li> USE_KDUMP is set to <b>1</b></li>
-    <li> The <i>crashkernel</i> parameter  is set on the kernel command line.
+    <li><strong>current state</strong> shows <strong> ready to dump</strong>.</li>
+    <li> <strong>USE_KDUMP</strong> is set to <strong>1</strong></li>
+    <li> The <em>crashkernel</em> parameter  is set on the kernel command line.
     (this can be checked using: <code>sudo cat /proc/cmdline)</code></li>
 </ul>
 

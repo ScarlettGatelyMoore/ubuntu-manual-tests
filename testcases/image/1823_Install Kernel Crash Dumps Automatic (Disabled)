@@ -1,9 +1,5 @@
 <p>
-The purpose of this testcase is to test that kernel crash dumps are
-<b>successfully disabled</b> on installed systems which do not meet certain criteria.
-The result of this test case will depend on the specifics of your hardware.
-Please perform the test using a system that <b>does not meet</b> the following
-minimum criteria:
+The purpose of this testcase is to test that kernel crash dumps are <strong>successfully disabled</strong> on installed systems which do not meet certain criteria. The result of this test case will depend on the specifics of your hardware. Please perform the test using a system that <strong>does not meet</strong> the following minimum criteria:
 </p>
 
 <table>
@@ -69,8 +65,8 @@ something similar to:</p>
 
 <p> Ensure that: </p>
 <ul>
-    <li><b>current state</b> shows <b>Not ready to dump</b>.</li>
-    <li> USE_KDUMP is set to <b>0</b></li>
+    <li><strong>current state</strong> shows <strong>Not ready to dump</strong>.</li>
+    <li> <strong>USE_KDUMP</strong> is set to <strong>0</strong></li>
 </ul>
 
 
