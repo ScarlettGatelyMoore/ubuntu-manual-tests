@@ -35,6 +35,17 @@
     </dd>
   </ut:test>
 
+  <ut:test id="running">
+    <dt>
+      After logging in, run <code>systemctl status</code>, and look at the
+      "State:" reported at the top of the output
+    </dt>
+    <dd>
+      State should be reported as "running". In particular, it should
+      <em>not</em> read "degraded".
+    </dd>
+  </ut:test>
+
   <ut:test id="flash-kernel">
     <dt>
       Run <code>sudo flash-kernel</code>
@@ -224,6 +235,7 @@
   <ut:case id="1711_RaspberryPi 4 2GB Post-install">
     <ut:define name="model">Raspberry Pi 4 2GB</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -253,6 +265,7 @@
   <ut:case id="1719_RaspberryPi 4 4GB Post-install">
     <ut:define name="model">Raspberry Pi 4 4GB</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -282,6 +295,7 @@
   <ut:case id="1720_RaspberryPi 4 8GB Post-install">
     <ut:define name="model">Raspberry Pi 4 8GB</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -311,6 +325,7 @@
   <ut:case id="1721_RaspberryPi 3B+ Post-install">
     <ut:define name="model">Raspberry Pi 3B+</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -333,6 +348,7 @@
   <ut:case id="1722_RaspberryPi 3B Post-install">
     <ut:define name="model">Raspberry Pi 3B</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -355,6 +371,7 @@
   <ut:case id="1723_RaspberryPi 3A+ Post-install">
     <ut:define name="model">Raspberry Pi 3A+</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -376,6 +393,7 @@
   <ut:case id="1724_RaspberryPi 2 Post-install">
     <ut:define name="model">Raspberry Pi 2</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -395,6 +413,7 @@
 
   <ut:case id="1726_RaspberryPi CM3+ Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 3+</ut:define>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -409,6 +428,7 @@
 
   <ut:case id="1727_RaspberryPi CM3+ Lite Post-install">
     <ut:define name="model">Raspberry Pi Compute Module 3+ Lite</ut:define>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -424,6 +444,7 @@
   <ut:case id="1740_RaspberryPi 400 Post-install">
     <ut:define name="model">Raspberry Pi 400</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -451,6 +472,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -478,6 +500,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -505,6 +528,7 @@
       (1st) partition and uncomment the <code>#dtoverlay=dwc2,dr_mode=host</code>
       line to ensure the USB ports on the IO board operate correctly</p>
     </ut:define>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -533,6 +557,7 @@
         activity, but should otherwise remain lit.
       </ut:define>
     </ut:include>
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -550,6 +575,7 @@
   <ut:case id="1793_RaspberryPi 5 4GB Post-install">
     <ut:define name="model">Raspberry Pi 5 4GB</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
@@ -575,6 +601,7 @@
   <ut:case id="1794_RaspberryPi 5 8GB Post-install">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
     <ut:include ref="power-led" />
+    <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
