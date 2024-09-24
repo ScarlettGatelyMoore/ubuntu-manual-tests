@@ -210,20 +210,19 @@
     <dt>
       With <ut:var name="device" />, and an available MP3 file:
       <ul>
-        <li>Install mpg321 and amixer with <code>sudo apt install mpg321
+        <li>Install ffmpeg and amixer with <code>sudo apt install ffmpeg
           alsa-utils</code></li>
-        <li>Find the correct hardware output for the <ut:var name="output" />:
-          <code>cat /proc/asound/cards</code> and note the number at the start
-          of the line for the <ut:var name="output" /> (usually 0 and possibly
-          1 for any connected monitor(s), and 1 or possibly 2 for the headphone
-          jack)</li>
-        <li>Attempt to play your MP3 file with: <code>mpg321 -o alsa -a
-          hw:<em>num</em>,0 <em>music.mp3</em></code> substituting
-          <em>num</em> for the number found during the previous step, and
-          <em>music.mp3</em> for your choice of MP3 file, e.g. <code>mpg321 -o
-          alsa -a hw:0,0 &quot;Jeff Wayne - War of the
+        <li>Find the correct card name for the <ut:var name="output" />:
+          <code>cat /proc/asound/cards</code> and note the name in [brackets]
+          for the <ut:var name="output" /></li>
+        <li>Attempt to play your MP3 file with: <code>ffmpeg -i
+          <em>music.mp3</em> -f alsa default:CARD=<em>name</em></code>
+          substituting <em>name</em> for the card name found during the
+          previous step, and <em>music.mp3</em> for your choice of MP3 file,
+          e.g. <code>mpg321 -o alsa -a hw:0,0 &quot;Jeff Wayne - War of the
           Worlds.mp3&quot;</code></li>
-        <li>Use <tt>Ctrl+C</tt> to end playback early, if you wish</li>
+        <li>Use <tt>Ctrl+C</tt> or <tt>q</tt> to end playback early, if you
+          wish</li>
         <li>If you cannot hear anything, first check that the mixer's volume is
           not set too low; run <code>alsamixer</code>, and adjust the volume
           (<tt>J</tt> for down, <tt>K</tt> for up) before exiting
