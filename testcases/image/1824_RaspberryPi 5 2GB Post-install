@@ -4,12 +4,21 @@
 -->
 
     
-    <p>This test case is to be carried out on a Raspberry Pi Compute Module 4 2GB.</p>
+    <p>This test case is to be carried out on a Raspberry Pi 5 2GB.</p>
     <p>Follow the installation steps at <a href="https://ubuntu.com/download/iot/installation-media">
       IoT installation media</a>
     </p>
     <dl>
       
+    
+    <dt>
+      After powering on the machine, look at the power LED
+    </dt>
+    <dd>
+      The power LED illuminates and stays illuminated while the kernel continues
+      to boot. 
+    </dd>
+  
     
     <dt>
       After logging in, run <code>systemctl status</code>, and look at the
@@ -50,7 +59,7 @@
     </dt>
     <dd>
       Reported "Mem" under "total" is consistent with a
-      Raspberry Pi Compute Module 4 2GB. It should be in the region of 1.6-1.8GB.
+      Raspberry Pi 5 2GB. It should be in the region of 1.6-1.8GB.
     </dd>
   
     
@@ -77,6 +86,22 @@
     <dd>
       <code>cmp</code> returns 0 and outputs nothing, indicating the files are
       identical
+    </dd>
+  
+    
+    <dt>
+      Connect a USB keyboard to one of the USB2 (black) ports
+    </dt>
+    <dd>
+      Verify that keys typed on the keyboard appear on the console
+    </dd>
+  
+    
+    <dt>
+      Connect a USB keyboard to one of the USB3 (blue) ports
+    </dt>
+    <dd>
+      Verify that keys typed on the keyboard appear on the console
     </dd>
   
     
