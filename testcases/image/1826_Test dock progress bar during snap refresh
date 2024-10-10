@@ -15,15 +15,11 @@
         <dd>If you receive an error telling you that it's not possible to remove the active revision, that means that the 'revert' command failed. Try again to revert the snap, or try with a different snap.</dd>
     <dt>Ensure that your dock is fully visible (just in case that you have enabled the <strong>intellihide</strong> option, and/or a window is covering it).</dt>
     <dt>Type the command <strong>sudo snap refresh SNAP-NAME</strong> (and RETURN key) in the terminal. In our example, the command should be <strong>sudo snap refresh telegram-desktop</strong>.</dt>
-        <dd>A progress bar should appear over the icon of the chosen snap.</dd>
-        <dd>If the "refresh" process completes without a progress bar over the icon, then there is a bug.</dd>
-    <dt>While the progress bar is visible, click over the icon</dt>
-        <dd>A message informing that the snap can't be launched because it is being updated, and to try again later, should pop-up.</dd>
-        <dd>If no message appears, and/or the application launches, then there is a bug.</dd>
+        <dd>A progress bar must appear over the icon of the chosen snap. The progress bar should increase along with the refresh process stages.</dd>
+    <dt>While the progress bar is visible, click over the icon to launch the application.</dt>
+        <dd>A message must pop-up over the icon informing that the snap can't be launched because it is being updated, and to try again later.</dd>
     <dt>When the <strong>refresh</strong> command ends, the progress bar must disappear. Clicking on the icon must launch the application.</dt>
-        <dd>If the progress bar remains, or a message telling you that the snap can't be launched because it is updated is shown, there is a bug.</dd>
 </dl>
-
 <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
     If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
 
