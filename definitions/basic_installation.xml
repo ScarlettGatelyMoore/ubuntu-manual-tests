@@ -393,4 +393,17 @@
     <ut:include ref="zfs-load-encrypted-partition-from-live-session"/>
   </ut:case>
 
+  <ut:case id="1836_Install Windows Dual Boot">
+    <p><strong>This test involves installing Ubuntu on a system with Windows already installed. The size of the Windows installation should leave appropriate space for an Ubuntu installation. Please report whether the system is using BIOS or UEFI, whether Secure Boot is enabled (where applicable), and whether Windows is using BitLocker.</strong></p>
+    <ut:include ref="start" />
+    <ut:include ref="auto-resize" />
+    <ut:include ref="finish" />
+    <ut:test>
+      <dt>Allow the machine to reboot, select Ubuntu at the GRUB menu</dt>
+          <dd>Your new installation boots</dd>
+      <dt>Reboot machine, select Windows at the GRUB menu</dt>
+          <dd>Windows boots and operates as expected</dd>
+    </ut:test>
+  </ut:case>
+
 </ut:configuration>
