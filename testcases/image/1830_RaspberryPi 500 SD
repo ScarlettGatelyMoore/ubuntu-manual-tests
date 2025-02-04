@@ -4,12 +4,12 @@
 -->
 
     
-    <p>This test case is to be carried out on a Raspberry Pi 5 4GB.</p>
+    <p>This test case is to be carried out on a Raspberry Pi 500.</p>
     <p>Follow the installation steps at <a href="https://ubuntu.com/download/iot/installation-media">
-      IoT installation media</a>, and write the image to a USB3 drive.
+      IoT installation media</a>, and write the image to an SD card.
       Then, using <tt>sudo rpi-eeprom-config</tt>, ensure the EEPROM's
       <tt><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#BOOT_ORDER">BOOT_ORDER</a></tt>
-      is set to 0xf41.
+      is set to 0xf1.
     </p>
     <dl>
       
@@ -82,8 +82,8 @@
       appears
     </dt>
     <dd>
-      Reported "Memory" is consistent with a Raspberry Pi 5 4GB.
-      It should be in the region of 3.6-3.8GB.
+      Reported "Memory" is consistent with a Raspberry Pi 500.
+      It should be in the region of 7.6-7.8GB.
     </dd>
   
     <ns0:incldue ref="dual-monitor"></ns0:incldue>
