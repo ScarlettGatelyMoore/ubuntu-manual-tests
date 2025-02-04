@@ -552,7 +552,7 @@
     <ut:include ref="lock-screen" />
   </ut:case>
 
-  <ut:case id="1818_RaspberryPi 5 8GB Desktop USB">
+  <ut:case id="1818_RaspberryPi 5 8GB Desktop NVMe">
     <ut:define name="model">Raspberry Pi 5 8GB</ut:define>
     <ut:define name="storage">an NVMe drive</ut:define>
     <ut:define name="boot-order">0xf61</ut:define>
