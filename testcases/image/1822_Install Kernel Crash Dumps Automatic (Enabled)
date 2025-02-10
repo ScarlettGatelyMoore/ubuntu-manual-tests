@@ -1,4 +1,7 @@
 <p>
+<strong>This test is only valid for Oracular (24.10) and later releases. If testing pre-Oracular media, please just mark this test as passing.</strong>
+</p>
+<p>
 The purpose of this testcase is to test that kernel crash dumps are <strong>successfully enabled</strong> on installed systems which meet certain criteria. The result of this test case will depend on the specifics of your hardware. Please perform the test using a system that <strong>meets</strong> the following minimum
 criteria:
 </p>
