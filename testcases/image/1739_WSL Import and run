@@ -203,6 +203,25 @@ $ GDK_BACKEND=wayland gtk4-demo
 (Wait a moment until the application starts and is displayed)
 </pre></dd>
 
+	<dt>Check that Windows interoperability is still working
+		<dd> Launch a Windows application
+<pre>
+> notepad.exe # It should open.
+</pre>
+		</dd>
+		<dd> List the contents of the C:\Windows
+<pre>
+> ls -l /mnt/c/Windows
+dr-xr-xr-x 1 root root     512 Feb 11 08:58  AppReadiness
+dr-xr-xr-x 1 root root     512 Apr  1  2024  Boot
+dr-xr-xr-x 1 root root     512 Apr  1  2024  Branding
+dr-xr-xr-x 1 root root     512 Oct  7 14:37  BrowserCore
+dr-xr-xr-x 1 root root     512 Jun  4  2024  CSCmnt
+[...]
+</pre>
+		</dd>
+	</dt>
+
 <dt>Exit WSL
 <pre>logout</pre></dt>
 	<dd>Check that your back to the PowerShell prompt</dd>
