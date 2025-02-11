@@ -4,8 +4,25 @@ It requires a working Microsoft Windows 10 or higher installation with WSL2 enab
 
 To run this test you must download the image from <a href="http://cloud-images.ubuntu.com/">http://cloud-images.ubuntu.com/</a>
 
-For example for latest focal image download: <a href="http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz">http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz</a>
+<pre>
+Since the release of Ubuntu LTS 24.04.2 Noble Numbat, new images are found at <a href="https://cdimages.ubuntu.com/ubuntu-wsl/">https://cdimages.ubuntu.com/ubuntu-wsl/</a>
+and their file extension is ".wsl" instead of ".tar.gz".
+</pre>
+
+For example for latest focal image download: <a
+	href="http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz">http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz</a>
+and for the latest noble image:  <a href="https://cdimages.ubuntu.com/ubuntu-wsl/noble/daily-live/pending/noble-wsl-amd64.wsl">https://cdimages.ubuntu.com/ubuntu-wsl/daily-live/noble/pending/noble-wsl-amd64.wsl</a>
 Make sure to download the image from the download link associated to this test case.
+
+Latest releases have cloud-init seeded. To make sure your environment doesn't contain any files that could
+cause cloud-init to change the expected results of this test cases, remove the following directories on the
+host (Windows) filesystem (if they exist):
+
+<ul>
+<li>%USERPROFILE%\.cloud-init</li>
+<li>%USERPROFILE%\.ubuntupro\cloud-init</li>
+</ul>
+
 
 Open Windows Terminal or PowerShell and execute the test case below:
 
@@ -152,7 +169,7 @@ Hello, world!
 
 	<dt>Install and run graphical applications
 <pre>
-$ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal
+$ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal, on noble you'll also need libgles2
 [...]
 </pre>
 	</dt>
@@ -193,7 +210,7 @@ TestUbuntuWSL
 </pre>
 		</dd>
 
-		<dd>And the	directory is empty
+		<dd>And the directory is either missing or empty.
 <pre>
 &gt; ls .\wsl
 &gt;
