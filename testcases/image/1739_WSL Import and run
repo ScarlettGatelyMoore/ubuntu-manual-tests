@@ -65,6 +65,18 @@ Codename:       focal
 </pre>
 		</dd>
 
+	<dt>Since Jammy (22.04) systemd is also enabled by default, so make sure it's running and that there are no
+		failed units:
+<pre>
+$ systemctl is-system-running
+running
+$ systemctl --failed
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+  0 loaded units listed.
+</pre>
+	</dt>
+
     <dt>Wait for cloud-init to finish its job, if it's present in the system (cloud-init is only present in recent releases):
 <pre>
 $ which cloud-init && cloud-init status --wait
