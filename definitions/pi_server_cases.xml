@@ -232,6 +232,78 @@
     <dd>Audio can be heard through the device</dd>
   </ut:test>
 
+  <ut:test id="vcgencmd">
+    <dt>
+      Check the CPU clock speed using <code>vcgencmd</code>
+      <ul>
+        <li>Stress the CPU by doing <code>yes > /dev/null &amp;</code></li>
+        <li>Run <code>sudo vcgencmd measure_clock arm</code> after about 5 sec</li>
+        <li>Kill the stress process</li>
+      </ul>
+    </dt>
+    <dd>The output should be around <ut:var name="clock" /> (obtained from online specs)</dd>
+  </ut:test>
+
+  <ut:test id="vcmailbox">
+    <dt>
+      Run <code>sudo vcmailbox 0x00010004 8 8 0 0</code>
+    </dt>
+    <dd>
+      The output should have the board serial number as the 6th integer.
+    </dd>
+  </ut:test>
+
+  <ut:test id="dtmerge">
+    <dt>
+      Test <code>dtmerge</code>
+      <ul>
+        <li>Copy the live device tree using <code>dtc -I fs -O dtb -o test.dtb /proc/device-tree</code></li>
+        <li>Use dtmerge to overclock the SD card. <code>dtmerge test.dtb merged.dtb - sd_overclock=62</code></li>
+        <li>Check the contents of the new DTB. <code>dtdiff test.dtb merged.dtb</code></li>
+        <li>Delete both test.dtb and merged.dtb</li>
+      </ul>
+    </dt>
+    <dd>
+      merged.dtb should have <code>brcm,overclock-50 = 0x3e</code> under the SD card device.
+    </dd>
+  </ut:test>
+
+  <ut:test id="dtoverlay">
+  <dt>
+    Test <code>dtoverlay</code>
+    <ul>
+      <li>Run <code>sudo dtoverlay pwm</code></li>
+      <li>Run <code>sudo dtoverlay -l</code></li>
+    </ul>
+  </dt>
+  <dd>The PWM Overlay should show up as loaded. Remove it by running <code>sudo dtoverlay -r pwm</code></dd>
+  </ut:test>
+
+  <ut:test id="dtparam">
+  <dt>
+    Test <code>dtparam</code>
+    <ul>
+      <li>Run <code>sudo dtparam sd_overclock=62</code></li>
+      <li>Run <code>sudo dtparam -l</code></li>
+    </ul>
+  </dt>
+  <dd>The sd_overclock parameter should show up as set. Remove it by running <code>sudo dtparam -r 0</code></dd>
+  </ut:test>
+  
+  <ut:test id="pinctrl">
+    <dt>
+      Run <code>sudo pinctrl</code>
+    </dt>
+    <dd>THe output should have status of the GPIO pins.</dd>
+  </ut:test>
+
+  <ut:test id="raspinfo">
+    <dt>
+      Run <code>sudo raspinfo</code>
+    </dt>
+    <dd>The output should have an information dump about the Pi.</dd>
+  </ut:test>
+
   <ut:case id="1711_RaspberryPi 4 2GB Post-install">
     <ut:define name="model">Raspberry Pi 4 2GB</ut:define>
     <ut:include ref="power-led" />
@@ -260,6 +332,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.8GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1719_RaspberryPi 4 4GB Post-install">
@@ -290,6 +369,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.8GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1720_RaspberryPi 4 8GB Post-install">
@@ -320,6 +406,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.8GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1721_RaspberryPi 3B+ Post-install">
@@ -343,6 +436,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.4GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1722_RaspberryPi 3B Post-install">
@@ -388,6 +488,13 @@
     </ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.2GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1724_RaspberryPi 2 Post-install">
@@ -424,6 +531,13 @@
       <ut:define name="device">an HDMI monitor that supports audio</ut:define>
       <ut:define name="output">HDMI port</ut:define>
     </ut:include>
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.2GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1727_RaspberryPi CM3+ Lite Post-install">
@@ -439,6 +553,13 @@
       <ut:define name="device">an HDMI monitor that supports audio</ut:define>
       <ut:define name="output">HDMI port</ut:define>
     </ut:include>
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.2GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1740_RaspberryPi 400 Post-install">
@@ -463,6 +584,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.8GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1741_RaspberryPi CM4 2GB Post-install">
@@ -486,6 +614,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.5GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1742_RaspberryPi CM4 4GB Post-install">
@@ -509,6 +644,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.5GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1777_RaspberryPi CM4 8GB Post-install">
@@ -532,6 +674,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1.5GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1752_RaspberryPi Zero 2 Post-install">
@@ -555,6 +704,13 @@
     </ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">1GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1824_RaspberryPi 5 2GB Post-install">
@@ -581,6 +737,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">2.4GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1793_RaspberryPi 5 4GB Post-install">
@@ -607,6 +770,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">2.4GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1794_RaspberryPi 5 8GB Post-install">
@@ -633,6 +803,13 @@
     <ut:include ref="ethernet"><ut:define name="intf">eth0</ut:define></ut:include>
     <ut:include ref="wifi"><ut:define name="intf">wlan0</ut:define></ut:include>
     <ut:include ref="bluetooth" />
+    <ut:include ref="vcgencmd"><ut:define name="clock">2.4GHz</ut:define></ut:include>
+    <ut:include ref="vcmailbox" />
+    <ut:include ref="dtmerge" />
+    <ut:include ref="dtoverlay" />
+    <ut:include ref="dtparam" />
+    <ut:include ref="pinctrl" />
+    <ut:include ref="raspinfo" />
   </ut:case>
 
   <ut:case id="1825_RaspberryPi 5 16GB Post-install">
