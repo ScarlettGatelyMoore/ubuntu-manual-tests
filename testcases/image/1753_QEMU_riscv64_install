@@ -5,7 +5,6 @@ On your installed Ubuntu machine.
 
 <dl>
     <dt>sudo apt install -y opensbi qemu-system-misc u-boot-qemu</dt>
-    <dt>gzip -d &lt;release&gt;-live-server-riscv64.img.gz</dt>
     <dt>rm -f disk</dt>
     <dt>dd if=/dev/zero bs=1M of=disk count=1 seek=16383</dt>
     <dt>Start the installer with:
@@ -15,7 +14,7 @@ On your installed Ubuntu machine.
     -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
     -netdev user,id=net0 \
     -device virtio-net-device,netdev=net0 \
-    -drive file=&lt;release&gt;-live-server-riscv64.img,format=raw,if=virtio \
+    -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio \
     -drive file=disk,format=raw,if=virtio \
     -device virtio-rng-pci
 </pre></dt>
