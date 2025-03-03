@@ -106,11 +106,11 @@
           <code>cat /proc/asound/cards</code> and note the name in [brackets]
           for the HDMI port</li>
         <li>Attempt to play your MP3 file with: <code>ffmpeg -i
-          <em>music.mp3</em> -f alsa default:CARD=<em>name</em></code>
+          <em>music.mp3</em> -f alsa -ar 22050 default:CARD=<em>name</em></code>
           substituting <em>name</em> for the card name found during the
           previous step, and <em>music.mp3</em> for your choice of MP3 file,
-           e.g. <code>ffmpeg "Jeff Wayne - War of the Worlds.mp3"
-          -f alsa default:CARD=vc4hdmi0</code></li>
+           e.g. <code>ffmpeg -i "Jeff Wayne - War of the Worlds.mp3"
+          -f alsa -ar 22050 default:CARD=vc4hdmi0</code></li>
         <li>Use <tt>Ctrl+C</tt> or <tt>q</tt> to end playback early, if you
           wish</li>
         <li>If you cannot hear anything, first check that the mixer's volume is
@@ -131,11 +131,11 @@
           <code>cat /proc/asound/cards</code> and note the name in [brackets]
           for the headphone jack</li>
         <li>Attempt to play your MP3 file with: <code>ffmpeg -i
-          <em>music.mp3</em> -f alsa default:CARD=<em>name</em></code>
+          <em>music.mp3</em> -f alsa -ar 22050 default:CARD=<em>name</em></code>
           substituting <em>name</em> for the card name found during the
           previous step, and <em>music.mp3</em> for your choice of MP3 file,
-           e.g. <code>ffmpeg "Jeff Wayne - War of the Worlds.mp3"
-          -f alsa default:CARD=vc4hdmi0</code></li>
+           e.g. <code>ffmpeg -i "Jeff Wayne - War of the Worlds.mp3"
+          -f alsa -ar 22050 default:CARD=vc4hdmi0</code></li>
         <li>Use <tt>Ctrl+C</tt> or <tt>q</tt> to end playback early, if you
           wish</li>
         <li>If you cannot hear anything, first check that the mixer's volume is
