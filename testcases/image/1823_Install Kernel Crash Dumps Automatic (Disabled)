@@ -9,7 +9,7 @@ The purpose of this testcase is to test that kernel crash dumps are <strong>succ
     <li><strong> CPU Architecture</strong>: amd64 (x86_64), arm64 (aarch64), or s390x </li>
     <li><strong> CPU Cores</strong>: >=4 </li>
     <li><strong> Memory (RAM + SWAP)</strong>: >=6GiB</li>
-    <li><strong> Disk space in /var</strong>: 5 x (Memory)</li>
+    <li><strong> Disk size</strong>: >= 5 x (Memory)</li>
 </ul>
 
 <em>
