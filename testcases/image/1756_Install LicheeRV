@@ -55,17 +55,20 @@ The scope of this test is to ensure that riscv64+licheerv image boots from SD ca
         <dd>    link/ether ae:12:05:64:8e:2c brd ff:ff:ff:ff:ff:ff</dd>
         <dd>3: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc mq state DOWN group default qlen 1000</dd>
         <dd>    link/ether 34:20:03:2a:0d:0c brd ff:ff:ff:ff:ff:ff</dd>
-        <dd>Try to connect to local network by using the following netplan configuration file saved at /etc/netplan/wifi.yaml</dd>
-        <dd> network:</dd>
-        <dd>  version: 2</dd>
-        <dd>  renderer: networkd</dd>
-        <dd>  wifis:</dd>
-        <dd>    wlan0:</dd>
-        <dd>      dhcp4: yes</dd>
-        <dd>      dhcp6: yes</dd>
-        <dd>      access-points:</dd>
-        <dd>        "YOUR_SSID":</dd>
-        <dd>          password: "YOUR_PASSWORD"</dd>
+        <dd>Try to connect to local network by using the following netplan configuration file saved at /etc/netplan/wifi.yaml<br />
+<pre>
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    wlan0:
+      dhcp4: yes
+      dhcp6: yes
+      access-points:
+        "YOUR_SSID":
+          password: "YOUR_PASSWORD"
+</pre>
+        </dd>
         <dd>And then type:</dd>
         <dd>$ sudo netplan apply </dd>
         <dd>You should connect successfully to your local network in a few seconds</dd>
