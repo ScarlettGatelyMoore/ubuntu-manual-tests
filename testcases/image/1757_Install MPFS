@@ -12,6 +12,7 @@ The scope of this test is to ensure that riscv64+icicle image boots from SD card
     <dt>Connect to the 'kernel' serial console</dt>
         <dd>sudo screen /dev/ttyUSB1 115200</dd>
     <dt>Power on the board</dt>
+        <dd>Power cycling is required here. Pressing the reset button while running the preinstalled SDK does return the board into a bootable state</dd>
         <dd>You should see U-BOOT menu on the firmware console</dd>
         <dd>It should then boot GRUB after a delay</dd>
         <dd>You should see GRUB menu</dd>
