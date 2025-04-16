@@ -6,7 +6,7 @@ On your installed Ubuntu machine.
 <dl>
     <dt>sudo apt install -y opensbi qemu-system-misc u-boot-qemu</dt>
     <dt>rm -f disk</dt>
-    <dt>dd if=/dev/zero bs=1M of=disk count=1 seek=16383</dt>
+    <dt>truncate -s 16G disk</dt>
     <dt>Start the installer with:
 <pre>
 /usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
