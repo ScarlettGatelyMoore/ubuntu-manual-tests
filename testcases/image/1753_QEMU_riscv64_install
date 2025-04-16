@@ -13,24 +13,14 @@ On your installed Ubuntu machine.
     -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
     -netdev user,id=net0 \
     -device virtio-net-device,netdev=net0 \
-    -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio \
+    -drive file=disk,format=raw,if=virtio \
+    -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio,readonly=on \
     -drive file=disk,format=raw,if=virtio \
     -device virtio-rng-pci
 </pre></dt>
     <dt>Install on the 16 GiB drive.</dt>
         <dd>The installation finishes without reporting failures.</dd>
-    <dt>During the reboot press the Enter key to access U-Boot's command line.</dt>
-    <dt>Execute the poweroff command</dt>
-        <dd>QEMU terminates</dd>
-    <dt>Run the installed system with:
-<pre>
-/usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
-    -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
-    -netdev user,id=net0 \
-    -device virtio-net-device,netdev=net0 \
-    -drive file=disk,format=raw,if=virtio \
-    -device virtio-rng-pci
-</pre></dt>
+    <dt>Reboot<dt>
         <dd>The system boots via GRUB.</dd>
     <dt>Login in with the username and password defined during the installation</dt>
     <dt>Run any command that is not installed, e.g. hello.</dt>
