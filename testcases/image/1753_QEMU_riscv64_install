@@ -29,6 +29,11 @@ On your installed Ubuntu machine.
         <dd>Check that the package performs correctly.</dd>
     <dt>Install a snap, e.g. hello.</dt>
         <dd>check that the snap works correctly.</dd>
+    <dt>Check grub.cfg</dt>
+        <dd>If installing to real hardware using a device-tree,
+	/boot/dtb-<kernel-version> should exists and
+	/boot/grub/grub.cfg should contain a devicetree command loading
+	the this device-tree.</dd>
     <dt>Poweroff</dt>
         <dd>Console messages should reach the poweroff target</dd>
         <dd>There should be final message 'reboot: Power down'</dd>
