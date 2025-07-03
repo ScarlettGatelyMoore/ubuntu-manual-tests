@@ -15,7 +15,6 @@ On your installed Ubuntu machine.
     -device virtio-net-device,netdev=net0 \
     -drive file=disk,format=raw,if=virtio \
     -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio,readonly=on \
-    -drive file=disk,format=raw,if=virtio \
     -device virtio-rng-pci
 </pre></dt>
     <dt>Install on the 16 GiB drive.</dt>
