@@ -41,7 +41,7 @@ write_files:
     [user]
     default=ubuntu
 
-packages: [hello, x11-apps, gtk-4-examples, libgles2]
+packages: [hello, x11-apps, gtk-4-examples]
 </pre>
 	</dd>
 	<dt>Install a new instance from the image you downloaded

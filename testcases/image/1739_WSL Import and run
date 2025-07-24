@@ -181,7 +181,7 @@ Hello, world!
 
 	<dt>Install and run graphical applications
 <pre>
-$ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal, on noble you'll also need libgles2
+$ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal
 [...]
 </pre>
 	</dt>

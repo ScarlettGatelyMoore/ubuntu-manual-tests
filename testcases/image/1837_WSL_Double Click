@@ -123,7 +123,7 @@ Hello, world!
 
 	<dt>Install and run graphical applications
 <pre>
-$ sudo apt install x11-apps gtk-4-examples libgles2
+$ sudo apt install x11-apps gtk-4-examples
 [...]
 </pre>
 	</dt>
