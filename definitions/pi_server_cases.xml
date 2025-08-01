@@ -73,6 +73,30 @@
     </dd>
   </ut:test>
 
+  <ut:test id="ab-piboot">
+    <dt>
+      (for 25.10, questing, and onwards only)<br/>
+      Create new boot assets and deliberately corrupt them, ensuring that
+      boot fallback operates as expected
+      <ul>
+        <li>Run <code>sudo flash-kernel</code> to write new boot assets to the
+          boot partition</li>
+        <li>Run <code>sudo truncate -s 10M /boot/firmware/vmlinuz</code> to
+          truncate the Linux kernel, corrupting it</li>
+        <li>Run <code>sudo reboot</code></li>
+        <li>Once the system finally returns to a login prompt, run <code>cat
+          /boot/firmware/new/state</code></li>
+      </ul>
+    </dt>
+    <dd>
+      Observe three separate reboots: the first should be relatively short and
+      causes the pi to enter "tryboot" mode. The second should fail with the
+      Linux kernel panicking. The third should be the fallback which should
+      then succeed. The final cat command should print "bad" indicating the
+      new boot assets were found to be faulty.
+    </dd>
+  </ut:test>
+
   <ut:test id="usb-file-transfer">
     <dt>
       Perform a large (300-600MB) file copy to USB storage
@@ -294,7 +318,7 @@
     <dt>
       Run <code>sudo pinctrl</code>
     </dt>
-    <dd>THe output should have status of the GPIO pins.</dd>
+    <dd>The output should have status of the GPIO pins.</dd>
   </ut:test>
 
   <ut:test id="raspinfo">
@@ -311,6 +335,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -348,6 +373,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -385,6 +411,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -422,6 +449,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -452,6 +480,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -475,6 +504,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">300-500MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -504,6 +534,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -524,6 +555,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -546,6 +578,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">800-1000MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2</ut:define></ut:include>
@@ -569,6 +602,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="audio">
@@ -599,6 +633,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="audio">
@@ -629,6 +664,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="audio">
@@ -659,6 +695,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="audio">
@@ -695,6 +732,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">300-500MB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="audio">
@@ -720,6 +758,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">1.6-1.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -753,6 +792,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">3.6-3.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -786,6 +826,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -819,6 +860,7 @@
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">15GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
@@ -838,13 +880,14 @@
     <ut:include ref="bluetooth" />
   </ut:case>
 
-  <ut:case id="1826_RaspberryPi 500 Post-install">
+  <ut:case id="1841_RaspberryPi 500 Post-install">
     <ut:define name="model">Raspberry Pi 500</ut:define>
     <ut:include ref="power-led" />
     <ut:include ref="running" />
     <ut:include ref="flash-kernel" />
     <ut:include ref="reboot" />
     <ut:include ref="shutdown" />
+    <ut:include ref="ab-piboot" />
     <ut:include ref="ram-free"><ut:define name="mem">7.6-7.8GB</ut:define></ut:include>
     <ut:include ref="usb-file-transfer" />
     <ut:include ref="usb-keyboard"><ut:define name="usb">USB2 (black)</ut:define></ut:include>
