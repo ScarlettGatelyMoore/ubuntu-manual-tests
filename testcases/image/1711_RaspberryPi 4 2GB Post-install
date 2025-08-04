@@ -55,6 +55,29 @@
   
     
     <dt>
+      (for 25.10, questing, and onwards only)<br>
+      Create new boot assets and deliberately corrupt them, ensuring that
+      boot fallback operates as expected
+      <ul>
+        <li>Run <code>sudo flash-kernel</code> to write new boot assets to the
+          boot partition</li>
+        <li>Run <code>sudo truncate -s 10M /boot/firmware/vmlinuz</code> to
+          truncate the Linux kernel, corrupting it</li>
+        <li>Run <code>sudo reboot</code></li>
+        <li>Once the system finally returns to a login prompt, run <code>cat
+          /boot/firmware/new/state</code></li>
+      </ul>
+    </dt>
+    <dd>
+      Observe three separate reboots: the first should be relatively short and
+      causes the pi to enter "tryboot" mode. The second should fail with the
+      Linux kernel panicking. The third should be the fallback which should
+      then succeed. The final cat command should print "bad" indicating the
+      new boot assets were found to be faulty.
+    </dd>
+  
+    
+    <dt>
       Check output of <code>free -h</code>
     </dt>
     <dd>
@@ -310,7 +333,7 @@
     <dt>
       Run <code>sudo pinctrl</code>
     </dt>
-    <dd>THe output should have status of the GPIO pins.</dd>
+    <dd>The output should have status of the GPIO pins.</dd>
   
     
     <dt>
