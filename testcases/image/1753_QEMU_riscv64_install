@@ -7,7 +7,7 @@ On your installed Ubuntu machine.
     <dt>sudo apt install -y opensbi qemu-system-misc u-boot-qemu</dt>
     <dt>rm -f disk</dt>
     <dt>truncate -s 16G disk</dt>
-    <dt>Start the installer with:
+    <dt>Start the installer with (needs QEMU > 10.1, available on Ubuntu 25.10):
 <pre>
 /usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
     -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
@@ -15,7 +15,7 @@ On your installed Ubuntu machine.
     -device virtio-net-device,netdev=net0 \
     -drive file=disk,format=raw,if=virtio \
     -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio,readonly=on \
-    -device virtio-rng-pci
+    -device virtio-rng-pci -cpu rva23s64
 </pre></dt>
     <dt>Install on the 16 GiB drive.</dt>
         <dd>The installation finishes without reporting failures.</dd>
