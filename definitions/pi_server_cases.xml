@@ -81,7 +81,7 @@
       <ul>
         <li>Run <code>sudo flash-kernel</code> to write new boot assets to the
           boot partition</li>
-        <li>Run <code>sudo truncate -s 10M /boot/firmware/vmlinuz</code> to
+        <li>Run <code>sudo truncate -s 10M /boot/firmware/new/vmlinuz</code> to
           truncate the Linux kernel, corrupting it</li>
         <li>Run <code>sudo reboot</code></li>
         <li>Once the system finally returns to a login prompt, run <code>cat
