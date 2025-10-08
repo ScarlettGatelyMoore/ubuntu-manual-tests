@@ -91,10 +91,14 @@
     <dt>Create a file in the /home/$USER/ directory to check for later.</dt>
     <dt>Run the following command to create a file we'll check for later:</dt>
       <dd>echo "dummy file" &gt; /home/$USER/dummy_file</dd>
+    <dt>It's important that before rebooting from this first installed system, you must also run:</dt>
+      <dd>sync</dd>
   
     
     <dt>Shutdown the installed system.</dt>
     <dt>Put the installation medium back in, and boot into the installation of a new system.</dt>
+    <dt>Once you've booted into the second live session, quit the installer, and mount the /home partition. Inspect the contents of the /home partition and ensure the dummy_file is present</dt>
+    <dt>Now, start the installer and perform the second installation</dt>
       <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
     <dt>Continue installation as normal, and reboot once finished.</dt>
   
