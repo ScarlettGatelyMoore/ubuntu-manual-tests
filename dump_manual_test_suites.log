@@ -1,0 +1,1289 @@
+Dumping manual tests for Resolute in /home/ubuntu/manual_test_suites/Resolute
+milestone series id: 109
+Dumping testsuite Ubuntu Desktop arm64
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop arm64 to Ubuntu Desktop arm64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64 ~
+~
+Dumping testsuite Edubuntu Desktop arm64+raspi
+Dumping product Edubuntu Desktop arm64+raspi
+Mapping Edubuntu Desktop arm64+raspi to Edubuntu Desktop arm64+raspi
+~/manual_test_suites/Resolute/products/Edubuntu Desktop arm64+raspi ~
+~
+Dumping testsuite Xubuntu Installation
+Dumping product Xubuntu Desktop i386
+Mapping Xubuntu Installation to Xubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Xubuntu Desktop i386 ~
+~
+Dumping testsuite Xubuntu Post-installation
+Dumping product Xubuntu Desktop i386
+Mapping Xubuntu Post-installation to Xubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Xubuntu Desktop i386 ~
+~
+Dumping testsuite Lubuntu Desktop
+Dumping product Lubuntu Desktop powerpc
+Mapping Lubuntu Desktop to Lubuntu Desktop powerpc
+~/manual_test_suites/Resolute/products/Lubuntu Desktop powerpc ~
+~
+Skipping testsuite Xubuntu Installation, already done
+Dumping product Xubuntu Desktop amd64
+Mapping Xubuntu Installation to Xubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Xubuntu Desktop amd64 ~
+~
+Skipping testsuite Xubuntu Post-installation, already done
+Dumping product Xubuntu Desktop amd64
+Mapping Xubuntu Post-installation to Xubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Xubuntu Desktop amd64 ~
+~
+Dumping testsuite Legacy testcases for 'Xubuntu Alternate i386'
+Dumping product Xubuntu Alternate i386
+Mapping Legacy testcases for 'Xubuntu Alternate i386' to Xubuntu Alternate i386
+~/manual_test_suites/Resolute/products/Xubuntu Alternate i386 ~
+~
+Dumping testsuite Lubuntu Alternate
+Dumping product Lubuntu Alternate amd64
+Mapping Lubuntu Alternate to Lubuntu Alternate amd64
+~/manual_test_suites/Resolute/products/Lubuntu Alternate amd64 ~
+~
+Skipping testsuite Lubuntu Alternate, already done
+Dumping product Lubuntu Alternate powerpc
+Mapping Lubuntu Alternate to Lubuntu Alternate powerpc
+~/manual_test_suites/Resolute/products/Lubuntu Alternate powerpc ~
+~
+Skipping testsuite Lubuntu Alternate, already done
+Dumping product Lubuntu Alternate i386
+Mapping Lubuntu Alternate to Lubuntu Alternate i386
+~/manual_test_suites/Resolute/products/Lubuntu Alternate i386 ~
+~
+Dumping testsuite Ubuntu Desktop Mandatory Extras (2)
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop Mandatory Extras (2) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Dumping testsuite Ubuntu Desktop Run-Once (arm64)
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Dumping testsuite Ubuntu Desktop (legacy)
+Dumping product Ubuntu Desktop amd64+mac
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop amd64+mac
+~/manual_test_suites/Resolute/products/Ubuntu Desktop amd64+mac ~
+~
+Skipping testsuite Ubuntu Desktop Run-Once (arm64), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Desktop Mandatory Extras (2), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop Mandatory Extras (2) to Ubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Desktop i386 ~
+~
+Dumping testsuite Ubuntu Base
+Dumping product Ubuntu Base i386
+Mapping Ubuntu Base to Ubuntu Base i386
+~/manual_test_suites/Resolute/products/Ubuntu Base i386 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base armhf
+Mapping Ubuntu Base to Ubuntu Base armhf
+~/manual_test_suites/Resolute/products/Ubuntu Base armhf ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base armel
+Mapping Ubuntu Base to Ubuntu Base armel
+~/manual_test_suites/Resolute/products/Ubuntu Base armel ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base arm64
+Mapping Ubuntu Base to Ubuntu Base arm64
+~/manual_test_suites/Resolute/products/Ubuntu Base arm64 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base amd64
+Mapping Ubuntu Base to Ubuntu Base amd64
+~/manual_test_suites/Resolute/products/Ubuntu Base amd64 ~
+~
+Dumping testsuite Netboot PPC
+Dumping product Netboot powerpc
+Mapping Netboot PPC to Netboot powerpc
+~/manual_test_suites/Resolute/products/Netboot powerpc ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base powerpc
+Mapping Ubuntu Base to Ubuntu Base powerpc
+~/manual_test_suites/Resolute/products/Ubuntu Base powerpc ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base ppc64el
+Mapping Ubuntu Base to Ubuntu Base ppc64el
+~/manual_test_suites/Resolute/products/Ubuntu Base ppc64el ~
+~
+Dumping testsuite Kubuntu Desktop
+Dumping product Kubuntu Desktop amd64
+Mapping Kubuntu Desktop to Kubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Kubuntu Desktop amd64 ~
+~
+Dumping testsuite Kubuntu Desktop Extra
+Dumping product Kubuntu Desktop amd64
+Mapping Kubuntu Desktop Extra to Kubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Kubuntu Desktop amd64 ~
+~
+Dumping testsuite Kubuntu Desktop Extra i386
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop Extra i386 to Kubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Kubuntu Desktop i386 ~
+~
+Skipping testsuite Kubuntu Desktop Extra, already done
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop Extra to Kubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Kubuntu Desktop i386 ~
+~
+Skipping testsuite Kubuntu Desktop, already done
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop to Kubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Kubuntu Desktop i386 ~
+~
+Dumping testsuite Mythbuntu
+Dumping product Mythbuntu Desktop i386
+Mapping Mythbuntu to Mythbuntu Desktop i386
+~/manual_test_suites/Resolute/products/Mythbuntu Desktop i386 ~
+~
+Skipping testsuite Mythbuntu, already done
+Dumping product Mythbuntu Desktop amd64
+Mapping Mythbuntu to Mythbuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Mythbuntu Desktop amd64 ~
+~
+Dumping testsuite Edubuntu
+Dumping product Edubuntu DVD amd64
+Mapping Edubuntu to Edubuntu DVD amd64
+~/manual_test_suites/Resolute/products/Edubuntu DVD amd64 ~
+~
+Skipping testsuite Edubuntu, already done
+Dumping product Edubuntu DVD i386
+Mapping Edubuntu to Edubuntu DVD i386
+~/manual_test_suites/Resolute/products/Edubuntu DVD i386 ~
+~
+Dumping testsuite Ubuntu Server
+Dumping product Ubuntu Server amd64
+Mapping Ubuntu Server to Ubuntu Server amd64
+~/manual_test_suites/Resolute/products/Ubuntu Server amd64 ~
+~
+Dumping testsuite Ubuntu Mate
+Dumping product Ubuntu MATE Desktop powerpc
+Mapping Ubuntu Mate to Ubuntu MATE Desktop powerpc
+~/manual_test_suites/Resolute/products/Ubuntu MATE Desktop powerpc ~
+~
+Skipping testsuite Ubuntu Mate, already done
+Dumping product Ubuntu MATE Desktop i386
+Mapping Ubuntu Mate to Ubuntu MATE Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu MATE Desktop i386 ~
+~
+Skipping testsuite Ubuntu Mate, already done
+Dumping product Ubuntu MATE Desktop amd64
+Mapping Ubuntu Mate to Ubuntu MATE Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu MATE Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Kylin Installation
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin Installation to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop i386 ~
+~
+Skipping testsuite Ubuntu Kylin Installation, already done
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin Installation to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Server arm64+raspi
+Dumping product Ubuntu Server armhf+omap4
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+omap4
+~/manual_test_suites/Resolute/products/Ubuntu Server armhf+omap4 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+omap
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+omap
+~/manual_test_suites/Resolute/products/Ubuntu Server armhf+omap ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server amd64+mac
+Mapping Ubuntu Server to Ubuntu Server amd64+mac
+~/manual_test_suites/Resolute/products/Ubuntu Server amd64+mac ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server powerpc
+Mapping Ubuntu Server to Ubuntu Server powerpc
+~/manual_test_suites/Resolute/products/Ubuntu Server powerpc ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server ppc64el
+Mapping Ubuntu Server to Ubuntu Server ppc64el
+~/manual_test_suites/Resolute/products/Ubuntu Server ppc64el ~
+~
+Dumping testsuite Desktop Upgrade
+Dumping product Upgrade Edubuntu amd64
+Mapping Desktop Upgrade to Upgrade Edubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Edubuntu amd64 ~
+~
+Dumping testsuite Xubuntu Minimal
+Dumping product Xubuntu Core
+Mapping Xubuntu Minimal to Xubuntu Core
+~/manual_test_suites/Resolute/products/Xubuntu Core ~
+~
+Dumping testsuite Kubuntu Upgrades
+Dumping product Upgrade Kubuntu i386
+Mapping Kubuntu Upgrades to Upgrade Kubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Kubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Lubuntu amd64
+Mapping Desktop Upgrade to Upgrade Lubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Lubuntu amd64 ~
+~
+Dumping testsuite LTS Desktop Upgrade (Trusty)
+Dumping product Upgrade Xubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Xubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Xubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Xubuntu i386
+Mapping Desktop Upgrade to Upgrade Xubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Xubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Xubuntu amd64
+Mapping Desktop Upgrade to Upgrade Xubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Xubuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu Studio amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu Studio amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu Studio amd64 ~
+~
+Dumping testsuite Server upgrade
+Dumping product Upgrade Ubuntu Server i386
+Mapping Server upgrade to Upgrade Ubuntu Server i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu Server i386 ~
+~
+Skipping testsuite Server upgrade, already done
+Dumping product Upgrade Ubuntu Server amd64
+Mapping Server upgrade to Upgrade Ubuntu Server amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu Server amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu MATE i386
+Mapping Desktop Upgrade to Upgrade Ubuntu MATE i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu MATE i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu MATE amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu MATE amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu MATE amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade UbuntuKylin i386
+Mapping Desktop Upgrade to Upgrade UbuntuKylin i386
+~/manual_test_suites/Resolute/products/Upgrade UbuntuKylin i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade UbuntuKylin amd64
+Mapping Desktop Upgrade to Upgrade UbuntuKylin amd64
+~/manual_test_suites/Resolute/products/Upgrade UbuntuKylin amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu i386
+Mapping Desktop Upgrade to Upgrade Ubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Ubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Ubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu GNOME i386
+Mapping Desktop Upgrade to Upgrade Ubuntu GNOME i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu GNOME i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu GNOME amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu GNOME amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu GNOME amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Edubuntu i386
+Mapping Desktop Upgrade to Upgrade Edubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Edubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Lubuntu i386
+Mapping Desktop Upgrade to Upgrade Lubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Lubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Mythbuntu amd64
+Mapping Desktop Upgrade to Upgrade Mythbuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Mythbuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Mythbuntu i386
+Mapping Desktop Upgrade to Upgrade Mythbuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Mythbuntu i386 ~
+~
+Dumping testsuite Automated Upgrade
+Dumping product Upgrade Ubuntu amd64
+Mapping Automated Upgrade to Upgrade Ubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu amd64 ~
+~
+Skipping testsuite Automated Upgrade, already done
+Dumping product Upgrade Ubuntu i386
+Mapping Automated Upgrade to Upgrade Ubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server s390x
+Mapping Ubuntu Server to Ubuntu Server s390x
+~/manual_test_suites/Resolute/products/Ubuntu Server s390x ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Lubuntu amd64
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Lubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Lubuntu amd64 ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Lubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Lubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Lubuntu i386 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base s390x
+Mapping Ubuntu Base to Ubuntu Base s390x
+~/manual_test_suites/Resolute/products/Ubuntu Base s390x ~
+~
+Skipping testsuite Kubuntu Upgrades, already done
+Dumping product Upgrade Kubuntu amd64
+Mapping Kubuntu Upgrades to Upgrade Kubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Kubuntu amd64 ~
+~
+Dumping testsuite Kubuntu LTS Upgrades
+Dumping product Upgrade Kubuntu amd64
+Mapping Kubuntu LTS Upgrades to Upgrade Kubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Kubuntu amd64 ~
+~
+Skipping testsuite Kubuntu LTS Upgrades, already done
+Dumping product Upgrade Kubuntu i386
+Mapping Kubuntu LTS Upgrades to Upgrade Kubuntu i386
+~/manual_test_suites/Resolute/products/Upgrade Kubuntu i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server i386
+Mapping Ubuntu Server to Ubuntu Server i386
+~/manual_test_suites/Resolute/products/Ubuntu Server i386 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop powerpc
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop powerpc
+~/manual_test_suites/Resolute/products/Ubuntu Desktop powerpc ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch armhf
+Mapping Blank to Ubuntu Touch armhf
+~/manual_test_suites/Resolute/products/Ubuntu Touch armhf ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch i386
+Mapping Blank to Ubuntu Touch i386
+~/manual_test_suites/Resolute/products/Ubuntu Touch i386 ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch arm64
+Mapping Blank to Ubuntu Touch arm64
+~/manual_test_suites/Resolute/products/Ubuntu Touch arm64 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi2
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi2
+~/manual_test_suites/Resolute/products/Ubuntu Server armhf+raspi2 ~
+~
+Dumping testsuite Ubuntu Budgie
+Dumping product Ubuntu Budgie Desktop amd64
+Mapping Ubuntu Budgie to Ubuntu Budgie Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Budgie Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Budgie, already done
+Dumping product Ubuntu Budgie Desktop i386
+Mapping Ubuntu Budgie to Ubuntu Budgie Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Budgie Desktop i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server arm64
+Mapping Ubuntu Server to Ubuntu Server arm64
+~/manual_test_suites/Resolute/products/Ubuntu Server arm64 ~
+~
+Dumping testsuite Ubuntu Kylin UKUI Desktop
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin UKUI Desktop to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Kylin UKUI Desktop, already done
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin UKUI Desktop to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop i386 ~
+~
+Dumping testsuite Ubuntu Kylin Optional Apps
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin Optional Apps to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Kylin Optional Apps, already done
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin Optional Apps to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Resolute/products/Ubuntu Kylin Desktop i386 ~
+~
+Dumping testsuite Ubuntu Subiquity amd64
+Dumping product Ubuntu Server Subiquity amd64
+Mapping Ubuntu Subiquity amd64 to Ubuntu Server Subiquity amd64
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity amd64 ~
+~
+Dumping testsuite Lubuntu
+Dumping product Lubuntu Desktop amd64
+Mapping Lubuntu to Lubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Lubuntu Desktop amd64 ~
+~
+Skipping testsuite Lubuntu, already done
+Dumping product Lubuntu Desktop i386
+Mapping Lubuntu to Lubuntu Desktop i386
+~/manual_test_suites/Resolute/products/Lubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi3
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi3
+~/manual_test_suites/Resolute/products/Ubuntu Server armhf+raspi3 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server arm64+raspi3
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server arm64+raspi3
+~/manual_test_suites/Resolute/products/Ubuntu Server arm64+raspi3 ~
+~
+Dumping testsuite Ubuntu Subiquity ppc64el
+Dumping product Ubuntu Server Subiquity ppc64el
+Mapping Ubuntu Subiquity ppc64el to Ubuntu Server Subiquity ppc64el
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity ppc64el ~
+~
+Dumping testsuite Ubuntu Subiquity arm64
+Dumping product Ubuntu Server Subiquity arm64
+Mapping Ubuntu Subiquity arm64 to Ubuntu Server Subiquity arm64
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity arm64 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server arm64+raspi
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server arm64+raspi
+~/manual_test_suites/Resolute/products/Ubuntu Server arm64+raspi ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi
+~/manual_test_suites/Resolute/products/Ubuntu Server armhf+raspi ~
+~
+Dumping testsuite LTS Desktop Upgrade (Bionic)
+Dumping product Upgrade Ubuntu amd64
+Mapping LTS Desktop Upgrade (Bionic) to Upgrade Ubuntu amd64
+~/manual_test_suites/Resolute/products/Upgrade Ubuntu amd64 ~
+~
+Dumping testsuite Ubuntu Subiquity s390x
+Dumping product Ubuntu Server Subiquity s390x
+Mapping Ubuntu Subiquity s390x to Ubuntu Server Subiquity s390x
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity s390x ~
+~
+Dumping testsuite Ubuntu Desktop arm64+raspi
+Dumping product Ubuntu Desktop arm64+raspi
+Mapping Ubuntu Desktop arm64+raspi to Ubuntu Desktop arm64+raspi
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64+raspi ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base riscv64
+Mapping Ubuntu Base to Ubuntu Base riscv64
+~/manual_test_suites/Resolute/products/Ubuntu Base riscv64 ~
+~
+Dumping testsuite Netboot Server Live (arm64)
+Dumping product Netboot arm64
+Mapping Netboot Server Live (arm64) to Netboot arm64
+~/manual_test_suites/Resolute/products/Netboot arm64 ~
+~
+Dumping testsuite Netboot Server Live (amd64)
+Dumping product Netboot amd64
+Mapping Netboot Server Live (amd64) to Netboot amd64
+~/manual_test_suites/Resolute/products/Netboot amd64 ~
+~
+Dumping testsuite WSL
+Dumping product Ubuntu WSL amd64
+Mapping WSL to Ubuntu WSL amd64
+~/manual_test_suites/Resolute/products/Ubuntu WSL amd64 ~
+~
+Dumping testsuite Ubuntu Desktop
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop to Ubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Desktop Run-Once (arm64), already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop arm64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64 ~
+~
+Dumping testsuite Ubuntu Subiquity riscv64
+Dumping product Ubuntu Server Subiquity riscv64
+Mapping Ubuntu Subiquity riscv64 to Ubuntu Server Subiquity riscv64
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity riscv64 ~
+~
+Dumping testsuite Ubuntu Desktop Mandatory Extras
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop Mandatory Extras to Ubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Desktop Run-Once
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop Run-Once to Ubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop amd64 ~
+~
+Skipping testsuite Xubuntu Installation, already done
+Dumping product Xubuntu Minimal amd64
+Mapping Xubuntu Installation to Xubuntu Minimal amd64
+~/manual_test_suites/Resolute/products/Xubuntu Minimal amd64 ~
+~
+Skipping testsuite Xubuntu Post-installation, already done
+Dumping product Xubuntu Minimal amd64
+Mapping Xubuntu Post-installation to Xubuntu Minimal amd64
+~/manual_test_suites/Resolute/products/Xubuntu Minimal amd64 ~
+~
+Skipping testsuite Edubuntu, already done
+Dumping product Edubuntu Desktop amd64
+Mapping Edubuntu to Edubuntu Desktop amd64
+~/manual_test_suites/Resolute/products/Edubuntu Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Cinnamon Desktop
+Dumping product Ubuntu Cinnamon Desktop amd64
+Mapping Ubuntu Cinnamon Desktop to Ubuntu Cinnamon Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Cinnamon Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Unity Desktop
+Dumping product Ubuntu Unity Desktop amd64
+Mapping Ubuntu Unity Desktop to Ubuntu Unity Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Unity Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Studio
+Dumping product Ubuntu Studio Desktop amd64
+Mapping Ubuntu Studio to Ubuntu Studio Desktop amd64
+~/manual_test_suites/Resolute/products/Ubuntu Studio Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Desktop, already done
+Dumping product Ubuntu Desktop arm64+x13s
+Mapping Ubuntu Desktop to Ubuntu Desktop arm64+x13s
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64+x13s ~
+~
+Dumping testsuite RISCV Generic
+Dumping product Ubuntu Server riscv64
+Mapping RISCV Generic to Ubuntu Server riscv64
+~/manual_test_suites/Resolute/products/Ubuntu Server riscv64 ~
+~
+Skipping testsuite Ubuntu Desktop Mandatory Extras, already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop Mandatory Extras to Ubuntu Desktop arm64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64 ~
+~
+Skipping testsuite Ubuntu Desktop, already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop to Ubuntu Desktop arm64
+~/manual_test_suites/Resolute/products/Ubuntu Desktop arm64 ~
+~
+Dumping testsuite Ubuntu Subiquity arm64+largemem
+Dumping product Ubuntu Server Subiquity arm64+largemem
+Mapping Ubuntu Subiquity arm64+largemem to Ubuntu Server Subiquity arm64+largemem
+~/manual_test_suites/Resolute/products/Ubuntu Server Subiquity arm64+largemem ~
+~
+Skipping testsuite WSL, already done
+Dumping product Ubuntu WSL arm64
+Mapping WSL to Ubuntu WSL arm64
+~/manual_test_suites/Resolute/products/Ubuntu WSL arm64 ~
+~
+Dumping manual tests for Noble in /home/ubuntu/manual_test_suites/Noble
+milestone series id: 102
+Dumping testsuite Edubuntu Desktop arm64+raspi
+Dumping product Edubuntu Desktop arm64+raspi
+Mapping Edubuntu Desktop arm64+raspi to Edubuntu Desktop arm64+raspi
+~/manual_test_suites/Noble/products/Edubuntu Desktop arm64+raspi ~
+~
+Dumping testsuite WSL
+Dumping product Ubuntu WSL arm64
+Mapping WSL to Ubuntu WSL arm64
+~/manual_test_suites/Noble/products/Ubuntu WSL arm64 ~
+~
+Dumping testsuite RISCV PIC64GX
+Dumping product Ubuntu Server riscv64+pic64gx
+Mapping RISCV PIC64GX to Ubuntu Server riscv64+pic64gx
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+pic64gx ~
+~
+Dumping testsuite Ubuntu Subiquity arm64
+Dumping product Ubuntu Server Subiquity arm64+largemem
+Mapping Ubuntu Subiquity arm64 to Ubuntu Server Subiquity arm64+largemem
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity arm64+largemem ~
+~
+Dumping testsuite Nezha
+Dumping product Ubuntu Server riscv64+nezha
+Mapping Nezha to Ubuntu Server riscv64+nezha
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+nezha ~
+~
+Dumping testsuite MPFS
+Dumping product Ubuntu Server riscv64+icicle
+Mapping MPFS to Ubuntu Server riscv64+icicle
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+icicle ~
+~
+Dumping testsuite jh7110
+Dumping product Ubuntu Server riscv64+jh7110
+Mapping jh7110 to Ubuntu Server riscv64+jh7110
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+jh7110 ~
+~
+Dumping testsuite LicheeRV
+Dumping product Ubuntu Server riscv64+licheerv
+Mapping LicheeRV to Ubuntu Server riscv64+licheerv
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+licheerv ~
+~
+Dumping testsuite milkv-mars
+Dumping product Ubuntu Server riscv64+milkvmars
+Mapping milkv-mars to Ubuntu Server riscv64+milkvmars
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+milkvmars ~
+~
+Dumping testsuite Xubuntu Installation
+Dumping product Xubuntu Desktop i386
+Mapping Xubuntu Installation to Xubuntu Desktop i386
+~/manual_test_suites/Noble/products/Xubuntu Desktop i386 ~
+~
+Dumping testsuite Xubuntu Post-installation
+Dumping product Xubuntu Desktop i386
+Mapping Xubuntu Post-installation to Xubuntu Desktop i386
+~/manual_test_suites/Noble/products/Xubuntu Desktop i386 ~
+~
+Dumping testsuite Lubuntu Desktop
+Dumping product Lubuntu Desktop powerpc
+Mapping Lubuntu Desktop to Lubuntu Desktop powerpc
+~/manual_test_suites/Noble/products/Lubuntu Desktop powerpc ~
+~
+Skipping testsuite Xubuntu Installation, already done
+Dumping product Xubuntu Desktop amd64
+Mapping Xubuntu Installation to Xubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Xubuntu Desktop amd64 ~
+~
+Skipping testsuite Xubuntu Post-installation, already done
+Dumping product Xubuntu Desktop amd64
+Mapping Xubuntu Post-installation to Xubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Xubuntu Desktop amd64 ~
+~
+Dumping testsuite Legacy testcases for 'Xubuntu Alternate i386'
+Dumping product Xubuntu Alternate i386
+Mapping Legacy testcases for 'Xubuntu Alternate i386' to Xubuntu Alternate i386
+~/manual_test_suites/Noble/products/Xubuntu Alternate i386 ~
+~
+Dumping testsuite Lubuntu Alternate
+Dumping product Lubuntu Alternate amd64
+Mapping Lubuntu Alternate to Lubuntu Alternate amd64
+~/manual_test_suites/Noble/products/Lubuntu Alternate amd64 ~
+~
+Skipping testsuite Lubuntu Alternate, already done
+Dumping product Lubuntu Alternate powerpc
+Mapping Lubuntu Alternate to Lubuntu Alternate powerpc
+~/manual_test_suites/Noble/products/Lubuntu Alternate powerpc ~
+~
+Skipping testsuite Lubuntu Alternate, already done
+Dumping product Lubuntu Alternate i386
+Mapping Lubuntu Alternate to Lubuntu Alternate i386
+~/manual_test_suites/Noble/products/Lubuntu Alternate i386 ~
+~
+Dumping testsuite Ubuntu Desktop Mandatory Extras (2)
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop Mandatory Extras (2) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Dumping testsuite Ubuntu Desktop Run-Once (arm64)
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Dumping testsuite Ubuntu Desktop (legacy)
+Dumping product Ubuntu Desktop amd64+mac
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop amd64+mac
+~/manual_test_suites/Noble/products/Ubuntu Desktop amd64+mac ~
+~
+Skipping testsuite Ubuntu Desktop Run-Once (arm64), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Desktop Mandatory Extras (2), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop Mandatory Extras (2) to Ubuntu Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Desktop i386 ~
+~
+Dumping testsuite Ubuntu Base
+Dumping product Ubuntu Base i386
+Mapping Ubuntu Base to Ubuntu Base i386
+~/manual_test_suites/Noble/products/Ubuntu Base i386 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base armhf
+Mapping Ubuntu Base to Ubuntu Base armhf
+~/manual_test_suites/Noble/products/Ubuntu Base armhf ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base armel
+Mapping Ubuntu Base to Ubuntu Base armel
+~/manual_test_suites/Noble/products/Ubuntu Base armel ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base arm64
+Mapping Ubuntu Base to Ubuntu Base arm64
+~/manual_test_suites/Noble/products/Ubuntu Base arm64 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base amd64
+Mapping Ubuntu Base to Ubuntu Base amd64
+~/manual_test_suites/Noble/products/Ubuntu Base amd64 ~
+~
+Dumping testsuite Netboot PPC
+Dumping product Netboot powerpc
+Mapping Netboot PPC to Netboot powerpc
+~/manual_test_suites/Noble/products/Netboot powerpc ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base powerpc
+Mapping Ubuntu Base to Ubuntu Base powerpc
+~/manual_test_suites/Noble/products/Ubuntu Base powerpc ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base ppc64el
+Mapping Ubuntu Base to Ubuntu Base ppc64el
+~/manual_test_suites/Noble/products/Ubuntu Base ppc64el ~
+~
+Dumping testsuite Kubuntu Desktop
+Dumping product Kubuntu Desktop amd64
+Mapping Kubuntu Desktop to Kubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Kubuntu Desktop amd64 ~
+~
+Dumping testsuite Kubuntu Desktop Extra
+Dumping product Kubuntu Desktop amd64
+Mapping Kubuntu Desktop Extra to Kubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Kubuntu Desktop amd64 ~
+~
+Dumping testsuite Kubuntu Desktop Extra i386
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop Extra i386 to Kubuntu Desktop i386
+~/manual_test_suites/Noble/products/Kubuntu Desktop i386 ~
+~
+Skipping testsuite Kubuntu Desktop Extra, already done
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop Extra to Kubuntu Desktop i386
+~/manual_test_suites/Noble/products/Kubuntu Desktop i386 ~
+~
+Skipping testsuite Kubuntu Desktop, already done
+Dumping product Kubuntu Desktop i386
+Mapping Kubuntu Desktop to Kubuntu Desktop i386
+~/manual_test_suites/Noble/products/Kubuntu Desktop i386 ~
+~
+Dumping testsuite Mythbuntu
+Dumping product Mythbuntu Desktop i386
+Mapping Mythbuntu to Mythbuntu Desktop i386
+~/manual_test_suites/Noble/products/Mythbuntu Desktop i386 ~
+~
+Skipping testsuite Mythbuntu, already done
+Dumping product Mythbuntu Desktop amd64
+Mapping Mythbuntu to Mythbuntu Desktop amd64
+~/manual_test_suites/Noble/products/Mythbuntu Desktop amd64 ~
+~
+Dumping testsuite Edubuntu
+Dumping product Edubuntu DVD amd64
+Mapping Edubuntu to Edubuntu DVD amd64
+~/manual_test_suites/Noble/products/Edubuntu DVD amd64 ~
+~
+Skipping testsuite Edubuntu, already done
+Dumping product Edubuntu DVD i386
+Mapping Edubuntu to Edubuntu DVD i386
+~/manual_test_suites/Noble/products/Edubuntu DVD i386 ~
+~
+Dumping testsuite Ubuntu Server
+Dumping product Ubuntu Server amd64
+Mapping Ubuntu Server to Ubuntu Server amd64
+~/manual_test_suites/Noble/products/Ubuntu Server amd64 ~
+~
+Dumping testsuite Ubuntu Mate
+Dumping product Ubuntu MATE Desktop powerpc
+Mapping Ubuntu Mate to Ubuntu MATE Desktop powerpc
+~/manual_test_suites/Noble/products/Ubuntu MATE Desktop powerpc ~
+~
+Skipping testsuite Ubuntu Mate, already done
+Dumping product Ubuntu MATE Desktop i386
+Mapping Ubuntu Mate to Ubuntu MATE Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu MATE Desktop i386 ~
+~
+Skipping testsuite Ubuntu Mate, already done
+Dumping product Ubuntu MATE Desktop amd64
+Mapping Ubuntu Mate to Ubuntu MATE Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu MATE Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Kylin Installation
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin Installation to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop i386 ~
+~
+Skipping testsuite Ubuntu Kylin Installation, already done
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin Installation to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Server arm64+raspi
+Dumping product Ubuntu Server armhf+omap4
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+omap4
+~/manual_test_suites/Noble/products/Ubuntu Server armhf+omap4 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+omap
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+omap
+~/manual_test_suites/Noble/products/Ubuntu Server armhf+omap ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server amd64+mac
+Mapping Ubuntu Server to Ubuntu Server amd64+mac
+~/manual_test_suites/Noble/products/Ubuntu Server amd64+mac ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server powerpc
+Mapping Ubuntu Server to Ubuntu Server powerpc
+~/manual_test_suites/Noble/products/Ubuntu Server powerpc ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server ppc64el
+Mapping Ubuntu Server to Ubuntu Server ppc64el
+~/manual_test_suites/Noble/products/Ubuntu Server ppc64el ~
+~
+Dumping testsuite Desktop Upgrade
+Dumping product Upgrade Edubuntu amd64
+Mapping Desktop Upgrade to Upgrade Edubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Edubuntu amd64 ~
+~
+Dumping testsuite Xubuntu Minimal
+Dumping product Xubuntu Core
+Mapping Xubuntu Minimal to Xubuntu Core
+~/manual_test_suites/Noble/products/Xubuntu Core ~
+~
+Dumping testsuite Kubuntu Upgrades
+Dumping product Upgrade Kubuntu i386
+Mapping Kubuntu Upgrades to Upgrade Kubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Kubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Lubuntu amd64
+Mapping Desktop Upgrade to Upgrade Lubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Lubuntu amd64 ~
+~
+Dumping testsuite LTS Desktop Upgrade (Trusty)
+Dumping product Upgrade Xubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Xubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Xubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Xubuntu i386
+Mapping Desktop Upgrade to Upgrade Xubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Xubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Xubuntu amd64
+Mapping Desktop Upgrade to Upgrade Xubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Xubuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu Studio amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu Studio amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu Studio amd64 ~
+~
+Dumping testsuite Server upgrade
+Dumping product Upgrade Ubuntu Server i386
+Mapping Server upgrade to Upgrade Ubuntu Server i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu Server i386 ~
+~
+Skipping testsuite Server upgrade, already done
+Dumping product Upgrade Ubuntu Server amd64
+Mapping Server upgrade to Upgrade Ubuntu Server amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu Server amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu MATE i386
+Mapping Desktop Upgrade to Upgrade Ubuntu MATE i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu MATE i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu MATE amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu MATE amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu MATE amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade UbuntuKylin i386
+Mapping Desktop Upgrade to Upgrade UbuntuKylin i386
+~/manual_test_suites/Noble/products/Upgrade UbuntuKylin i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade UbuntuKylin amd64
+Mapping Desktop Upgrade to Upgrade UbuntuKylin amd64
+~/manual_test_suites/Noble/products/Upgrade UbuntuKylin amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu i386
+Mapping Desktop Upgrade to Upgrade Ubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Ubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Ubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu GNOME i386
+Mapping Desktop Upgrade to Upgrade Ubuntu GNOME i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu GNOME i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu GNOME amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu GNOME amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu GNOME amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Ubuntu amd64
+Mapping Desktop Upgrade to Upgrade Ubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Edubuntu i386
+Mapping Desktop Upgrade to Upgrade Edubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Edubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Lubuntu i386
+Mapping Desktop Upgrade to Upgrade Lubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Lubuntu i386 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Mythbuntu amd64
+Mapping Desktop Upgrade to Upgrade Mythbuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Mythbuntu amd64 ~
+~
+Skipping testsuite Desktop Upgrade, already done
+Dumping product Upgrade Mythbuntu i386
+Mapping Desktop Upgrade to Upgrade Mythbuntu i386
+~/manual_test_suites/Noble/products/Upgrade Mythbuntu i386 ~
+~
+Dumping testsuite Automated Upgrade
+Dumping product Upgrade Ubuntu amd64
+Mapping Automated Upgrade to Upgrade Ubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu amd64 ~
+~
+Skipping testsuite Automated Upgrade, already done
+Dumping product Upgrade Ubuntu i386
+Mapping Automated Upgrade to Upgrade Ubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Ubuntu i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server s390x
+Mapping Ubuntu Server to Ubuntu Server s390x
+~/manual_test_suites/Noble/products/Ubuntu Server s390x ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Lubuntu amd64
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Lubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Lubuntu amd64 ~
+~
+Skipping testsuite LTS Desktop Upgrade (Trusty), already done
+Dumping product Upgrade Lubuntu i386
+Mapping LTS Desktop Upgrade (Trusty) to Upgrade Lubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Lubuntu i386 ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base s390x
+Mapping Ubuntu Base to Ubuntu Base s390x
+~/manual_test_suites/Noble/products/Ubuntu Base s390x ~
+~
+Skipping testsuite Kubuntu Upgrades, already done
+Dumping product Upgrade Kubuntu amd64
+Mapping Kubuntu Upgrades to Upgrade Kubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Kubuntu amd64 ~
+~
+Dumping testsuite Kubuntu LTS Upgrades
+Dumping product Upgrade Kubuntu amd64
+Mapping Kubuntu LTS Upgrades to Upgrade Kubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Kubuntu amd64 ~
+~
+Skipping testsuite Kubuntu LTS Upgrades, already done
+Dumping product Upgrade Kubuntu i386
+Mapping Kubuntu LTS Upgrades to Upgrade Kubuntu i386
+~/manual_test_suites/Noble/products/Upgrade Kubuntu i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server i386
+Mapping Ubuntu Server to Ubuntu Server i386
+~/manual_test_suites/Noble/products/Ubuntu Server i386 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop (Legacy) amd64
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop (Legacy) amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop (Legacy) amd64 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop i386
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop powerpc
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop powerpc
+~/manual_test_suites/Noble/products/Ubuntu Desktop powerpc ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch armhf
+Mapping Blank to Ubuntu Touch armhf
+~/manual_test_suites/Noble/products/Ubuntu Touch armhf ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch i386
+Mapping Blank to Ubuntu Touch i386
+~/manual_test_suites/Noble/products/Ubuntu Touch i386 ~
+~
+Dumping testsuite Blank
+Dumping product Ubuntu Touch arm64
+Mapping Blank to Ubuntu Touch arm64
+~/manual_test_suites/Noble/products/Ubuntu Touch arm64 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi2
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi2
+~/manual_test_suites/Noble/products/Ubuntu Server armhf+raspi2 ~
+~
+Dumping testsuite Ubuntu Budgie
+Dumping product Ubuntu Budgie Desktop amd64
+Mapping Ubuntu Budgie to Ubuntu Budgie Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Budgie Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Budgie, already done
+Dumping product Ubuntu Budgie Desktop i386
+Mapping Ubuntu Budgie to Ubuntu Budgie Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Budgie Desktop i386 ~
+~
+Skipping testsuite Ubuntu Server, already done
+Dumping product Ubuntu Server arm64
+Mapping Ubuntu Server to Ubuntu Server arm64
+~/manual_test_suites/Noble/products/Ubuntu Server arm64 ~
+~
+Dumping testsuite Ubuntu Kylin UKUI Desktop
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin UKUI Desktop to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Kylin UKUI Desktop, already done
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin UKUI Desktop to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop i386 ~
+~
+Dumping testsuite Ubuntu Kylin Optional Apps
+Dumping product Ubuntu Kylin Desktop amd64
+Mapping Ubuntu Kylin Optional Apps to Ubuntu Kylin Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Kylin Optional Apps, already done
+Dumping product Ubuntu Kylin Desktop i386
+Mapping Ubuntu Kylin Optional Apps to Ubuntu Kylin Desktop i386
+~/manual_test_suites/Noble/products/Ubuntu Kylin Desktop i386 ~
+~
+Dumping testsuite Ubuntu Subiquity amd64
+Dumping product Ubuntu Server Subiquity amd64
+Mapping Ubuntu Subiquity amd64 to Ubuntu Server Subiquity amd64
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity amd64 ~
+~
+Dumping testsuite Lubuntu
+Dumping product Lubuntu Desktop amd64
+Mapping Lubuntu to Lubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Lubuntu Desktop amd64 ~
+~
+Skipping testsuite Lubuntu, already done
+Dumping product Lubuntu Desktop i386
+Mapping Lubuntu to Lubuntu Desktop i386
+~/manual_test_suites/Noble/products/Lubuntu Desktop i386 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi3
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi3
+~/manual_test_suites/Noble/products/Ubuntu Server armhf+raspi3 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server arm64+raspi3
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server arm64+raspi3
+~/manual_test_suites/Noble/products/Ubuntu Server arm64+raspi3 ~
+~
+Dumping testsuite Ubuntu Subiquity ppc64el
+Dumping product Ubuntu Server Subiquity ppc64el
+Mapping Ubuntu Subiquity ppc64el to Ubuntu Server Subiquity ppc64el
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity ppc64el ~
+~
+Skipping testsuite Ubuntu Subiquity arm64, already done
+Dumping product Ubuntu Server Subiquity arm64
+Mapping Ubuntu Subiquity arm64 to Ubuntu Server Subiquity arm64
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity arm64 ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server arm64+raspi
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server arm64+raspi
+~/manual_test_suites/Noble/products/Ubuntu Server arm64+raspi ~
+~
+Skipping testsuite Ubuntu Server arm64+raspi, already done
+Dumping product Ubuntu Server armhf+raspi
+Mapping Ubuntu Server arm64+raspi to Ubuntu Server armhf+raspi
+~/manual_test_suites/Noble/products/Ubuntu Server armhf+raspi ~
+~
+Dumping testsuite LTS Desktop Upgrade (Bionic)
+Dumping product Upgrade Ubuntu amd64
+Mapping LTS Desktop Upgrade (Bionic) to Upgrade Ubuntu amd64
+~/manual_test_suites/Noble/products/Upgrade Ubuntu amd64 ~
+~
+Dumping testsuite Ubuntu Subiquity s390x
+Dumping product Ubuntu Server Subiquity s390x
+Mapping Ubuntu Subiquity s390x to Ubuntu Server Subiquity s390x
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity s390x ~
+~
+Dumping testsuite Ubuntu Desktop arm64+raspi
+Dumping product Ubuntu Desktop arm64+raspi
+Mapping Ubuntu Desktop arm64+raspi to Ubuntu Desktop arm64+raspi
+~/manual_test_suites/Noble/products/Ubuntu Desktop arm64+raspi ~
+~
+Skipping testsuite Ubuntu Base, already done
+Dumping product Ubuntu Base riscv64
+Mapping Ubuntu Base to Ubuntu Base riscv64
+~/manual_test_suites/Noble/products/Ubuntu Base riscv64 ~
+~
+Dumping testsuite Netboot Server Live (arm64)
+Dumping product Netboot arm64
+Mapping Netboot Server Live (arm64) to Netboot arm64
+~/manual_test_suites/Noble/products/Netboot arm64 ~
+~
+Dumping testsuite Netboot Server Live (amd64)
+Dumping product Netboot amd64
+Mapping Netboot Server Live (amd64) to Netboot amd64
+~/manual_test_suites/Noble/products/Netboot amd64 ~
+~
+Dumping testsuite RISCV Unleashed Server
+Dumping product Ubuntu Server riscv64+unleashed
+Mapping RISCV Unleashed Server to Ubuntu Server riscv64+unleashed
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+unleashed ~
+~
+Dumping testsuite RISCV Unmatched Server
+Dumping product Ubuntu Server riscv64+unmatched
+Mapping RISCV Unmatched Server to Ubuntu Server riscv64+unmatched
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+unmatched ~
+~
+Skipping testsuite WSL, already done
+Dumping product Ubuntu WSL amd64
+Mapping WSL to Ubuntu WSL amd64
+~/manual_test_suites/Noble/products/Ubuntu WSL amd64 ~
+~
+Dumping testsuite Ubuntu Desktop
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop to Ubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Desktop (legacy), already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop (legacy) to Ubuntu Desktop arm64
+~/manual_test_suites/Noble/products/Ubuntu Desktop arm64 ~
+~
+Skipping testsuite Ubuntu Desktop Mandatory Extras (2), already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop Mandatory Extras (2) to Ubuntu Desktop arm64
+~/manual_test_suites/Noble/products/Ubuntu Desktop arm64 ~
+~
+Skipping testsuite Ubuntu Desktop Run-Once (arm64), already done
+Dumping product Ubuntu Desktop arm64
+Mapping Ubuntu Desktop Run-Once (arm64) to Ubuntu Desktop arm64
+~/manual_test_suites/Noble/products/Ubuntu Desktop arm64 ~
+~
+Dumping testsuite Ubuntu Subiquity riscv64
+Dumping product Ubuntu Server Subiquity riscv64
+Mapping Ubuntu Subiquity riscv64 to Ubuntu Server Subiquity riscv64
+~/manual_test_suites/Noble/products/Ubuntu Server Subiquity riscv64 ~
+~
+Dumping testsuite VisionFive
+Dumping product Ubuntu Server riscv64+visionfive
+Mapping VisionFive to Ubuntu Server riscv64+visionfive
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+visionfive ~
+~
+Dumping testsuite Ubuntu Desktop Mandatory Extras
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop Mandatory Extras to Ubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Desktop Run-Once
+Dumping product Ubuntu Desktop amd64
+Mapping Ubuntu Desktop Run-Once to Ubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Desktop amd64 ~
+~
+Skipping testsuite Xubuntu Installation, already done
+Dumping product Xubuntu Minimal amd64
+Mapping Xubuntu Installation to Xubuntu Minimal amd64
+~/manual_test_suites/Noble/products/Xubuntu Minimal amd64 ~
+~
+Skipping testsuite Xubuntu Post-installation, already done
+Dumping product Xubuntu Minimal amd64
+Mapping Xubuntu Post-installation to Xubuntu Minimal amd64
+~/manual_test_suites/Noble/products/Xubuntu Minimal amd64 ~
+~
+Skipping testsuite Edubuntu, already done
+Dumping product Edubuntu Desktop amd64
+Mapping Edubuntu to Edubuntu Desktop amd64
+~/manual_test_suites/Noble/products/Edubuntu Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Cinnamon Desktop
+Dumping product Ubuntu Cinnamon Desktop amd64
+Mapping Ubuntu Cinnamon Desktop to Ubuntu Cinnamon Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Cinnamon Desktop amd64 ~
+~
+Dumping testsuite Ubuntu Unity Desktop
+Dumping product Ubuntu Unity Desktop amd64
+Mapping Ubuntu Unity Desktop to Ubuntu Unity Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Unity Desktop amd64 ~
+~
+Dumping testsuite VisionFive 2
+Dumping product Ubuntu Server riscv64+visionfive2
+Mapping VisionFive 2 to Ubuntu Server riscv64+visionfive2
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64+visionfive2 ~
+~
+Dumping testsuite Ubuntu Studio
+Dumping product Ubuntu Studio Desktop amd64
+Mapping Ubuntu Studio to Ubuntu Studio Desktop amd64
+~/manual_test_suites/Noble/products/Ubuntu Studio Desktop amd64 ~
+~
+Skipping testsuite Ubuntu Desktop, already done
+Dumping product Ubuntu Desktop arm64+x13s
+Mapping Ubuntu Desktop to Ubuntu Desktop arm64+x13s
+~/manual_test_suites/Noble/products/Ubuntu Desktop arm64+x13s ~
+~
+Dumping testsuite RISCV Generic
+Dumping product Ubuntu Server riscv64
+Mapping RISCV Generic to Ubuntu Server riscv64
+~/manual_test_suites/Noble/products/Ubuntu Server riscv64 ~
+~
