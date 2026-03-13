@@ -9,6 +9,8 @@ Scope of this test is to verify that the system is installed and you can login i
     <dt>On the filesystem setup screen, select "Manual"</dt>
     <dt>
         Create a partition on two drives. For each drive:
+        </dt>
+        <dd>
         <dl>
             <dt>If it already has partitions, select "Reformat" from the menu</dt>
             <dt>Select "Use As Boot Device" from the menu - (on the second disk it will say "Add As Another Boot Device")</dt>
@@ -16,9 +18,11 @@ Scope of this test is to verify that the system is installed and you can login i
             <dt>Leave size blank and select "Leave unformatted" for the format</dt>
             <dt>Click Done</dt>
        </dl>
-    </dt>
+        </dd>
     <dt>
 	Create the RAID device and mount it as /:
+        </dt>
+        <dd>
         <dl>
             <dt>Select the "Create software RAID (md)" button</dt>
             <dt>Select the two partitions you created to be part of the RAID (they should be the only available options, unless the machine has more than two disks)</dt>
@@ -26,7 +30,7 @@ Scope of this test is to verify that the system is installed and you can login i
 	    <dt>Select the md0 device and choose "Format" from the menu</dt>
             <dt>The default should be to format as ext4 and mount at /. Select Done</dt>
         </dl>
-    </dt>
+        </dd>
     <dt>The Done button should now be enabled. Select it</dt>
     <dt>In the confirmation dialog, select "Continue" (it should <b>not</b> be selected by default)</dt>
     <dt>Fill out the user information, making sure to import your SSH keys from somewhere</dt>

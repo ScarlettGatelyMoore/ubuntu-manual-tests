@@ -57,9 +57,9 @@
         <dd>The new user's desktop is presented</dd>
     <dt>Open dash and type Terminal into search box.  Click on Terminal icon.</dt>
         <dd>TheTerminal window will appear</dd>
-    <dt>Verify that neither the restricted nor multiverse archives have been enabled by typing <pre>grep "restricted\|multiverse" /etc/apt/sources.list | grep -v "^#"</pre></dt>
+    <dt>Verify that neither the restricted nor multiverse archives have been enabled by typing <code>grep "restricted\|multiverse" /etc/apt/sources.list | grep -v "^#"</code></dt>
         <dd>No result returned (username command prompt line will appear again)</dd>
-    <dt>Verify that the linux-restricted-modules package has not been installed by typing <pre>dpkg -l linux-restricted-* |  grep -vE "^[a-z]n"</pre></dt>
+    <dt>Verify that the linux-restricted-modules package has not been installed by typing <code>dpkg -l linux-restricted-* |  grep -vE "^[a-z]n"</code></dt>
         <dd>No packages printed (some lines of text will appear, but after +=====etc sequence username command prompt line will appear)</dd>
 </dl>
 <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result. If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>

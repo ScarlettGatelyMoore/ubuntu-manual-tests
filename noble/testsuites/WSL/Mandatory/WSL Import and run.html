@@ -34,11 +34,11 @@ Open Windows Terminal or PowerShell and execute the test case below:
 > wsl.exe --import &lt;name of the distro&gt; &lt;location to unpack rootfs&gt; &lt;rootfs&gt; [--version &lt;version of WSL&gt;]
 </pre>
 	    </dd>
-For example:
+		<dd>For example:
 <pre>
 > wsl.exe --import Ubuntu20.04.3 .\wsl\ .\Downloads\focal-server-cloudimg-amd64-wsl.rootfs.tar.gz --version 2
 </pre>
-	</dt>
+		</dd>
 		<dd>Verify that the	image has been imported by running the following command:
 <pre>
 > wsl.exe --list --all --verbose
@@ -184,7 +184,6 @@ ubuntu@WSL:/mnt/c/Users/ubuntu$
 	    <dd>
 		<pre>$ sudo apt update</pre>
 	    </dd>
-	</dt>
 		<dd>Verify that the	command ends successfully</dd>
 
 	<dt>Apply any update
@@ -199,7 +198,6 @@ ubuntu@WSL:/mnt/c/Users/ubuntu$
 	    <dd>
 		<pre>$ sudo apt install hello</pre>
 	    </dd>
-	</dt>
 		<dd>Verify that the	package has been successfully installed and the application can run<dd>
 <pre>
 $ hello
@@ -250,7 +248,6 @@ dr-xr-xr-x 1 root root     512 Jun  4  2024  CSCmnt
 [...]
 </pre>
 		</dd>
-	</dt>
 
 <dt>Exit WSL
     </dt>
