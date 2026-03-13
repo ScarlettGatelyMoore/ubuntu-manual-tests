@@ -1,11 +1,11 @@
-This case tests provisioning a tar-based WSL image as WSL 1.</p>
+<p>This case tests provisioning a tar-based WSL image as WSL 1.</p>
 
 It requires a working Microsoft Windows 11 or higher installation with WSL version 2.4.10 or later. Installing Windows and enabling WSL 2 is outside of the scope of this  test case.
 
-Since the release of Ubuntu LTS 24.04.2 Noble Numbat, tar-based images are found at <a href=""https://cdimages.ubuntu.com/ubuntu-wsl/"">https://cdimages.ubuntu.com/ubuntu-wsl/</a>
-and their file extension is "".wsl"" instead of "".tar.gz"".
+Since the release of Ubuntu LTS 24.04.2 Noble Numbat, tar-based images are found at <a href="https://cdimages.ubuntu.com/ubuntu-wsl/">https://cdimages.ubuntu.com/ubuntu-wsl/</a>
+and their file extension is ".wsl" instead of ".tar.gz".
 
-For example for latest noble image:  <a href=""https://cdimages.ubuntu.com/ubuntu-wsl/noble/daily-live/pending/noble-wsl-amd64.wsl"">https://cdimages.ubuntu.com/ubuntu-wsl/daily-live/noble/pending/noble-wsl-amd64.wsl</a>
+For example for latest noble image:  <a href="https://cdimages.ubuntu.com/ubuntu-wsl/noble/daily-live/pending/noble-wsl-amd64.wsl">https://cdimages.ubuntu.com/ubuntu-wsl/daily-live/noble/pending/noble-wsl-amd64.wsl</a>
 Make sure to download the image matching the correct release under test from the download link associated to this test case.
 
 WSL 1 doesn't support systemd, thus we skip checking if its running, if there are failed units. We also assume
@@ -52,8 +52,8 @@ Create a default Unix user account: ubuntu
 New password:
 Retype new password:
 passwd: password updated successfully
-To run a command as administrator (user ""root""), use ""sudo <command>"".
-See ""man sudo_root"" for details.
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
 
 Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
 
@@ -104,6 +104,7 @@ Hello, world!
 </pre></dd>
 
 	<dt>Check that Windows interoperability is still working
+	</dt>
 		<dd> Launch a Windows application
 <pre>
 > notepad.exe # It should open.
@@ -122,13 +123,19 @@ dr-xr-xr-x 1 root root     512 Jun  4  2024  CSCmnt
 		</dd>
 
 	<dt>Exit WSL
-<pre>logout</pre></dt>
+	    </dt>
+	    <dd>
+<pre>logout</pre>
+	    </dd>
 		<dd>Check that your back to the PowerShell prompt</dd>
 
 	<dt>Unregister the distro instance
+	    </dt>
+	    <dd>
 <pre>
 > wsl.exe --unregister Noble
-</pre></dt>
+</pre>
+	    </dd>
 		<dd>The isntance no longer listed
 <pre>
 > wsl --list
@@ -140,5 +147,5 @@ TestUbuntuWSL
 
 </dl>
 
-<strong>If all actions produce the expected results listed, please <a href=""results#add_result"">submit</a> a 'passed' result.
-    If an action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result.</strong>
+<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>

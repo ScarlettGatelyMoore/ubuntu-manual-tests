@@ -11,10 +11,12 @@
     <dt>Boot up the image</dt>
         <dd>If you see the GRUB boot menu you should see the following:</dd>
         <dd>
+           <ul>
            <li>'Try or Install FAMILY'</li>
            <li>'FAMILY (safe graphics)'</li>
            <li>'OEM install (for manufacturers)'</li>
            <li>'Test memory' (only on BIOS systems)</li>
+           </ul>
         </dd>
         <dd>The system boots properly and loads the installer displaying the Welcome dialog with language selection and 'Try FAMILY' and 'Install FAMILY' buttons</dd>
     <dt>Click on the release notes hyperlink to confirm that a browser launches and you are taken to the release notes discourse page.</dt>
@@ -47,7 +49,7 @@
     <dt>Click on the 'OK' button</dt>
         <dd>The dialog closes and 'ZFS selected' is displayed next to the 'Advanced features...' button</dd>
     <dt>Click Continue</dt>
-    <dt>The ""Choose a security key"" slide opens</dt>
+    <dt>The "Choose a security key" slide opens</dt>
         <dd>Enter your desired security key</dd>
     <dt>Click on the 'Install Now' button</dt>
         <dd>'Write the changes to disks' dialogue appears</dd>
@@ -105,13 +107,13 @@
     <dt>Run the lsblk command and check for this line in the output:</dt>
       <dd>cryptoswap   252:1    0   2.6G  0 crypt [SWAP]</dd>
     <dt>Run the following command to place a file under ~:</dt>
-      <dd>echo ""hello"" &gt; /home/$USER/hello</dd>
+      <dd>echo "hello" &gt; /home/$USER/hello</dd>
       <dd>We're going to check for this file in a later part of this test case.</dd>
   
     
     <dt>Shut down the installed system.</dt>
     <dt>Using the same .iso, boot into the iso using the disk that you just completed the installation on.</dt>
-    <dt>Go through the grub menu and instead of installing, select ""Try Ubuntu"".</dt>
+    <dt>Go through the grub menu and instead of installing, select "Try Ubuntu".</dt>
     <dt>Open a terminal window, and enter the following:</dt>
         <dd>sudo su</dd>
         <dd>fdisk -l /dev/$disk # Where $disk is the disk you completed the install on.</dd>
@@ -124,13 +126,13 @@
         <dd>For the rest of this testcase, we will use vda in place of $disk.</dd>
     <dt>Check for the zfs pool names:</dt>
         <dd>blkid /dev/vda*</dd>
-        <dd><code>/dev/vda: PTUUID=""7dd06581-4867-4632-9a90-23d9c472b039"" PTTYPE=""gpt""
-                  /dev/vda1: PARTUUID=""c061c581-06c1-43e2-8680-d353771bf341""
-                  /dev/vda2: UUID=""2748-996B"" BLOCK_SIZE=""512"" TYPE=""vfat"" PARTLABEL=""EFI System Partition"" PARTUUID=""f7c29e7e-687f-4cbb-a1a1-f8876f809a64""
-                  /dev/vda3: UUID=""8c1d6471-1f90-4212-8fbd-097a9a9ad909"" TYPE=""crypto_LUKS"" PARTUUID=""8ff61492-9bda-40fe-94a8-7d6fe4d220cb""
-                  /dev/vda4: LABEL=""bpool"" UUID=""8851209407646287070"" UUID_SUB=""1631837207961890120"" BLOCK_SIZE=""4096"" TYPE=""zfs_member"" PARTUUID=""8b8b8818-cc94-42bd-b23d-cf7c9e9b73ff""
-                  /dev/vda5: LABEL=""rpool"" UUID=""4519996901618382696"" UUID_SUB=""8860607139843727357"" BLOCK_SIZE=""4096"" TYPE=""zfs_member"" PARTUUID=""5cc65ba9-8ef4-475c-a107-cc130a9be1be""</code></dd>
-        <dd>Here, the zfs pool names are the labels of the drives of TYPE ""zfs_member"". So in this case, the zfs pools are ""bpool"" and ""rpool"".</dd>
+        <dd><code>/dev/vda: PTUUID="7dd06581-4867-4632-9a90-23d9c472b039" PTTYPE="gpt"
+                  /dev/vda1: PARTUUID="c061c581-06c1-43e2-8680-d353771bf341"
+                  /dev/vda2: UUID="2748-996B" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f7c29e7e-687f-4cbb-a1a1-f8876f809a64"
+                  /dev/vda3: UUID="8c1d6471-1f90-4212-8fbd-097a9a9ad909" TYPE="crypto_LUKS" PARTUUID="8ff61492-9bda-40fe-94a8-7d6fe4d220cb"
+                  /dev/vda4: LABEL="bpool" UUID="8851209407646287070" UUID_SUB="1631837207961890120" BLOCK_SIZE="4096" TYPE="zfs_member" PARTUUID="8b8b8818-cc94-42bd-b23d-cf7c9e9b73ff"
+                  /dev/vda5: LABEL="rpool" UUID="4519996901618382696" UUID_SUB="8860607139843727357" BLOCK_SIZE="4096" TYPE="zfs_member" PARTUUID="5cc65ba9-8ef4-475c-a107-cc130a9be1be"</code></dd>
+        <dd>Here, the zfs pool names are the labels of the drives of TYPE "zfs_member". So in this case, the zfs pools are "bpool" and "rpool".</dd>
     <dt>Now, we will import the pool of the root partition:</dt>
         <dd>zpool import rpool</dd>
     <dt>Check the output of the following command to see that rpool is imported:</dt>
@@ -159,14 +161,14 @@
         <dd>zfs mount -a</dd>
     <dt>Check for the test file we made earlier, for example:</dt>
         <dd>cat /mnt/rpool/USERDATA/tim_aqj46w/hello</dd>
-        <dd>The output should be ""hello""</dd>
+        <dd>The output should be "hello"</dd>
   
   
     </dl>
     <p>If <strong>all</strong> actions produce the expected results described,
-      please <a href=""results#add_result"">submit</a> a 'passed' result.</p>
+      please <a href="results#add_result">submit</a> a 'passed' result.</p>
     <p>If <strong>any</strong> action fails, or produces an unexpected result,
-      please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include
-      the bug number when you <a href=""results#add_result"">submit</a> your
+      please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include
+      the bug number when you <a href="results#add_result">submit</a> your
       result.</p>
   

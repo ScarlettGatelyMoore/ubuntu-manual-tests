@@ -21,31 +21,31 @@ The purpose of this testcase is to test that kernel crash dumps are <strong>succ
 <p> The test steps are as follows: </p>
 
 <ol>
-    <li> Perform the install as desired, up until the ""Guided storage configuration"" (Server) or ""Disk setup"" (Desktop) screen. Follow step 2 for Server and step 3 for Desktop.</li>
+    <li> Perform the install as desired, up until the "Guided storage configuration" (Server) or "Disk setup" (Desktop) screen. Follow step 2 for Server and step 3 for Desktop.</li>
     <li> Server:
     <ol>
-        <li> Ensure that ""Use an entire disk"" is selected and <strong> unselect </strong> ""Set up this disk as an LVM group"".</li>
-        <li> Select ""Done"" then confirm the creation of two partitions on the next screen.
+        <li> Ensure that "Use an entire disk" is selected and <strong> unselect </strong> "Set up this disk as an LVM group".</li>
+        <li> Select "Done" then confirm the creation of two partitions on the next screen.
         <ul>
-            <li> A partition mounted at ""/"" with an ext4 filesystem. </li>
-            <li> A partition mounted at ""/boot/efi"" with a fat32 filesystem. </li>
+            <li> A partition mounted at "/" with an ext4 filesystem. </li>
+            <li> A partition mounted at "/boot/efi" with a fat32 filesystem. </li>
         </ul>
-        <li> Select ""Done"" again, confirm the install, and proced with the remainder of the install as desired. </li>
-        <li> Go to step 4. </li>
         </li>
+        <li> Select "Done" again, confirm the install, and proced with the remainder of the install as desired. </li>
+        <li> Go to step 4. </li>
     </ol>
     </li>
     <li> Desktop:
     <ol>
-        <li> Choose the default ""Erase disk and install Ubuntu"" option. </li>
+        <li> Choose the default "Erase disk and install Ubuntu" option. </li>
         <li> Continue with the install as desired until the confirmation screen. </li>
         <li> Confirm the creation of two partitions:
         <ul>
-            <li> A partition mounted at ""/"" with an ext4 filesystem. </li>
-            <li> A partition mounted at ""/boot/efi"" with a fat32 filesystem. </li>
+            <li> A partition mounted at "/" with an ext4 filesystem. </li>
+            <li> A partition mounted at "/boot/efi" with a fat32 filesystem. </li>
         </ul>
         </li>
-        <li> Select ""Install"" and let the install proceed. </li>
+        <li> Select "Install" and let the install proceed. </li>
         <li> Proceed to step 4. </li>
     </ol>
     </li>
@@ -56,7 +56,7 @@ The purpose of this testcase is to test that kernel crash dumps are <strong>succ
 
 <p> The result of the <code>kdump-config show</code> command should show
 something similar to:</p>
-<div class=""box"">
+<div class="box">
     <pre>
        $ kdump-config show
         DUMP_MODE:              kdump
@@ -71,7 +71,7 @@ something similar to:</p>
         crashkernel suggested size: 223M
 
         kexec command:
-          /sbin/kexec -p --command-line=""BOOT_IMAGE=/boot/vmlinuz-6.11.0-7-generic root=UUID=8c19e778-298a-40ad-91cd-f6725092446a ro reset_devices systemd.unit=kdump-tools-dump.service nr_cpus=1 irqpoll usbcore.nousb"" --initrd=/var/lib/kdump/initrd.img /var/lib/kdump/vmlinuz
+          /sbin/kexec -p --command-line="BOOT_IMAGE=/boot/vmlinuz-6.11.0-7-generic root=UUID=8c19e778-298a-40ad-91cd-f6725092446a ro reset_devices systemd.unit=kdump-tools-dump.service nr_cpus=1 irqpoll usbcore.nousb" --initrd=/var/lib/kdump/initrd.img /var/lib/kdump/vmlinuz
     </pre>
 </div>
 
@@ -89,7 +89,7 @@ something similar to:</p>
     <li> If the results are not as expected, please include:
     <ul>
         <li> The output of the following command in your bug report: <code>sudo /usr/share/kdump-tools/kdump_set_default</code> </li>
-        <li> The contents of ""/var/log/installer/curtin-install.log"" </li>
+        <li> The contents of "/var/log/installer/curtin-install.log" </li>
     </ul>
     </li>
     <li> If performing the test with a VM, note that it has been reported that
@@ -99,6 +99,6 @@ something similar to:</p>
     </li>
 </ul>
 
-<strong>If you finish the installation, please <a href=""results#add_result"">submit</a> a 'passed' result.
-    If any action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result.</strong>
+<strong>If you finish the installation, please <a href="results#add_result">submit</a> a 'passed' result.
+    If any action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
 

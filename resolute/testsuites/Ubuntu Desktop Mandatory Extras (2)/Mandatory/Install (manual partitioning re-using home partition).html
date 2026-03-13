@@ -49,7 +49,7 @@
     <dt>Check that / and /home use different partitions</dt>
     <dt>Create a file in the /home/$USER/ directory to check for later.</dt>
     <dt>Run the following command to create a file we'll check for later:</dt>
-        <dd>echo ""dummy file"" > /home/$USER/dummy_file</dd>
+        <dd>echo "dummy file" > /home/$USER/dummy_file</dd>
     <dt>Shutdown the installed system.</dt>
     <dt>Put the installation medium back in, and boot into the installation of a new system.</dt>
         <dd>Do everything as before, but when you get to the manual partitioning screen, make sure to remove the old '/' partition, create a new one, and make sure the partition used for '/home' has also been selected to have '/home' as the mount point (highlight the existing home partition, and click the 'Change' button), but make sure the reformat check box is left unchecked.</dd>
@@ -58,5 +58,5 @@
         <dd>cat /home/$USER/dummy_file</dd>
 </dl>
 
-<strong>If all actions produce the expected results listed, please <a href=""results#add_result"">submit</a> a 'passed' result.<br />
-    If an action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result.</strong>
+<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.<br />
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>

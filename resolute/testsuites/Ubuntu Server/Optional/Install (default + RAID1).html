@@ -3,17 +3,17 @@ Server basic RAID1 install
 <em>Proceed in your native language if you wish. Instructions will remain in English</em>
 
 <dl>
-    <dt>NB: A more exhaustive set of test instructions to be used in KVM environments can be found on the <a href=""https://wiki.ubuntu.com/BootDegradedRaid#Implementation"">BootDegradedRaid wiki page</a></dt>
+    <dt>NB: A more exhaustive set of test instructions to be used in KVM environments can be found on the <a href="https://wiki.ubuntu.com/BootDegradedRaid#Implementation">BootDegradedRaid wiki page</a></dt>
     <dt>Boot CD and run the CD self-check (then reboot)</dt>
-    <dt>Select Install Ubuntu Server or """"Install to Hard Disk""""</dt>
+    <dt>Select Install Ubuntu Server or ""Install to Hard Disk""</dt>
     <dt>Choose your language, country and keyboard layout</dt>
     <dt>Set hostname: default - ubuntu</dt>
     <dt>Confirm time zone detection.</dt>
-    <dt>Partitioning method: ""Manual"".</dt>
+    <dt>Partitioning method: "Manual".</dt>
         <dd>RAID1 array for /</dd>
         <dd>RAID1 array for swap</dd>
         <dd>RAID1 array for /home (testing non-rootfs raid)</dd>
-    <dt>Select ""Yes"" to the ""boot degraded?"" question</dt>
+    <dt>Select "Yes" to the "boot degraded?" question</dt>
     <dt>User account: enter username and password</dt>
     <dt>No software selection.</dt>
     <dt>Reboot and login.</dt>
@@ -25,8 +25,8 @@ Server basic RAID1 install
         <dd>cat /proc/mdstat</dd>
     <dt>Make sure that grub has been installed on both disks:</dt>
         <dd>sudo apt-get install -y binutils</dd>
-        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d"" "" -f1) | grep "" /dev/"" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""TRUE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d" " -f1) | grep " /dev/" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
+    <dt>Make sure that the BOOT_DEGRADED setting is "TRUE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Power off the system</dd>
@@ -58,9 +58,9 @@ Server basic RAID1 install
         <dd>Power on the system</dd>
     <dt>Wait for both drives to be back in sync:</dt>
         <dd>cat /proc/mdstat</dd>
-    <dt>Change ""Do you want to boot degraded?"" answer to ""No"":</dt>
+    <dt>Change "Do you want to boot degraded?" answer to "No":</dt>
         <dd>sudo dpkg-reconfigure mdadm</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""FALSE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+    <dt>Make sure that the BOOT_DEGRADED setting is "FALSE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Power off the system</dd>
@@ -101,7 +101,7 @@ Server with LUKS on RAID1 install
         <dd>RAID1 array with LUKS on it for /</dd>
         <dd>RAID1 array for swap (should it get encrypted automatically?)</dd>
         <dd>RAID1 array with LUKS on it for /home</dd>
-    <dt>Select ""Yes"" to the ""boot degraded?"" question</dt>
+    <dt>Select "Yes" to the "boot degraded?" question</dt>
     <dt>Select your time zone and set the system clock to UTC</dt>
     <dt>User account: enter username and password</dt>
     <dt>No software selection.</dt>
@@ -116,8 +116,8 @@ Server with LUKS on RAID1 install
         <dd>cat /proc/mdstat</dd>
     <dt>Make sure that grub has been installed on both disks:</dt>
         <dd>sudo apt-get install -y binutils</dd>
-        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d"" "" -f1) | grep "" /dev/"" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""TRUE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d" " -f1) | grep " /dev/" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
+    <dt>Make sure that the BOOT_DEGRADED setting is "TRUE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Power off the system</dd>
@@ -136,9 +136,9 @@ Server with LUKS on RAID1 install
         <dd>Power on the system</dd>
     <dt>Wait for both drives to be back in sync:</dt>
         <dd>cat /proc/mdstat</dd>
-    <dt>Change ""Do you want to boot degraded?"" answer to ""No"":</dt>
+    <dt>Change "Do you want to boot degraded?" answer to "No":</dt>
         <dd>sudo dpkg-reconfigure mdadm</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""FALSE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+    <dt>Make sure that the BOOT_DEGRADED setting is "FALSE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Power off the system</dd>
@@ -177,7 +177,7 @@ Server with LVM on LUKS on RAID1 install
     <dt>Partition disks: Custom partition scheme.</dt>
         <dd>RAID1 array for /boot</dd>
         <dd>RAID1 array with LUKS on it, with LVM on it, for /, /swap and /home</dd>
-    <dt>Select ""Yes"" to the ""boot degraded?"" question</dt>
+    <dt>Select "Yes" to the "boot degraded?" question</dt>
     <dt>Select your time zone and set the system clock to UTC</dt>
     <dt>User account: enter username and password</dt>
     <dt>No software selection.</dt>
@@ -192,8 +192,8 @@ Server with LVM on LUKS on RAID1 install
         <dd>cat /proc/mdstat</dd>
     <dt>Make sure that grub has been installed on both disks:</dt>
         <dd>sudo apt-get install -y binutils</dd>
-        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d"" "" -f1) | grep "" /dev/"" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""TRUE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+        <dd>for i in $(sudo mdadm -Q --detail $(df -P /boot | grep ^/dev/ | cut -d" " -f1) | grep " /dev/" | awk '{print $NF}' | sed -e 's/[0-9]$//'); do sudo dd if=$i bs=512 count=1 2>/dev/null | strings -a | grep -q GRUB && echo $i: ok || echo $i: FAIL; done</dd>
+    <dt>Make sure that the BOOT_DEGRADED setting is "TRUE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Poweroff the system</dd>
@@ -212,9 +212,9 @@ Server with LVM on LUKS on RAID1 install
         <dd>Poweron the system</dd>
     <dt>Wait for both drives to be back in sync:</dt>
         <dd>cat /proc/mdstat</dd>
-    <dt>Change ""Do you want to boot degraded?"" answer to ""No"":</dt>
+    <dt>Change "Do you want to boot degraded?" answer to "No":</dt>
         <dd>sudo dpkg-reconfigure mdadm</dd>
-    <dt>Make sure that the BOOT_DEGRADED setting is ""FALSE"" in /etc/initramfs-tools/conf.d/mdadm:</dt>
+    <dt>Make sure that the BOOT_DEGRADED setting is "FALSE" in /etc/initramfs-tools/conf.d/mdadm:</dt>
         <dd>cat /etc/initramfs-tools/conf.d/mdadm</dd>
     <dt>Test booting from a cold-degraded array:</dt>
         <dd>Poweroff the system</dd>
@@ -243,5 +243,5 @@ Server with LVM on LUKS on RAID1 install
         <dd>Reboot, verify that system comes up degraded without failure. (BOOT_DEGRADED setting bogus, Bug #539597)</dd>
 </dl>
 <strong>
-    If all actions produce the expected results listed, please <a href=""results#add_result"">submit</a> a 'passed' result.
-    If an action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result</strong>.
+    If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result</strong>.

@@ -1,17 +1,17 @@
-This test case imports a WSL image from a rootfs and runs it.</p>
+<p>This test case imports a WSL image from a rootfs and runs it.</p>
 
 It requires a working Microsoft Windows 10 or higher installation with WSL2 enabled. Installing Windows and enabling WSL 2 is outside of the scope of this  test case.
 
-To run this test you must download the image from <a href=""http://cloud-images.ubuntu.com/"">http://cloud-images.ubuntu.com/</a>
+To run this test you must download the image from <a href="http://cloud-images.ubuntu.com/">http://cloud-images.ubuntu.com/</a>
 
 <pre>
-Since the release of Ubuntu LTS 24.04.2 Noble Numbat, new images are found at <a href=""https://cdimages.ubuntu.com/ubuntu-wsl/"">https://cdimages.ubuntu.com/ubuntu-wsl/</a>
-and their file extension is "".wsl"" instead of "".tar.gz"".
+Since the release of Ubuntu LTS 24.04.2 Noble Numbat, new images are found at <a href="https://cdimages.ubuntu.com/ubuntu-wsl/">https://cdimages.ubuntu.com/ubuntu-wsl/</a>
+and their file extension is ".wsl" instead of ".tar.gz".
 </pre>
 
 For example for latest focal image download: <a
-	href=""http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz"">http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz</a>
-and for the latest noble image:  <a href=""https://cdimages.ubuntu.com/ubuntu-wsl/noble/daily-live/pending/noble-wsl-amd64.wsl"">https://cdimages.ubuntu.com/ubuntu-wsl/daily-live/noble/pending/noble-wsl-amd64.wsl</a>
+	href="http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz">http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz</a>
+and for the latest noble image:  <a href="https://cdimages.ubuntu.com/ubuntu-wsl/noble/daily-live/pending/noble-wsl-amd64.wsl">https://cdimages.ubuntu.com/ubuntu-wsl/daily-live/noble/pending/noble-wsl-amd64.wsl</a>
 Make sure to download the image from the download link associated to this test case.
 
 Latest releases have cloud-init seeded. To make sure your environment doesn't contain any files that could
@@ -28,9 +28,12 @@ Open Windows Terminal or PowerShell and execute the test case below:
 
 <dl>
 	<dt>Import the image in WSL
+	    </dt>
+	    <dd>
 <pre>
 > wsl.exe --import &lt;name of the distro&gt; &lt;location to unpack rootfs&gt; &lt;rootfs&gt; [--version &lt;version of WSL&gt;]
 </pre>
+	    </dd>
 For example:
 <pre>
 > wsl.exe --import Ubuntu20.04.3 .\wsl\ .\Downloads\focal-server-cloudimg-amd64-wsl.rootfs.tar.gz --version 2
@@ -50,10 +53,12 @@ TestUbuntuWSL    Stopped         2
 		<dd>Check the the name used in previous command appears in the list.</dd>
 
 	<dt>Launch the newly installed application
+	    </dt>
+	    <dd>
 <pre>
 > wsl -d Ubuntu20.04.3
 </pre>
-	</dt>
+	    </dd>
 		<dd>Verify that	you're inside the WSL instance and running the right distribution. For example run:
 <pre>
 $ lsb_release -a
@@ -67,6 +72,8 @@ Codename:       focal
 
 	<dt>Since Jammy (22.04) systemd is also enabled by default, so make sure it's running and that there are no
 		failed units:
+	    </dt>
+	    <dd>
 <pre>
 $ systemctl is-system-running
 running
@@ -75,17 +82,22 @@ $ systemctl --failed
 
   0 loaded units listed.
 </pre>
-	</dt>
+	    </dd>
 
     <dt>Wait for cloud-init to finish its job, if it's present in the system (cloud-init is only present in recent releases):
+        </dt>
+        <dd>
 <pre>
 $ which cloud-init && cloud-init status --wait
 /usr/bin/cloud-init
 
 status: disabled
-</pre></dt>
+</pre>
+        </dd>
 
   <dt>Since the image	has been installed directly and not with the distro launcher, you're logged in a root by default and have to create a first user manually. But first, verify that there is no other user already created by default:
+      </dt>
+      <dd>
 <pre>
 $ id 1000
 id: '1000': no such user: No such file or directory
@@ -93,8 +105,10 @@ $ id ubuntu
 id: 'ubuntu': no such user
 $ egrep ':100[0-9]:' /etc/passwd        # should output nothing.
 </pre>
-		</dt>
+      </dd>
     <dt>Create a new user named 'ubuntu':
+        </dt>
+        <dd>
 <pre>
 $ adduser ubuntu
 Adding user `ubuntu' ...
@@ -114,13 +128,15 @@ Home Phone []:
 Other []:
 Is the information correct? [Y/n]
 </pre>
-	</dt>
+        </dd>
 
 	<dt>Add the newly created user to the sudo group:
+	    </dt>
+	    <dd>
 <pre>
 $ usermod -aG sudo ubuntu
 </pre>
-	</dt>
+	    </dd>
 	<dd>Verify that you	can switch to the new user
 <pre>
 $ su ubuntu
@@ -134,6 +150,8 @@ ubuntu
 	<dt>Exit WSL. Type CTRL+D twice until you're back to the PowerShell prompt.</dt>
 
 	<dt>Start a WSL	session directly with the newly created user.
+	    </dt>
+	    <dd>
 <pre>
 &gt; wsl -d Ubuntu20.04.3 -u ubuntu
 To run a command as administrator (user &quot;root&quot;), use &quot;sudo &lt;command&gt;&quot;.
@@ -159,19 +177,28 @@ This message is shown once a day. To disable it please create the
 /home/ubuntu/.hushlogin file.
 ubuntu@WSL:/mnt/c/Users/ubuntu$
 </pre>
-	</dt>
+	    </dd>
 
 	<dt>Run a command as root with sudo, for instance
+	    </dt>
+	    <dd>
 		<pre>$ sudo apt update</pre>
+	    </dd>
 	</dt>
 		<dd>Verify that the	command ends successfully</dd>
 
 	<dt>Apply any update
-		<pre>$ sudo apt full-upgrade</pre></dt>
+	    </dt>
+	    <dd>
+		<pre>$ sudo apt full-upgrade</pre>
+	    </dd>
 		<dd>Verify that the	command ends successfully and that any packge that must be upgraded has been upgraded</dd>
 
 	<dt>Install a package
+	    </dt>
+	    <dd>
 		<pre>$ sudo apt install hello</pre>
+	    </dd>
 	</dt>
 		<dd>Verify that the	package has been successfully installed and the application can run<dd>
 <pre>
@@ -180,11 +207,13 @@ Hello, world!
 </pre></dd>
 
 	<dt>Install and run graphical applications
+	    </dt>
+	    <dd>
 <pre>
 $ sudo apt install x11-apps gtk-4-examples              # gtk-3-examples for focal
 [...]
 </pre>
-	</dt>
+	    </dd>
 		<dd>Start one of the graphical application from the x11-apps package, like xcalc for example:
 <pre>
 $ xcalc
@@ -204,6 +233,7 @@ $ GDK_BACKEND=wayland gtk4-demo
 </pre></dd>
 
 	<dt>Check that Windows interoperability is still working
+	</dt>
 		<dd> Launch a Windows application
 <pre>
 > notepad.exe # It should open.
@@ -223,13 +253,19 @@ dr-xr-xr-x 1 root root     512 Jun  4  2024  CSCmnt
 	</dt>
 
 <dt>Exit WSL
-<pre>logout</pre></dt>
+    </dt>
+    <dd>
+<pre>logout</pre>
+    </dd>
 	<dd>Check that your back to the PowerShell prompt</dd>
 
 	<dt>Unregister the distro instance
+	    </dt>
+	    <dd>
 <pre>
 > wsl.exe --unregister Ubuntu20.04.3
-</pre></dt>
+</pre>
+	    </dd>
 		<dd>The application	is no longer listed
 <pre>
 > wsl --list
@@ -249,5 +285,5 @@ TestUbuntuWSL
 		</dd>
 </dl>
 
-<strong>If all actions produce the expected results listed, please <a href=""results#add_result"">submit</a> a 'passed' result.
-    If an action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result.</strong>
+<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
+    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>

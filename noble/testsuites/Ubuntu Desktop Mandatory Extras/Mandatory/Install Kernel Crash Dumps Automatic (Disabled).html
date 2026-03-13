@@ -30,7 +30,7 @@ The purpose of this testcase is to test that kernel crash dumps are <strong>succ
 
 <p> The result of the <code>kdump-config show</code> command should show
 something similar to:</p>
-<div class=""box"">
+<div class="box">
     <pre>
         $ kdump-config show
          * /etc/default/kdump-tools: USE_KDUMP is not set or zero
@@ -46,7 +46,7 @@ something similar to:</p>
         crashkernel suggested size: 215M
 
         kexec command:
-          /sbin/kexec -p --command-line=""BOOT_IMAGE=/boot/vmlinuz-6.11.0-7-generic root=UUID=8c19e778-298a-40ad-91cd-f6725092446a ro reset_devices systemd.unit=kdump-tools-dump.service nr_cpus=1 irqpoll usbcore.nousb"" --initrd=/var/lib/kdump/initrd.img /var/lib/kdump/vmlinuz
+          /sbin/kexec -p --command-line="BOOT_IMAGE=/boot/vmlinuz-6.11.0-7-generic root=UUID=8c19e778-298a-40ad-91cd-f6725092446a ro reset_devices systemd.unit=kdump-tools-dump.service nr_cpus=1 irqpoll usbcore.nousb" --initrd=/var/lib/kdump/initrd.img /var/lib/kdump/vmlinuz
     </pre>
 </div>
 
@@ -65,6 +65,6 @@ something similar to:</p>
     </li>
 </ul>
 
-<strong>If you finish the installation, please <a href=""results#add_result"">submit</a> a 'passed' result.
-    If any action fails, or produces an unexpected result, please <a href=""results#add_result"">submit</a> a 'failed' result and <a href=""../../buginstructions"">file a bug</a>. Please be sure to include the bug number when you <a href=""results#add_result"">submit</a> your result.</strong>
+<strong>If you finish the installation, please <a href="results#add_result">submit</a> a 'passed' result.
+    If any action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
 
