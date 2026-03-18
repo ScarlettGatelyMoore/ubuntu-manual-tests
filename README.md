@@ -2,7 +2,9 @@
 
 This repo hosts the manual test cases used for various Ubuntu-related images.
 
-It's currently a dumb dump of what was hosted by the ISO tracker.
+Those tests are supposed to be human-readable only, so no particular format is
+defined. Once completed, test results are supposed to be reported against the
+tested artifact on <https://tests.ubuntu.com>.
 
 ## Repository structure
 
@@ -26,3 +28,19 @@ more than one product.
 
 **Testsuites** hold the actual test-case files written in Markdown. Every test
 case describes a step-by-step procedure together with the expected results.
+
+## Contributing
+
+Test cases are Markdown file. Many of them still contain the original HTML,
+because the whole repo was too inconsistent for a mass conversion. Feel free to
+manually convert them to proper Markdown on a case by case basis as you see fit.
+
+Test suites are just folders of test cases. Feel free to copy-paste or symlink
+(relative) across test suites to re-use existing test cases for multiple similar
+products.
+
+Product names are based on what's listed on <https://tests.ubuntu.com>, so
+please don't update them without checking with the Release Team first. Inside
+those high-level folders, you're free to do whatever you want as long as it
+ends up in a testing story that not too technical people can follow to provide
+test results.
