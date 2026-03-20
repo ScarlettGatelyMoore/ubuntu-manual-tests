@@ -3,11 +3,11 @@
 Test-case Live Session Start
 <dl>
     <dt>Boot up the image</dt>
-        <dd>FAMILY boot screen is displayed</dd>
+        <dd>Kubuntu boot screen is displayed</dd>
     <dt>When installer-prompt starts select your language in the first prompt</dt>
         <dd>Language is selected, all labels are changed to translated versions</dd>
         <dd>Current internet connection is shown in the second prompt</dd>
-    <dt>Press "Try FAMILY" and wait for the Live session to start</dt>
+    <dt>Press "Try Kubuntu" and wait for the Live session to start</dt>
         <dd>The default desktop is displayed</dd>
 </dl>
 
@@ -15,7 +15,7 @@ Test-case Live Session Usage
 <dl>
     <dt>Use and execute the default applications found for the desktop enviroment being run</dt>
         <dd>All applications should function without error</dd>
-    <dt>Use the "Install FAMILY XX.YY" icon on the Desktop</dt>
+    <dt>Use the "Install Kubuntu XX.YY" icon on the Desktop</dt>
         <dd>Calamares installer should start without error</dd>
 </dl>
 

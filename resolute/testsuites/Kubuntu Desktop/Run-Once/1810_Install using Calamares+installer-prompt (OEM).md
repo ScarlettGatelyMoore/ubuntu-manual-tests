@@ -2,13 +2,13 @@
 
 <dl>
     <dt>Boot up the image</dt>
-        <dd>FAMILY boot screen is displayed</dd>
+        <dd>Kubuntu boot screen is displayed</dd>
     <dt>Select "OEM Install (for manufacturers)" and hit Enter</dt>
     <dt>At the OEM mode informational dialog, click "Yes" to continue</dt>
         <dd>The Calamares installer starts</dd>
     <dt>After the "Welcome" pane is shown click "Next"</dt>
     <dt>After the "OEM Configuration" pane is shown, click "Next"</dt>
-        <dd>The "Batch" identifier is shown as FAMILY-XXYY-year-month-day</dd>
+        <dd>The "Batch" identifier is shown as Kubuntu-XXYY-year-month-day</dd>
     <dt>The "Location" pane is shown with a map and options to select region, time zone, language, and number/date locale</dt>
     <dt>Select the appropriate locale options and click "Next"</dt>
         <dd>The display should reflect your selections</dd>    
@@ -35,14 +35,14 @@
     <dt>At the "Finish" pane, "Restart now" is checked. Click "Done" to restart</dt>
     <dt>Remove the media when prompted and hit enter as instructed</dt>
     <dt>Allow the machine to reboot</dt>
-        <dd>The system boots properly and loads into FAMILY</dd>
+        <dd>The system boots properly and loads into Kubuntu</dd>
         <dd>The desktop is shown without having to enter a password</dd>
     <dt>Double click on the "Finish OEM preparation" icon on the desktop</dt>
     <dt>At the OEM mode informational dialog, click "Yes" to continue</dt>
     <dt>At the dialog saying that the account setup wizard will be run at next bootup, click "OK"</dt>
     <dt>Reboot the machine</dt>
         <dd>The system boots straight to the Calamares installer</dd>
-    <dt>At the "Welcome to FAMILY setup" pane, click "Next"</dt>
+    <dt>At the "Welcome to Kubuntu setup" pane, click "Next"</dt>
     <dt>The "Location" pane is shown with a map and options to select region, time zone, language, and number/date locale</dt>
     <dt>Select the appropriate locale options and click "Next"</dt>
         <dd>The display should reflect your selections</dd>    
@@ -54,7 +54,7 @@
         <dd>The slideshow should correctly display</dd>
     <dt>At the "Finish" pane, "Restart now" is checked. Click "Done" to restart</dt>
     <dt>Allow the machine to reboot</dt>
-        <dd>The system boots properly and loads into FAMILY showing the username you entered</dd>
+        <dd>The system boots properly and loads into Kubuntu showing the username you entered</dd>
 
     </dl>
     <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
