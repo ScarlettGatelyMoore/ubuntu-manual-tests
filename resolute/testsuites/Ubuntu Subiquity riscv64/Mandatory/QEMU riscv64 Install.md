@@ -1,46 +1,87 @@
-This testcase checks the installation of the live installer image for the
-riscv64 architecture on QEMU.
+# Test RISC-V server install image on QEMU
 
-On your installed Ubuntu machine.
+The test assumes a Ubuntu 26.04 LTS or higher host system.
 
-<dl>
-    <dt>sudo apt install -y opensbi qemu-system-misc u-boot-qemu</dt>
-    <dt>rm -f disk</dt>
-    <dt>truncate -s 16G disk</dt>
-    <dt>Start the installer with (needs QEMU > 10.1, available on Ubuntu 25.10):
-        </dt>
-        <dd>
-<pre>
-/usr/bin/qemu-system-riscv64 -machine virt -m 4G -smp cpus=2 -nographic \
-    -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
-    -netdev user,id=net0 \
-    -device virtio-net-device,netdev=net0 \
-    -drive file=disk,format=raw,if=virtio \
-    -drive file=&lt;release&gt;-live-server-riscv64.iso,format=raw,if=virtio,readonly=on \
-    -device virtio-rng-pci -cpu rva23s64
-</pre>
-        </dd>
-    <dt>Install on the 16 GiB drive.</dt>
-        <dd>The installation finishes without reporting failures.</dd>
-    <dt>Reboot</dt>
-        <dd>The system boots via GRUB.</dd>
-    <dt>Login in with the username and password defined during the installation</dt>
-    <dt>Run any command that is not installed, e.g. hello.</dt>
-        <dd>Check that command-not-found recommends things to install</dd>
-    <dt>Install a package, e.g. hello.</dt>
-        <dd>Check that the package performs correctly.</dd>
-    <dt>Install a snap, e.g. hello.</dt>
-        <dd>check that the snap works correctly.</dd>
-    <dt>Check grub.cfg</dt>
-        <dd>If installing to real hardware using a device-tree,
-	/boot/dtb-&lt;kernel-version&gt; should exists and
-	/boot/grub/grub.cfg should contain a devicetree command loading
-	the this device-tree.</dd>
-    <dt>Poweroff</dt>
-        <dd>Console messages should reach the poweroff target</dd>
-        <dd>There should be final message 'reboot: Power down'</dd>
-        <dd>QEMU should terminate automatically</dd>
-</dl>
-<strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
-    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
+* Install prerequisites
 
+      sudo apt-get update
+      sudo apt install \
+        opensbi \
+        qemu-efi-riscv64 \
+        qemu-system-riscv
+
+* Create a local copy of the EFI variables file.
+
+      cp /usr/share/qemu-efi-riscv64/RISCV_VIRT_VARS.fd .
+
+* Download the live installer image.
+* Create the disk image file that we will install to.
+
+      rm -f disk
+      truncate -s 16G disk
+
+* Start the installer with:
+
+      qemu-system-riscv64 \
+        -cpu rva23s64 \
+        -machine virt,acpi=on -m 4G -smp cpus=2 \
+        -nographic \
+        -drive if=pflash,format=raw,unit=0,file=/usr/share/qemu-efi-riscv64/RISCV_VIRT_CODE.fd,readonly=on \
+        -drive if=pflash,format=raw,unit=1,file=RISCV_VIRT_VARS.fd,readonly=off \
+        -netdev user,id=net0 \
+        -device virtio-net-device,netdev=net0 \
+        -device virtio-rng-pci \
+        -drive file=disk,format=raw,if=none,id=DISK \
+        -device virtio-blk,drive=DISK,bootindex=1 \
+        -drive file=<release>-live-server-riscv64.iso,format=raw,readonly=on,if=none,id=ISO \
+        -device virtio-blk,drive=ISO,bootindex=2
+
+* Follow the on screen instructions.
+   * The installation finishes without reporting failures.
+* Reboot
+   * The system boots via GRUB.
+* Login in with the username and password defined during the installation.
+* Perform generic testing
+  * Check that apt update works.
+
+        sudo apt-get update
+
+  * Install a package and check that it works, e.g. hello.
+
+        sudo apt-get install hello
+        /usr/bin/hello
+
+* Perform snap testing
+  * Install a snap and check that it works, e.g. hello.
+
+        sudo snap install hello
+        /snap/bin/hello
+
+* Check GRUB device-tree loading.
+   * If installing to real hardware using a device-tree, file
+     /boot/dtb-&lt;kernel-version> should exist and file /boot/grub/grub.cfg
+     should contain a *devicetree* command loading this device-tree.
+* Reboot and login again.
+
+      sudo reboot
+
+  * The system should reboot and show the login message again.
+  * Login should be successful.
+* Power off
+
+      sudo poweroff
+
+  * There should be final kernel message indicating powering off like
+
+        [  104.670221] reboot: Power down
+
+  * The host console should be reached.
+
+For reference see the
+[Ubuntu boards documentation](https://canonical-ubuntu-hardware-support.readthedocs-hosted.com/boards/how-to/ubuntu_supported/qemu-riscv/index.html).
+
+If all actions produce the expected results listed, please submit a 'passed'
+result.
+
+If an action fails, or produces an unexpected result, please submit  a 'failed'
+result and file a bug. Please include the bug number in the test report.
