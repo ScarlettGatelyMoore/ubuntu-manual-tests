@@ -1,26 +1,24 @@
-<em>Proceed in your native language if you wish. Instructions will remain in English</em>
+*Proceed in your native language if you wish. Instructions will remain in English*
 
 Test-case Live Session Start
-<dl>
-    <dt>Boot up the image</dt>
-        <dd>FAMILY boot screen is displayed</dd>
-    <dt>When installer-prompt starts select your language in the first prompt</dt>
-        <dd>Language is selected, all labels are changed to translated versions</dd>
-        <dd>Current internet connection is shown in the second prompt</dd>
-    <dt>Press "Try FAMILY" and wait for the Live session to start</dt>
-        <dd>The default desktop is displayed</dd>
-</dl>
+
+- Boot up the image
+  - Lubuntu boot screen is displayed
+- When installer-prompt starts, connect to the Internet using the network menu
+  - Network connection is successful
+  - Current internet connection is shown in the network menu
+- Select your language from the language menu if it is something other than US English
+  - If a new language was selected, it is installed if necessary, the installer prompt restarts, and the language is still selected after the restart
+- Press "Try Lubuntu" and wait for the Live session to start
+  - The default desktop is displayed
 
 Test-case Live Session Usage
-<dl>
-    <dt>Use and execute the default applications found for the desktop enviroment being run</dt>
-        <dd>All applications should function without error</dd>
-    <dt>Use the "Install FAMILY XX.YY" icon on the Desktop</dt>
-        <dd>Calamares installer should start without error</dd>
-</dl>
 
-<strong>
-    If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
-    If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>
+- Launch and smoke-test the default applications found for the desktop enviroment being run
+  - All applications should function without error
+- Use the "Install Lubuntu XX.YY" icon on the Desktop
+  - Calamares installer should start without error
 
+**If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 
+**If an action fails, or produces an unexpected result, please [submit](results#add_result) a 'failed' result and [file a bug](../../buginstructions). Please be sure to include the bug number when you [submit](results#add_result) your result.**

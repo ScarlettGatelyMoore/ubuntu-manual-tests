@@ -1,6 +1,5 @@
 *Proceed in your native language if you wish. Instructions will remain in English*
 
-- Before running this test, ensure that you are using BIOS firmware to boot
 - Boot up the image
   - Lubuntu boot screen is displayed
 - When installer-prompt starts, connect to the Internet using the network menu
@@ -24,9 +23,10 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Click "Next" without adjusting any settings
+- Select "Full Installation"
+  - The checkboxes under "Install additional third-party packages" is checked and the text changes to grey
+- Click "Next"
   - The "Partitions" pane is shown
-  - In the top left corner, "BIOS" is displayed
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
 - Select the "Erase disk" radio button
@@ -34,8 +34,7 @@
   - The "Swap to file" menu contains "No swap" as the other available option
   - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
-  - The "After" partition layout shown at the bottom of the screen shows a single `lubuntu_2604` partition covering the entire disk
-- Set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
+- If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
 - At the "Users" pane, enter details about the main system user
@@ -55,6 +54,7 @@
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
   - The system boots properly and loads into Lubuntu showing the username you entered
+  - The additional third-party packages should all be installed, Element and Krita may take a while to appear
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

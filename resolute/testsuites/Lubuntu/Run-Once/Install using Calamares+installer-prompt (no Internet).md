@@ -1,18 +1,18 @@
 *Proceed in your native language if you wish. Instructions will remain in English*
 
-- Before running this test, ensure that you are using BIOS firmware to boot
+- Before starting this test, make sure you are NOT connected to the Internet
 - Boot up the image
   - Lubuntu boot screen is displayed
-- When installer-prompt starts, connect to the Internet using the network menu
-  - Network connection is successful
-  - Current internet connection is shown in the network menu
+- When installer-prompt starts, verify all entries in the network menu show as being "Disconnected"
 - Select your language from the language menu if it is something other than US English
   - If a new language was selected, it is installed if necessary, the installer prompt restarts, and the language is still selected after the restart
 - Press "Install Lubuntu" and wait for Calamares installer to start
   - Language menu in Calamares has your language pre-selected
   - Text in the installer is properly translated
+  - A warning is shown: "The system is not connected to the Internet"
 - After the "Welcome" pane is shown click "Next"
   - The "Location" pane is shown with a map and options to select region, time zone, language, and number/date locale
+  - The default location shown is America/New York
 - Select the appropriate locale options
   - The display should reflect your selections    
 - Click "Next"
@@ -21,12 +21,11 @@
   - Keyboard layout is set properly
 - Click "Next"
   - The "Customize" pane is shown
-  - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
-  - "Download and install updates following installation" are unchecked
-  - The checkboxes under "Install additional third-party packages" are unchecked
+  - "Normal Installation" should be selected, but there is also an option for "Minimal Installation"
+  - "Download and install updates following installation" section is not shown
+  - "Install additional third-party packages section is not shown
 - Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
-  - In the top left corner, "BIOS" is displayed
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
 - Select the "Erase disk" radio button
@@ -34,8 +33,7 @@
   - The "Swap to file" menu contains "No swap" as the other available option
   - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
-  - The "After" partition layout shown at the bottom of the screen shows a single `lubuntu_2604` partition covering the entire disk
-- Set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
+- If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
 - At the "Users" pane, enter details about the main system user
