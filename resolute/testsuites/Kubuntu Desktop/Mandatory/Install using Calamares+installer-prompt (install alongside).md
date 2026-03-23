@@ -3,11 +3,11 @@
 <dl>
     <dt>Before starting this test, ensure your target disk has another operating system on it</dt>
     <dt>Boot up the image</dt>
-        <dd>FAMILY boot screen is displayed</dd>
+        <dd>Kubuntu boot screen is displayed</dd>
     <dt>When installer-prompt starts select your language in the first prompt</dt>
         <dd>Language is selected, all labels are changed to translated versions</dd>
         <dd>Current internet connection is shown in the second prompt</dd>
-    <dt>Press "Install FAMILY" and wait for Calamares installer to start</dt>
+    <dt>Press "Install Kubuntu" and wait for Calamares installer to start</dt>
     <dt>After the "Welcome" pane is shown click "Next"</dt>
     <dt>The "Location" pane is shown with a map and options to select region, time zone, language, and number/date locale</dt>
     <dt>Select the appropriate locale options and click "Next"</dt>
@@ -36,7 +36,7 @@
     <dt>At the "Finish" pane, "Restart now" is checked. Click "Done" to restart</dt>
     <dt>Remove the media when prompted and hit enter as instructed</dt>
     <dt>Allow the machine to reboot</dt>
-        <dd>The system boots properly and loads into FAMILY showing the username you entered</dd>
+        <dd>The system boots properly and loads into Kubuntu showing the username you entered</dd>
 </dl>
 <strong>If all actions produce the expected results listed, please <a href="results#add_result">submit</a> a 'passed' result.
     If an action fails, or produces an unexpected result, please <a href="results#add_result">submit</a> a 'failed' result and <a href="../../buginstructions">file a bug</a>. Please be sure to include the bug number when you <a href="results#add_result">submit</a> your result.</strong>

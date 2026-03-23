@@ -3,7 +3,7 @@ The goal of this test case is to check that localization support is functional d
     <dt>Boot up the image</dt>
     <dt>Select a non-English language and press Enter</dt>
 	<dd>The boot screen is displayed in the selected language</dd>
-    <dt>Select Try FAMILY without any change to your computer and press Enter</dt>
+    <dt>Select Try Kubuntu without any change to your computer and press Enter</dt>
         <dd>
             <ul>
                 <li>Once the live session has started, verify that the system is localized to the previously selected language</li>
