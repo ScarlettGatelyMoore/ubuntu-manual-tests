@@ -1,6 +1,5 @@
 *Proceed in your native language if you wish. Instructions will remain in English*
 
-- Before starting this test, ensure your target disk has another operating system on it
 - Boot up the image
   - Ubuntu Unity desktop is displayed
 - Connect to the Internet using the network widget
@@ -22,16 +21,16 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Click "Next" without adjusting any settings
+- Check the "Download and install updates following installation" box
+- Click "Next"
   - The "Partitions" pane is shown
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
-- Select the "Install alongside" radio button
+- Select the "Erase disk" radio button
+  - Two menus appear under the "Erase disk" option, set to "Swap to file" and "ext4"
+  - The "Swap to file" menu contains "No swap" as the other available option
+  - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
-- Click on the partition you want to shrink in the "Current" partition layout
-  - The "After" bar should show the existing partition layout, with the selected partition split into two parts, one for the existing OS and one for the new OS
-- Click and drag the arrow on the "After" bar left and right before settling on something roughly equally split
-  - The splitter should move in either direction, within reasonable limits as there needs to be enough space to install to
 - If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
@@ -51,12 +50,11 @@
   - System begins shutdown and prompts you to remove the installation media
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
-  - The system boots into a GRUB boot menu
-  - The OS that was previously installed has a boot entry present near the bottom of the menu
-  - After sitting for a few seconds, the system automatically continues boot and loads into Ubuntu Unity showing the username you entered
-- Reboot the system again
-- Select the previously installed OS and press Enter
-  - The previously installed OS boots successfully
+  - The system boots properly and loads into Ubuntu Unity showing the username you entered
+- Log into the installed system
+- Attempt to install updates from a terminal using "sudo apt update && sudo apt full-upgrade"
+- Provide your password when prompted
+  - No updates are available
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 
