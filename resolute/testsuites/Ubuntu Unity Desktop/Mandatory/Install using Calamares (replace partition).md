@@ -1,5 +1,8 @@
+# Ubuntu Unity: Install using Calamares (replace partition)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
+- Before starting this test, ensure your target disk has another operating system on it
 - Boot up the image
   - Ubuntu Unity desktop is displayed
 - Connect to the Internet using the network widget
@@ -21,16 +24,14 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Check the "Download and install updates following installation" box
-- Click "Next"
+- Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
-- Select the "Erase disk" radio button
-  - Two menus appear under the "Erase disk" option, set to "Swap to file" and "ext4"
-  - The "Swap to file" menu contains "No swap" as the other available option
-  - The "ext4" menu contains "btrfs" and "xfs" as the other available options
+- Select the "Replace partition" radio button
   - Above the partition layout, "Encrypt system" should be unchecked
+- Click on the partition you want to replace in the "Current" partition layout
+  - The "After" bar should show the existing partition layout, with the selected partition replaced with the new OS
 - If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
@@ -51,10 +52,6 @@
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
   - The system boots properly and loads into Ubuntu Unity showing the username you entered
-- Log into the installed system
-- Attempt to install updates from a terminal using "sudo apt update && sudo apt full-upgrade"
-- Provide your password when prompted
-  - No updates are available
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

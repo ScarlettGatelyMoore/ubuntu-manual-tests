@@ -1,3 +1,5 @@
+# Ubuntu Unity: Install using Calamares (updates)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image
@@ -21,7 +23,8 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Click "Next" without adjusting any settings
+- Check the "Download and install updates following installation" box
+- Click "Next"
   - The "Partitions" pane is shown
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
@@ -49,7 +52,11 @@
   - System begins shutdown and prompts you to remove the installation media
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
-  - The system boots properly and loads into Ubuntu Unity showing the username you entered and using the selected language
+  - The system boots properly and loads into Ubuntu Unity showing the username you entered
+- Log into the installed system
+- Attempt to install updates from a terminal using "sudo apt update && sudo apt full-upgrade"
+- Provide your password when prompted
+  - No updates are available
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

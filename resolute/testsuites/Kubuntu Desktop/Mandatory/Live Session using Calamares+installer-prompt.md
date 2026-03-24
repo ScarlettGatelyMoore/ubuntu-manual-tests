@@ -1,3 +1,5 @@
+# Kubuntu: Live Session using Calamares + installer-prompt
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 Test-case Live Session Start

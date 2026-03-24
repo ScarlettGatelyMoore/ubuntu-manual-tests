@@ -1,3 +1,5 @@
+# Lubuntu: Install using Calamares + installer-prompt (EFI + Secure Boot)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Before running this test, ensure that you are using EFI firmware with Secure Boot enabled to boot

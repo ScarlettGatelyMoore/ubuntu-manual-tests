@@ -1,3 +1,5 @@
+# Lubuntu: Install using Calamares + installer-prompt (manual partitioning)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image

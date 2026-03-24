@@ -1,6 +1,7 @@
+# Ubuntu Unity: Install using Calamares (autologin)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
-- Before running this test, ensure that you are using BIOS firmware to boot
 - Boot up the image
   - Ubuntu Unity desktop is displayed
 - Connect to the Internet using the network widget
@@ -24,7 +25,6 @@
   - The checkboxes under "Install additional third-party packages" are unchecked
 - Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
-  - In the top left corner, "BIOS" is displayed
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
 - Select the "Erase disk" radio button
@@ -32,12 +32,12 @@
   - The "Swap to file" menu contains "No swap" as the other available option
   - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
-  - The "After" partition layout shown at the bottom of the screen shows a single `ubuntu_unity_2604` partition covering the entire disk
-- Set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
+- If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
 - At the "Users" pane, enter details about the main system user
   - All details should be correctly filled in
+- Check "Log in automatically without asking for the password."
 - Click "Next"
   - The "Summary" pane is shown
 - Confirm the details you entered throughout the install are accurately shown
@@ -53,6 +53,7 @@
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
   - The system boots properly and loads into Ubuntu Unity showing the username you entered
+  - No login screen is shown and no password is required to get to the desktop environment
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

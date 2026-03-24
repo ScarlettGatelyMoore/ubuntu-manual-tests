@@ -1,3 +1,5 @@
+# Kubuntu: Install using Calamares + installer-prompt (non-English)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image

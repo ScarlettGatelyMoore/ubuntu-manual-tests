@@ -1,3 +1,5 @@
+# Ubuntu Unity: Install using Calamares (non-English)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image
@@ -21,9 +23,7 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Select "Full Installation"
-  - The checkboxes under "Install additional third-party packages" is checked and the text changes to grey
-- Click "Next"
+- Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
@@ -51,8 +51,7 @@
   - System begins shutdown and prompts you to remove the installation media
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
-  - The system boots properly and loads into Ubuntu Unity showing the username you entered
-  - The additional third-party packages should all be installed, Element and Krita may take a while to appear
+  - The system boots properly and loads into Ubuntu Unity showing the username you entered and using the selected language
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

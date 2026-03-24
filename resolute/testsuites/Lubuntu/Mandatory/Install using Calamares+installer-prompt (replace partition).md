@@ -1,3 +1,5 @@
+# Lubuntu: Install using Calamares + installer-prompt (replace partition)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Before starting this test, ensure your target disk has another operating system on it

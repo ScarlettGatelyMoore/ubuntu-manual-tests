@@ -1,3 +1,5 @@
+# Lubuntu: Install using Calamares + installer-prompt (BIOS)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Before running this test, ensure that you are using BIOS firmware to boot

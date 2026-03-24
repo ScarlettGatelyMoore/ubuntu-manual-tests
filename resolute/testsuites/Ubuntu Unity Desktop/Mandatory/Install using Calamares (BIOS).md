@@ -1,5 +1,8 @@
+# Ubuntu Unity: Install using Calamares (BIOS)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
+- Before running this test, ensure that you are using BIOS firmware to boot
 - Boot up the image
   - Ubuntu Unity desktop is displayed
 - Connect to the Internet using the network widget
@@ -23,24 +26,18 @@
   - The checkboxes under "Install additional third-party packages" are unchecked
 - Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
-- Select the "Manual partitioning" radio button
+  - In the top left corner, "BIOS" is displayed
+- Select the disk to install to from the "Select storage device" menu
+  - The "Current" partition layout shown at the bottom of the screen matches the selected device
+- Select the "Erase disk" radio button
+  - Two menus appear under the "Erase disk" option, set to "Swap to file" and "ext4"
+  - The "Swap to file" menu contains "No swap" as the other available option
+  - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
-- Click "Next"
-  - The manual partitioning pane is shown
-- In the "Storage device" menu, select the disk to install to
-  - The partition layout at the top of the screen matches the selected disk
-  - The table below the bar lists the partitions, file system, label, mount point, and size
-- Click "New Partition Table"
-  - A popup appears asking what kind of partition table to create, "MBR" is autoselected on BIOS systems, "GPT" is autoselected on EFI systems
-- Click "OK" to accept the default partition table type
-  - Popup disappears, table and partition layout bar shows all space on the disk as free space
-- Set up your partitions as desired using the "Create", "Edit", and "Delete" buttons, do NOT use the volume group buttons
-  - The partition layout and table match the layout you specified
-- If using a BIOS system, set the "Install boot loader on" menu to the "Master Boot Record" of the disk specified in the "Storage device" menu
+  - The "After" partition layout shown at the bottom of the screen shows a single `ubuntu_unity_2604` partition covering the entire disk
+- Set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
 - Click "Next"
   - The "Users" pane is shown
-  - A popup may appear recommending that one use a GPT partition layout even on BIOS systems
-- If the popup described above appears, dismiss it
 - At the "Users" pane, enter details about the main system user
   - All details should be correctly filled in
 - Click "Next"

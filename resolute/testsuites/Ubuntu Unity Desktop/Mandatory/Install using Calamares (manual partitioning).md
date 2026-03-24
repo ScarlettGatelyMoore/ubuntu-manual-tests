@@ -1,3 +1,5 @@
+# Ubuntu Unity: Install using Calamares (manual partitioning)
+
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image
@@ -23,21 +25,24 @@
   - The checkboxes under "Install additional third-party packages" are unchecked
 - Click "Next" without adjusting any settings
   - The "Partitions" pane is shown
-- Select the disk to install to from the "Select storage device" menu
-  - The "Current" partition layout shown at the bottom of the screen matches the selected device
-- Select the "Erase disk" radio button
-  - Two menus appear under the "Erase disk" option, set to "Swap to file" and "ext4"
-  - The "Swap to file" menu contains "No swap" as the other available option
-  - The "ext4" menu contains "btrfs" and "xfs" as the other available options
+- Select the "Manual partitioning" radio button
   - Above the partition layout, "Encrypt system" should be unchecked
-- If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
-- Check the "Encrypt system" checkbox
-  - Next to the checkbox, two prompts are shown: "Passphrase" and "Confirm passphrase"
-- Enter two matching passphrases in the prompts and click "Next"
-  - Upon success, a green checkmark is shown to the right of the prompts
-  - The "After" partition layout at the bottom shows a 4 GB boot partition, followed by a LUKS2 `ubuntu_unity_2604` partition
+- Click "Next"
+  - The manual partitioning pane is shown
+- In the "Storage device" menu, select the disk to install to
+  - The partition layout at the top of the screen matches the selected disk
+  - The table below the bar lists the partitions, file system, label, mount point, and size
+- Click "New Partition Table"
+  - A popup appears asking what kind of partition table to create, "MBR" is autoselected on BIOS systems, "GPT" is autoselected on EFI systems
+- Click "OK" to accept the default partition table type
+  - Popup disappears, table and partition layout bar shows all space on the disk as free space
+- Set up your partitions as desired using the "Create", "Edit", and "Delete" buttons, do NOT use the volume group buttons
+  - The partition layout and table match the layout you specified
+- If using a BIOS system, set the "Install boot loader on" menu to the "Master Boot Record" of the disk specified in the "Storage device" menu
 - Click "Next"
   - The "Users" pane is shown
+  - A popup may appear recommending that one use a GPT partition layout even on BIOS systems
+- If the popup described above appears, dismiss it
 - At the "Users" pane, enter details about the main system user
   - All details should be correctly filled in
 - Click "Next"
