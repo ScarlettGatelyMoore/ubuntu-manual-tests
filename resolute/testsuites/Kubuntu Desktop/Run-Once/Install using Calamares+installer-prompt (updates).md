@@ -1,4 +1,4 @@
-# Kubuntu: Install using Calamares + installer-prompt (encryption)
+# Kubuntu: Install using Calamares + installer-prompt (updates)
 
 *Proceed in your native language if you wish. Instructions will remain in English*
 
@@ -25,7 +25,8 @@
   - "Normal Installation" should be selected, but there are also options for "Full Installation" and "Minimal Installation"
   - "Download and install updates following installation" are unchecked
   - The checkboxes under "Install additional third-party packages" are unchecked
-- Click "Next" without adjusting any settings
+- Check the "Download and install updates following installation" box
+- Click "Next"
   - The "Partitions" pane is shown
 - Select the disk to install to from the "Select storage device" menu
   - The "Current" partition layout shown at the bottom of the screen matches the selected device
@@ -35,11 +36,6 @@
   - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
 - If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
-- Check the "Encrypt system" checkbox
-  - Next to the checkbox, two prompts are shown: "Passphrase" and "Confirm passphrase"
-- Enter two matching passphrases in the prompts and click "Next"
-  - Upon success, a green checkmark is shown to the right of the prompts
-  - The "After" partition layout at the bottom shows a 4 GB boot partition, followed by a LUKS2 `kubuntu_2604` partition
 - Click "Next"
   - The "Users" pane is shown
 - At the "Users" pane, enter details about the main system user
@@ -59,6 +55,10 @@
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
   - The system boots properly and loads into Kubuntu showing the username you entered
+- Log into the installed system
+- Click the Discover app store icon in the taskbar
+- Click "Updates" in the left-hand side bar
+  - No updates are available
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 

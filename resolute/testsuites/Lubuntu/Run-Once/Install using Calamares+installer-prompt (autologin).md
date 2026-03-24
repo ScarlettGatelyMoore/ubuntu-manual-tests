@@ -1,15 +1,15 @@
-# Kubuntu: Install using Calamares + installer-prompt (encryption)
+# Lubuntu: Install using Calamares + installer-prompt (autologin)
 
 *Proceed in your native language if you wish. Instructions will remain in English*
 
 - Boot up the image
-  - Kubuntu boot screen is displayed
+  - Lubuntu boot screen is displayed
 - When installer-prompt starts, connect to the Internet using the network menu
   - Network connection is successful
   - Current internet connection is shown in the network menu
 - Select your language from the language menu if it is something other than US English
   - If a new language was selected, it is installed if necessary, the installer prompt restarts, and the language is still selected after the restart
-- Press "Install Kubuntu" and wait for Calamares installer to start
+- Press "Install Lubuntu" and wait for Calamares installer to start
   - Language menu in Calamares has your language pre-selected
   - Text in the installer is properly translated
 - After the "Welcome" pane is shown click "Next"
@@ -35,15 +35,11 @@
   - The "ext4" menu contains "btrfs" and "xfs" as the other available options
   - Above the partition layout, "Encrypt system" should be unchecked
 - If "BIOS" is displayed in the upper-left corner of the pane, set the "Bootloader location" below the partition layout to the "Master Boot Record" of the disk specified in the "Select storage device" menu
-- Check the "Encrypt system" checkbox
-  - Next to the checkbox, two prompts are shown: "Passphrase" and "Confirm passphrase"
-- Enter two matching passphrases in the prompts and click "Next"
-  - Upon success, a green checkmark is shown to the right of the prompts
-  - The "After" partition layout at the bottom shows a 4 GB boot partition, followed by a LUKS2 `kubuntu_2604` partition
 - Click "Next"
   - The "Users" pane is shown
 - At the "Users" pane, enter details about the main system user
   - All details should be correctly filled in
+- Check "Log in automatically without asking for the password."
 - Click "Next"
   - The "Summary" pane is shown
 - Confirm the details you entered throughout the install are accurately shown
@@ -58,7 +54,8 @@
   - System begins shutdown and prompts you to remove the installation media
 - Remove the media when prompted and hit enter as instructed
 - Allow the machine to reboot
-  - The system boots properly and loads into Kubuntu showing the username you entered
+  - The system boots properly and loads into Lubuntu showing the username you entered
+  - No login screen is shown and no password is required to get to the desktop environment
 
 **If all actions produce the expected results listed, please [submit](results#add_result) a 'passed' result.**
 
