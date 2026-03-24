@@ -31,13 +31,37 @@ case describes a step-by-step procedure together with the expected results.
 
 ## Contributing
 
+### Test cases
+
 Test cases are Markdown file. Many of them still contain the original HTML,
 because the whole repo was too inconsistent for a mass conversion. Feel free to
 manually convert them to proper Markdown on a case by case basis as you see fit.
 
+The general structure of a test case should be the following:
+```
+# A unique test name
+
+* Step 1
+  - Substep 1
+  - Substep 2
+* Step 2
+...
+
+----
+**If all actions produce the expected results listed, please submit a `passed` result.**
+
+**If an action fails, or produces an unexpected result, please submit a `failed` result and file a bug. Please be sure to include the bug number when you submit your result.**
+```
+
+
+### Test suites
+
 Test suites are just folders of test cases. Feel free to copy-paste or symlink
 (relative) across test suites to re-use existing test cases for multiple similar
 products.
+
+
+### Products
 
 Product names are based on what's listed on <https://tests.ubuntu.com>, so
 please don't update them without checking with the Release Team first. Inside
