@@ -33,7 +33,7 @@ case describes a step-by-step procedure together with the expected results.
 
 ### Test cases
 
-Test cases are Markdown file. Many of them still contain the original HTML,
+Test cases are [Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) files. Many of them still contain the original HTML,
 because the whole repo was too inconsistent for a mass conversion. Feel free to
 manually convert them to proper Markdown on a case by case basis as you see fit.
 
